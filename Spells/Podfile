@@ -10,6 +10,6 @@ target 'Spells' do
   pod 'M13Checkbox'
   target 'SpellsTests' do
     inherit! :search_paths
-    # Pods for testing
+    
   end
 end
