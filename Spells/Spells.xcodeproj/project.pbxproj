@@ -34,6 +34,8 @@
 		99EDC05423339C96007855C4 /* PopupMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC05323339C96007855C4 /* PopupMenuVC.swift */; };
 		99EDC0572333A7FE007855C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC0552333A7FE007855C4 /* ViewController.swift */; };
 		99EDC0582333A7FE007855C4 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC0562333A7FE007855C4 /* ViewController.xib */; };
+		99EDC05C2333CABD007855C4 /* CreateListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC05A2333CABD007855C4 /* CreateListVC.swift */; };
+		99EDC05D2333CABD007855C4 /* CreateListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC05B2333CABD007855C4 /* CreateListVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		99EDC05323339C96007855C4 /* PopupMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMenuVC.swift; sourceTree = "<group>"; };
 		99EDC0552333A7FE007855C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		99EDC0562333A7FE007855C4 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		99EDC05A2333CABD007855C4 /* CreateListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListVC.swift; sourceTree = "<group>"; };
+		99EDC05B2333CABD007855C4 /* CreateListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateListVC.xib; sourceTree = "<group>"; };
 		A2E35F2D0F771D0D59E88AE1 /* Pods-Spells.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spells.release.xcconfig"; path = "Target Support Files/Pods-Spells/Pods-Spells.release.xcconfig"; sourceTree = "<group>"; };
 		C60309067E7DFEE3CFD061A5 /* Pods-SpellsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellsTests.release.xcconfig"; path = "Target Support Files/Pods-SpellsTests/Pods-SpellsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,6 +236,7 @@
 		99EDC05123339C1F007855C4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				99EDC0592333CAA4007855C4 /* CreateListVC */,
 				99EDC05223339C2A007855C4 /* PopupVC */,
 			);
 			path = ViewController;
@@ -243,6 +248,15 @@
 				99EDC05323339C96007855C4 /* PopupMenuVC.swift */,
 			);
 			path = PopupVC;
+			sourceTree = "<group>";
+		};
+		99EDC0592333CAA4007855C4 /* CreateListVC */ = {
+			isa = PBXGroup;
+			children = (
+				99EDC05A2333CABD007855C4 /* CreateListVC.swift */,
+				99EDC05B2333CABD007855C4 /* CreateListVC.xib */,
+			);
+			path = CreateListVC;
 			sourceTree = "<group>";
 		};
 		AA25A9EACB1B29AD8AEE330B /* Frameworks */ = {
@@ -352,6 +366,7 @@
 				99EDC011233372EC007855C4 /* LaunchScreen.storyboard in Resources */,
 				99EDC044233378D2007855C4 /* Colors.xcassets in Resources */,
 				99EDC0492333885D007855C4 /* TabBar.xcassets in Resources */,
+				99EDC05D2333CABD007855C4 /* CreateListVC.xib in Resources */,
 				99EDC00E233372EC007855C4 /* Assets.xcassets in Resources */,
 				99EDC0582333A7FE007855C4 /* ViewController.xib in Resources */,
 				99EDC00C233372EB007855C4 /* Main.storyboard in Resources */,
@@ -447,6 +462,7 @@
 				99EDC042233376B9007855C4 /* HeaderBottom2.swift in Sources */,
 				99EDC04C23339029007855C4 /* PlusButton.swift in Sources */,
 				99EDC0472333871B007855C4 /* CustomTBC.swift in Sources */,
+				99EDC05C2333CABD007855C4 /* CreateListVC.swift in Sources */,
 				99EDC03C23337635007855C4 /* HeaderBottom.swift in Sources */,
 				99EDC0572333A7FE007855C4 /* ViewController.swift in Sources */,
 				99EDC038233375F7007855C4 /* TextSearch.swift in Sources */,

@@ -30,6 +30,7 @@ class PopupMenuVC: UIViewController {
             self.view.alpha = 1
             self.popupMenu.frame = self.endRect
             childVC.view.frame = self.popupMenu.bounds
+            childVC.view.layoutIfNeeded()
             self.popupMenu.alpha = 1
         }
     }
@@ -39,6 +40,7 @@ class PopupMenuVC: UIViewController {
             self.view.alpha = 0
             self.popupMenu.frame = self.startRect ?? .zero
             self.popupMenu.alpha = 0
+            self.childVC!.view.layoutIfNeeded()
         })
     }
     

@@ -94,7 +94,7 @@ extension CustomTBC {
         let rootView = UIApplication.shared.windows.first!.rootViewController!.view!
         let baseMargin: CGFloat = 20
         popupVC = PopupMenuVC()
-        popupVC.childVC = ViewController()
+        popupVC.childVC = CreateListVC()
         popupVC.startRect = tabBar.convert(plusButton.frame, to: nil)
         popupVC.endRect = CGRect(x: baseMargin, y: popupVC.startRect!.origin.y - 16 - 175, width: rootView.bounds.width - baseMargin * 2, height: 175)
         
