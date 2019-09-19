@@ -27,6 +27,10 @@
 		99EDC04023337695007855C4 /* TextFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC03F23337695007855C4 /* TextFilter.swift */; };
 		99EDC042233376B9007855C4 /* HeaderBottom2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC041233376B9007855C4 /* HeaderBottom2.swift */; };
 		99EDC044233378D2007855C4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC043233378D2007855C4 /* Colors.xcassets */; };
+		99EDC0472333871B007855C4 /* CustomTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC0462333871B007855C4 /* CustomTBC.swift */; };
+		99EDC0492333885D007855C4 /* TabBar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC0482333885D007855C4 /* TabBar.xcassets */; };
+		99EDC04C23339029007855C4 /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC04B23339029007855C4 /* PlusButton.swift */; };
+		99EDC04F2333910A007855C4 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC04E2333910A007855C4 /* UIColor+Palette.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,10 @@
 		99EDC03F23337695007855C4 /* TextFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFilter.swift; sourceTree = "<group>"; };
 		99EDC041233376B9007855C4 /* HeaderBottom2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBottom2.swift; sourceTree = "<group>"; };
 		99EDC043233378D2007855C4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		99EDC0462333871B007855C4 /* CustomTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTBC.swift; sourceTree = "<group>"; };
+		99EDC0482333885D007855C4 /* TabBar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TabBar.xcassets; sourceTree = "<group>"; };
+		99EDC04B23339029007855C4 /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
+		99EDC04E2333910A007855C4 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		A2E35F2D0F771D0D59E88AE1 /* Pods-Spells.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spells.release.xcconfig"; path = "Target Support Files/Pods-Spells/Pods-Spells.release.xcconfig"; sourceTree = "<group>"; };
 		C60309067E7DFEE3CFD061A5 /* Pods-SpellsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellsTests.release.xcconfig"; path = "Target Support Files/Pods-SpellsTests/Pods-SpellsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +143,7 @@
 			children = (
 				99EDC00D233372EC007855C4 /* Assets.xcassets */,
 				99EDC043233378D2007855C4 /* Colors.xcassets */,
+				99EDC0482333885D007855C4 /* TabBar.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -152,6 +161,7 @@
 		99EDC0282333754E007855C4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				99EDC04D233390F7007855C4 /* Extension */,
 				99EDC02923337553007855C4 /* UI */,
 			);
 			path = Core;
@@ -160,6 +170,8 @@
 		99EDC02923337553007855C4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				99EDC04A23339012007855C4 /* Button */,
+				99EDC045233386EA007855C4 /* TabBar */,
 				99EDC02A23337559007855C4 /* Label */,
 			);
 			path = UI;
@@ -182,6 +194,30 @@
 				99EDC041233376B9007855C4 /* HeaderBottom2.swift */,
 			);
 			path = Label;
+			sourceTree = "<group>";
+		};
+		99EDC045233386EA007855C4 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				99EDC0462333871B007855C4 /* CustomTBC.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		99EDC04A23339012007855C4 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				99EDC04B23339029007855C4 /* PlusButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		99EDC04D233390F7007855C4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				99EDC04E2333910A007855C4 /* UIColor+Palette.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		AA25A9EACB1B29AD8AEE330B /* Frameworks */ = {
@@ -290,6 +326,7 @@
 			files = (
 				99EDC011233372EC007855C4 /* LaunchScreen.storyboard in Resources */,
 				99EDC044233378D2007855C4 /* Colors.xcassets in Resources */,
+				99EDC0492333885D007855C4 /* TabBar.xcassets in Resources */,
 				99EDC00E233372EC007855C4 /* Assets.xcassets in Resources */,
 				99EDC00C233372EB007855C4 /* Main.storyboard in Resources */,
 			);
@@ -380,7 +417,10 @@
 				99EDC036233375E1007855C4 /* TextTag.swift in Sources */,
 				99EDC03A23337613007855C4 /* TextModal.swift in Sources */,
 				99EDC034233375C6007855C4 /* TextPush.swift in Sources */,
+				99EDC04F2333910A007855C4 /* UIColor+Palette.swift in Sources */,
 				99EDC042233376B9007855C4 /* HeaderBottom2.swift in Sources */,
+				99EDC04C23339029007855C4 /* PlusButton.swift in Sources */,
+				99EDC0472333871B007855C4 /* CustomTBC.swift in Sources */,
 				99EDC03C23337635007855C4 /* HeaderBottom.swift in Sources */,
 				99EDC038233375F7007855C4 /* TextSearch.swift in Sources */,
 				99EDC03123337583007855C4 /* Header2.swift in Sources */,
