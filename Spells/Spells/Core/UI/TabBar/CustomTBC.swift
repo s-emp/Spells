@@ -16,9 +16,28 @@ fileprivate let selectedSpellBookImage = "spellBookTBS"
 class CustomTBC: UITabBarController {
 
     private var backgroundImageView: UIImageView!
-    private var addButton: UIButton!
+    private var plusButton: PlusButton!
     private var menuList: UIView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        prepareTabBarItems()
+        backgroundImageView = UIImageView(image: UIImage(named: "backgroundTabBar"))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        prepareTabBar()
+    }
+    
+    @objc func touchPlusButton() {
+        let newState: PlusButtonState = plusButton.statePlusButton == .disclosed ? .rolledUp : .disclosed
+        plusButton.setState(newState, animated: true)
+    }
+}
+
+// MARK: - Prepare
+extension CustomTBC {
     fileprivate func prepareTabBarItems() {
         var imageEdgeTop = (UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 7.0) / 2
         imageEdgeTop = imageEdgeTop == 0.0 ? 7.0 : imageEdgeTop
@@ -36,25 +55,19 @@ class CustomTBC: UITabBarController {
         viewControllers = [firstVC, twoVC]
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        prepareTabBarItems()
-        backgroundImageView = UIImageView(image: UIImage(named: "backgroundTabBar"))
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    fileprivate func prepareTabBar() {
         let window = UIApplication.shared.windows.first
         let heightTabBar = tabBar.bounds.height + (window?.safeAreaInsets.bottom ?? 0.0)
         let baseButtonWidth: CGFloat = 56
         let baseTabBarWidth: CGFloat = 375
         let heightButton = baseButtonWidth * tabBar.bounds.width / baseTabBarWidth
-        addButton = UIButton(frame: CGRect(x: tabBar.center.x - heightButton / 2, y: -(heightButton / 2 - (10 * heightTabBar / 93)), width: heightButton, height: heightButton))
+        plusButton = PlusButton(frame: CGRect(x: tabBar.center.x - heightButton / 2, y: -(heightButton / 2 - (10 * heightTabBar / 93)), width: heightButton, height: heightButton))
+        plusButton.addTarget(self, action: #selector(touchPlusButton), for: .touchUpInside)
         
         backgroundImageView.frame = CGRect(x: tabBar.bounds.origin.x, y: tabBar.bounds.origin.y, width: tabBar.bounds.width, height: heightTabBar)
         
         tabBar.addSubview(backgroundImageView)
         tabBar.sendSubviewToBack(backgroundImageView)
-        tabBar.addSubview(addButton)
+        tabBar.addSubview(plusButton)
     }
 }

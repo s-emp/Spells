@@ -16,7 +16,7 @@ enum PlusButtonState {
 fileprivate let imageName = "plusButton"
 final class PlusButton: UIButton {
 
-    var addState: PlusButtonState = .rolledUp
+    var statePlusButton: PlusButtonState = .rolledUp
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,8 +42,11 @@ final class PlusButton: UIButton {
     
     func setState(_ state: PlusButtonState, animated: Bool) {
         if animated {
-            UIView.animate(withDuration: 0.25) {
+            isEnabled = false
+            UIView.animate(withDuration: 0.2, animations: {
                 self.changeState(state)
+            }) { _ in
+                self.isEnabled = true
             }
         } else {
             changeState(state)
@@ -53,13 +56,14 @@ final class PlusButton: UIButton {
     private func changeState(_ state: PlusButtonState) {
         switch state {
         case .disclosed:
-            transform = CGAffineTransform(rotationAngle: 0)
-            backgroundColor = UIColor(named: .plusBackground)
-            imageView?.tintColor = UIColor.white
-        case .rolledUp:
             transform = CGAffineTransform(rotationAngle: .pi / 4)
             backgroundColor = UIColor.white
             imageView?.tintColor = UIColor(named: .icon)
+        case .rolledUp:
+            transform = CGAffineTransform(rotationAngle: 0)
+            backgroundColor = UIColor(named: .plusBackground)
+            imageView?.tintColor = UIColor.white
         }
+        statePlusButton = state
     }
 }
