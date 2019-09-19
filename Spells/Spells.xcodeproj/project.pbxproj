@@ -26,6 +26,7 @@
 		99EDC03E23337673007855C4 /* TextBoldFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC03D23337673007855C4 /* TextBoldFilter.swift */; };
 		99EDC04023337695007855C4 /* TextFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC03F23337695007855C4 /* TextFilter.swift */; };
 		99EDC042233376B9007855C4 /* HeaderBottom2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC041233376B9007855C4 /* HeaderBottom2.swift */; };
+		99EDC044233378D2007855C4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC043233378D2007855C4 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		99EDC03D23337673007855C4 /* TextBoldFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBoldFilter.swift; sourceTree = "<group>"; };
 		99EDC03F23337695007855C4 /* TextFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFilter.swift; sourceTree = "<group>"; };
 		99EDC041233376B9007855C4 /* HeaderBottom2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBottom2.swift; sourceTree = "<group>"; };
+		99EDC043233378D2007855C4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		A2E35F2D0F771D0D59E88AE1 /* Pods-Spells.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spells.release.xcconfig"; path = "Target Support Files/Pods-Spells/Pods-Spells.release.xcconfig"; sourceTree = "<group>"; };
 		C60309067E7DFEE3CFD061A5 /* Pods-SpellsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellsTests.release.xcconfig"; path = "Target Support Files/Pods-SpellsTests/Pods-SpellsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				99EDC00D233372EC007855C4 /* Assets.xcassets */,
+				99EDC043233378D2007855C4 /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99EDC011233372EC007855C4 /* LaunchScreen.storyboard in Resources */,
+				99EDC044233378D2007855C4 /* Colors.xcassets in Resources */,
 				99EDC00E233372EC007855C4 /* Assets.xcassets in Resources */,
 				99EDC00C233372EB007855C4 /* Main.storyboard in Resources */,
 			);
