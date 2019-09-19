@@ -31,6 +31,7 @@
 		99EDC0492333885D007855C4 /* TabBar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC0482333885D007855C4 /* TabBar.xcassets */; };
 		99EDC04C23339029007855C4 /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC04B23339029007855C4 /* PlusButton.swift */; };
 		99EDC04F2333910A007855C4 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC04E2333910A007855C4 /* UIColor+Palette.swift */; };
+		99EDC05423339C96007855C4 /* PopupMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC05323339C96007855C4 /* PopupMenuVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		99EDC0482333885D007855C4 /* TabBar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TabBar.xcassets; sourceTree = "<group>"; };
 		99EDC04B23339029007855C4 /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
 		99EDC04E2333910A007855C4 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
+		99EDC05323339C96007855C4 /* PopupMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMenuVC.swift; sourceTree = "<group>"; };
 		A2E35F2D0F771D0D59E88AE1 /* Pods-Spells.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spells.release.xcconfig"; path = "Target Support Files/Pods-Spells/Pods-Spells.release.xcconfig"; sourceTree = "<group>"; };
 		C60309067E7DFEE3CFD061A5 /* Pods-SpellsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellsTests.release.xcconfig"; path = "Target Support Files/Pods-SpellsTests/Pods-SpellsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +163,7 @@
 		99EDC0282333754E007855C4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				99EDC05123339C1F007855C4 /* ViewController */,
 				99EDC04D233390F7007855C4 /* Extension */,
 				99EDC02923337553007855C4 /* UI */,
 			);
@@ -218,6 +221,22 @@
 				99EDC04E2333910A007855C4 /* UIColor+Palette.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		99EDC05123339C1F007855C4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				99EDC05223339C2A007855C4 /* PopupVC */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		99EDC05223339C2A007855C4 /* PopupVC */ = {
+			isa = PBXGroup;
+			children = (
+				99EDC05323339C96007855C4 /* PopupMenuVC.swift */,
+			);
+			path = PopupVC;
 			sourceTree = "<group>";
 		};
 		AA25A9EACB1B29AD8AEE330B /* Frameworks */ = {
@@ -425,6 +444,7 @@
 				99EDC038233375F7007855C4 /* TextSearch.swift in Sources */,
 				99EDC03123337583007855C4 /* Header2.swift in Sources */,
 				99EDC04023337695007855C4 /* TextFilter.swift in Sources */,
+				99EDC05423339C96007855C4 /* PopupMenuVC.swift in Sources */,
 				99EDC03E23337673007855C4 /* TextBoldFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,5 +26,6 @@ extension UIColor {
         case scholl4
         case tabMenuDone
         case text
+        case popupBackground
     }
 }
