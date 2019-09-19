@@ -32,6 +32,8 @@
 		99EDC04C23339029007855C4 /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC04B23339029007855C4 /* PlusButton.swift */; };
 		99EDC04F2333910A007855C4 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC04E2333910A007855C4 /* UIColor+Palette.swift */; };
 		99EDC05423339C96007855C4 /* PopupMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC05323339C96007855C4 /* PopupMenuVC.swift */; };
+		99EDC0572333A7FE007855C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC0552333A7FE007855C4 /* ViewController.swift */; };
+		99EDC0582333A7FE007855C4 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC0562333A7FE007855C4 /* ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		99EDC04B23339029007855C4 /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
 		99EDC04E2333910A007855C4 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		99EDC05323339C96007855C4 /* PopupMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMenuVC.swift; sourceTree = "<group>"; };
+		99EDC0552333A7FE007855C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		99EDC0562333A7FE007855C4 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		A2E35F2D0F771D0D59E88AE1 /* Pods-Spells.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spells.release.xcconfig"; path = "Target Support Files/Pods-Spells/Pods-Spells.release.xcconfig"; sourceTree = "<group>"; };
 		C60309067E7DFEE3CFD061A5 /* Pods-SpellsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellsTests.release.xcconfig"; path = "Target Support Files/Pods-SpellsTests/Pods-SpellsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +131,8 @@
 				99EDC02723337464007855C4 /* System */,
 				99EDC0262333745A007855C4 /* Resources */,
 				99EDC00A233372EB007855C4 /* Main.storyboard */,
+				99EDC0552333A7FE007855C4 /* ViewController.swift */,
+				99EDC0562333A7FE007855C4 /* ViewController.xib */,
 			);
 			path = Spells;
 			sourceTree = "<group>";
@@ -347,6 +353,7 @@
 				99EDC044233378D2007855C4 /* Colors.xcassets in Resources */,
 				99EDC0492333885D007855C4 /* TabBar.xcassets in Resources */,
 				99EDC00E233372EC007855C4 /* Assets.xcassets in Resources */,
+				99EDC0582333A7FE007855C4 /* ViewController.xib in Resources */,
 				99EDC00C233372EB007855C4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +448,7 @@
 				99EDC04C23339029007855C4 /* PlusButton.swift in Sources */,
 				99EDC0472333871B007855C4 /* CustomTBC.swift in Sources */,
 				99EDC03C23337635007855C4 /* HeaderBottom.swift in Sources */,
+				99EDC0572333A7FE007855C4 /* ViewController.swift in Sources */,
 				99EDC038233375F7007855C4 /* TextSearch.swift in Sources */,
 				99EDC03123337583007855C4 /* Header2.swift in Sources */,
 				99EDC04023337695007855C4 /* TextFilter.swift in Sources */,
