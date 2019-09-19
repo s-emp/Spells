@@ -12,7 +12,6 @@ enum PlusButtonState {
     case disclosed
     case rolledUp
 }
-
 fileprivate let imageName = "plusButton"
 final class PlusButton: UIButton {
 
