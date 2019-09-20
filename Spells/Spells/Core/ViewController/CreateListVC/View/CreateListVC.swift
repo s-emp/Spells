@@ -9,17 +9,23 @@
 import UIKit
 
 class CreateListVC: UIViewController {
+    
+    private var presenter: CreateListOutput!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        presenter = CreateListPresenter(self)
     }
 
     @IBAction func touchCreateSpell(_ sender: Any) {
-        print("Spell")
+        presenter.createSpell()
     }
     @IBAction func touchCreateSpellBook(_ sender: Any) {
-        print("SpellBook")
+        presenter.createSpellbook()
     }
+}
+
+// MARK: - Input
+extension CreateListVC: CreateListInput {
+    
 }
