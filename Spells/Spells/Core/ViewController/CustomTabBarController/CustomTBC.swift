@@ -93,10 +93,11 @@ extension CustomTBC {
     fileprivate func preparePopupMenu() {
         let rootView = UIApplication.shared.windows.first!.rootViewController!.view!
         let baseMargin: CGFloat = 20
+        let heightPopupMenu: CGFloat = 120
         popupVC = PopupMenuVC()
-        popupVC.childVC = ViewController()
+        popupVC.childVC = CreateListVC()
         popupVC.startRect = tabBar.convert(plusButton.frame, to: nil)
-        popupVC.endRect = CGRect(x: baseMargin, y: popupVC.startRect!.origin.y - 16 - 175, width: rootView.bounds.width - baseMargin * 2, height: 175)
+        popupVC.endRect = CGRect(x: baseMargin, y: popupVC.startRect!.origin.y - 16 - heightPopupMenu, width: rootView.bounds.width - baseMargin * 2, height: heightPopupMenu)
         
         plusButtonForPopupMenu = PlusButton(frame: tabBar.convert(plusButton.frame, to: nil))
         plusButtonForPopupMenu.addTarget(self, action: #selector(hidePopupMenu), for: .touchUpInside)
