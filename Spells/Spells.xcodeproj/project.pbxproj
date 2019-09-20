@@ -199,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				99EDC04A23339012007855C4 /* Button */,
-				99EDC045233386EA007855C4 /* TabBar */,
 				99EDC02A23337559007855C4 /* Label */,
 			);
 			path = UI;
@@ -224,12 +223,12 @@
 			path = Label;
 			sourceTree = "<group>";
 		};
-		99EDC045233386EA007855C4 /* TabBar */ = {
+		99EDC045233386EA007855C4 /* CustomTabBarController */ = {
 			isa = PBXGroup;
 			children = (
 				99EDC0462333871B007855C4 /* CustomTBC.swift */,
 			);
-			path = TabBar;
+			path = CustomTabBarController;
 			sourceTree = "<group>";
 		};
 		99EDC04A23339012007855C4 /* Button */ = {
@@ -251,6 +250,7 @@
 		99EDC05123339C1F007855C4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				99EDC045233386EA007855C4 /* CustomTabBarController */,
 				99EDC0592333CAA4007855C4 /* CreateListVC */,
 				99EDC05223339C2A007855C4 /* PopupVC */,
 			);
