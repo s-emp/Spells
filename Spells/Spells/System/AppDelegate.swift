@@ -8,6 +8,8 @@
 
 import UIKit
 
+class Test: Imported, Exported {}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,7 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let service = SpellService.shared()
+        let spells = Array(service.getAllSpell())
+        var uniqAction = Set<String>()
+        var uniqRange = Set<String>()
+        var uniqDuration = Set<String>()
+        spells.forEach {
+            uniqAction.insert($0.action)
+            uniqRange.insert($0.range)
+            uniqDuration.insert($0.duration)
+        }
+        uniqAction.forEach { print($0) }
+        print("=== Range ====")
+        uniqRange.forEach { print($0) }
+        print("=== Duration ====")
+        uniqDuration.forEach { print($0) }
         return true
     }
 
