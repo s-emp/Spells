@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ProfessionN: String {
+enum ProfessionN: String, Codable {
     case bard
     case cleric
     case druid
@@ -66,5 +66,11 @@ enum ProfessionN: String {
 extension ProfessionN: CustomStringConvertible {
     var description: String {
         return self.rawValue
+    }
+}
+
+extension ProfessionN {
+    static func transform(_ profession: Profession) -> Self {
+        return ProfessionN(rawValue: profession.id.lowercased())!
     }
 }

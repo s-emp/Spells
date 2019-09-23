@@ -25,6 +25,7 @@ class CustomTBC: UITabBarController {
         super.viewDidLoad()
         prepareTabBarItems()
         backgroundImageView = UIImageView(image: UIImage(named: "backgroundTabBar"))
+        backgroundImageView.backgroundColor = UIColor(named: .background)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +43,7 @@ class CustomTBC: UITabBarController {
         plusButtonForPopupMenu.setState(.disclosed, animated: true)
         addChild(popupVC)
         popupVC.show()
+        
     }
     
     @objc func hidePopupMenu() {
@@ -82,6 +84,12 @@ extension CustomTBC {
         backgroundImageView.frame = CGRect(x: tabBar.bounds.origin.x, y: tabBar.bounds.origin.y, width: tabBar.bounds.width, height: heightTabBar)
         
         tabBar.shadowImage = UIImage()
+        if #available(iOS 13.0, *) {
+            let appearance = self.tabBar.standardAppearance.copy()
+            appearance.shadowImage = UIImage()
+            appearance.shadowColor = UIColor(named: .background)
+            tabBar.standardAppearance = appearance
+        }
         tabBar.backgroundImage = UIImage()
         tabBar.backgroundColor = UIColor(named: .background)
         

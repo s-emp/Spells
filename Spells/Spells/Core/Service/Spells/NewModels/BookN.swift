@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum BookN: String {
+enum BookN: String, Codable {
     case PHB
     case TOEE
     case SCPC
@@ -50,5 +50,11 @@ enum BookN: String {
 extension BookN: CustomStringConvertible {
     var description: String {
         return self.rawValue
+    }
+}
+
+extension BookN {
+    static func transform(_ book: Book) -> Self {
+        return BookN(rawValue: book.id.uppercased())!
     }
 }

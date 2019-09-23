@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum SchoolN: String {
+enum SchoolN: String, Codable {
     case conjuration
     case abjuration
     case necromancy
@@ -65,5 +65,11 @@ enum SchoolN: String {
 extension SchoolN: CustomStringConvertible {
     var description: String {
         return self.rawValue
+    }
+}
+
+extension SchoolN {
+    static func transform(_ school: School) -> Self {
+        return SchoolN(rawValue: school.id.lowercased())!
     }
 }

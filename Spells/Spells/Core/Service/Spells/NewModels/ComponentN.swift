@@ -6,7 +6,7 @@
 //  Copyright © 2019 Sergey Melnikov. All rights reserved.
 //
 
-enum ComponentN: String {
+enum ComponentN: String, Codable {
     case v
     case s
     case m
@@ -88,13 +88,8 @@ extension ComponentN: CustomStringConvertible {
     }
 }
 
-//switch language {
-//case .ru:
-//    switch self {
-//    case
-//    }
-//case .en:
-//    switch self {
-//    case
-//    }
-//}
+extension ComponentN {
+    static func transform(_ component: Component) -> Self {
+        return ComponentN(rawValue: component.id.lowercased())!
+    }
+}

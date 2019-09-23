@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SpellN {
+struct SpellN: Codable {
     var level: Int
     var name: String
     var school: SchoolN
@@ -25,18 +25,9 @@ struct SpellN {
     var nameQuery: String
 }
 
-//@objc dynamic var level: Int = 0
-//@objc dynamic var name: String = ""
-//@objc dynamic var school: School?
-//@objc dynamic var action: String = ""
-//@objc dynamic var range: String = ""
-//var components = List<Component>()
-//@objc dynamic var duration: String = ""
-//@objc dynamic var spellDescription: String = ""
-//var professions = List<Profession>()
-//var source = List<Book>()
-//@objc dynamic var language: String = ""
-//@objc dynamic var isConcentration: Bool = false
-//@objc dynamic var isRitual: Bool = false
-//@objc dynamic var nameQuery: String = ""
-//@objc dynamic var materials: String?
+extension SpellN {
+    static func transform(_ spell: Spell) -> Self {
+        let components = Arrayt(spell.components.map { ComponentN.transform($0) })
+        return SpellN(level: spell.level, name: spell.name, school: SchoolN.transform(spell.school!), action: spell.action, duration: spell.duration, range: spell.range, info: spell.spellDescription, components: <#T##[ComponentN]#>, materials: <#T##String?#>, professions: <#T##[ProfessionN]#>, source: <#T##[BookN]#>, isConcentration: <#T##Bool#>, isRitual: <#T##Bool#>, nameQuery: <#T##String#>)
+    }
+}
