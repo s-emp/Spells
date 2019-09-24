@@ -8,7 +8,42 @@
 
 import RealmSwift
 
-class SpellService {
+class SpellService: Exported, Imported {
+    
+    // MARK: - Singleton
+    private static var service: SpellService?
+    static func shared() -> SpellService {
+        if service == nil {
+            service = SpellService()
+        }
+        return service!
+    }
+    
+    private(set) var realm: Realm
+    
+    private init() {
+        realm = try! Realm(configuration: Realm.Configuration.defaultConfiguration)
+        if realm.objects(SpellRealm.self).count == 0 {
+            resetDataBase()
+        }
+        print("DataBase url: \(realm.configuration.fileURL?.absoluteString ?? "???")")
+    }
+    
+    func resetDataBase() {
+        guard let url = Bundle.main.url(forResource: "Spell", withExtension: "json") else { fatalError("Отсутствует файл Spell.json в Bundle") }
+        do {
+            let allSpells: [Spell] = try SpellService.import(url)
+            let allSpellRealm = allSpells.map { SpellRealm.transform($0) }
+            try realm.write {
+                realm.deleteAll()
+                realm.add(allSpellRealm)
+            }
+        } catch let error {
+            fatalError(error.localizedDescription)
+        }
+    }
+    
+    
 
 //    private(set) var realm: Realm?
 //

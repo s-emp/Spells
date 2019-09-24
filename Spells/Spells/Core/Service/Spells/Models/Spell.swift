@@ -6,9 +6,10 @@
 //  Copyright © 2019 Sergey Melnikov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Spell: Codable {
+    let uuid: String
     var level: Int
     var name: String
     var school: School

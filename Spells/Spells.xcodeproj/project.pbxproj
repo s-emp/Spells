@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		6C6C9EB05F6A4CE77E83C213 /* Pods_SpellsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A07B82658D1E54FFC84D3A /* Pods_SpellsTests.framework */; };
 		8ECD5FC5CEB918AE440583B8 /* Pods_Spells.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9226616B132CC9327305E6 /* Pods_Spells.framework */; };
-		99829B492339F41C00E0D725 /* Spell.json in Resources */ = {isa = PBXBuildFile; fileRef = 99829B482339F41C00E0D725 /* Spell.json */; };
+		99829B4B233A040900E0D725 /* SpellRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99829B4A233A040900E0D725 /* SpellRealm.swift */; };
+		99829B4D233A0B7A00E0D725 /* Spell.json in Resources */ = {isa = PBXBuildFile; fileRef = 99829B4C233A0B7A00E0D725 /* Spell.json */; };
 		99EDC005233372EB007855C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC004233372EB007855C4 /* AppDelegate.swift */; };
 		99EDC00C233372EB007855C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC00A233372EB007855C4 /* Main.storyboard */; };
 		99EDC00E233372EC007855C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC00D233372EC007855C4 /* Assets.xcassets */; };
@@ -70,7 +71,8 @@
 		0324DE1C6F6E3E2E2B406743 /* Pods-SpellsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellsTests.release.xcconfig"; path = "Target Support Files/Pods-SpellsTests/Pods-SpellsTests.release.xcconfig"; sourceTree = "<group>"; };
 		47401B2B7F8FBC2AC013A915 /* Pods-Spells.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spells.release.xcconfig"; path = "Target Support Files/Pods-Spells/Pods-Spells.release.xcconfig"; sourceTree = "<group>"; };
 		89E81C350FE7BF95F8E1BA94 /* Pods-Spells.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spells.debug.xcconfig"; path = "Target Support Files/Pods-Spells/Pods-Spells.debug.xcconfig"; sourceTree = "<group>"; };
-		99829B482339F41C00E0D725 /* Spell.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Spell.json; sourceTree = "<group>"; };
+		99829B4A233A040900E0D725 /* SpellRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellRealm.swift; sourceTree = "<group>"; };
+		99829B4C233A0B7A00E0D725 /* Spell.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Spell.json; sourceTree = "<group>"; };
 		99EDC001233372EB007855C4 /* Spells.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spells.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99EDC004233372EB007855C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99EDC00B233372EB007855C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -338,7 +340,7 @@
 		B914421E23351F9F00C68557 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				99829B482339F41C00E0D725 /* Spell.json */,
+				99829B4C233A0B7A00E0D725 /* Spell.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -387,6 +389,7 @@
 				B98EF374233541F2008E81ED /* Profession.swift */,
 				B98EF37623354436008E81ED /* School.swift */,
 				B98EF3782335F00C008E81ED /* Spell.swift */,
+				99829B4A233A040900E0D725 /* SpellRealm.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -513,7 +516,7 @@
 				99EDC05D2333CABD007855C4 /* CreateListVC.xib in Resources */,
 				99EDC00E233372EC007855C4 /* Assets.xcassets in Resources */,
 				99EDC0582333A7FE007855C4 /* ViewController.xib in Resources */,
-				99829B492339F41C00E0D725 /* Spell.json in Resources */,
+				99829B4D233A0B7A00E0D725 /* Spell.json in Resources */,
 				99EDC00C233372EB007855C4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,6 +606,7 @@
 				99EDC005233372EB007855C4 /* AppDelegate.swift in Sources */,
 				99EDC03023337583007855C4 /* Header1.swift in Sources */,
 				B98EF36D23353E6C008E81ED /* Book.swift in Sources */,
+				99829B4B233A040900E0D725 /* SpellRealm.swift in Sources */,
 				99EDC036233375E1007855C4 /* TextTag.swift in Sources */,
 				B98EF375233541F2008E81ED /* Profession.swift in Sources */,
 				99EDC03A23337613007855C4 /* TextModal.swift in Sources */,
@@ -795,7 +799,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VABTQXHL78;
 				INFOPLIST_FILE = "$(SRCROOT)/Spells/System/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -815,7 +819,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VABTQXHL78;
 				INFOPLIST_FILE = "$(SRCROOT)/Spells/System/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
