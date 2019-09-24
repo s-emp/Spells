@@ -1,17 +1,74 @@
 //
 //  School.swift
-//  DnDSpells
+//  Spells
 //
-//  Created by Сергей Мельников on 15/07/2019.
-//  Copyright © 2019 Сергей Мельников. All rights reserved.
+//  Created by Сергей Мельников on 20/09/2019.
+//  Copyright © 2019 Sergey Melnikov. All rights reserved.
 //
 
 import Foundation
-import RealmSwift
 
-class School: Object, Codable {
-    @objc dynamic var id = ""
-    @objc dynamic var nameRus = ""
-    @objc dynamic var nameEng = ""
-    @objc dynamic var index = 0
+enum School: String, Codable {
+    case conjuration
+    case abjuration
+    case necromancy
+    case evocation
+    case enchantment
+    case transmutation
+    case illusion
+    case divination
+    case other
+    
+    func fullName(_ language: Language) -> String {
+        switch language {
+        case .ru:
+            switch self {
+            case .conjuration:
+                return "Призыв"
+            case .abjuration:
+                return "Ограждение"
+            case .necromancy:
+                return "Некромантия"
+            case .evocation:
+                return "Проявление"
+            case .enchantment:
+                return "Очарование"
+            case .transmutation:
+                return "Преобразование"
+            case .illusion:
+                return "Иллюзия"
+            case .divination:
+                return "Прорицание"
+            case .other:
+                return "Другое"
+            }
+        case .en:
+            switch self {
+            case .conjuration:
+                return "Conjuration"
+            case .abjuration:
+                return "Abjuration"
+            case .necromancy:
+                return "Necromancy"
+            case .evocation:
+                return "Evocation"
+            case .enchantment:
+                return "Enchantment"
+            case .transmutation:
+                return "Transmutation"
+            case .illusion:
+                return "Illusion"
+            case .divination:
+                return "Divination"
+            case .other:
+                return "Other"
+            }
+        }
+    }
+}
+
+extension School: CustomStringConvertible {
+    var description: String {
+        return self.rawValue
+    }
 }

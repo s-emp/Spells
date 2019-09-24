@@ -8,21 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, Imported, Exported {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-}
-
-extension ViewController {
-    fileprivate func transformSpells() {
-        let service = SpellService.shared()
-        let allObjects = service.getAllSpell()
-        var newSpells: [SpellN] = []
-        allObjects.forEach { spell in
-            
-        }
+        let url = URL(string: "file:///Users/melnikov/Developer/HomeProject/Spells/Spells/Spells/Core/Service/Spells/Resources/Spell.json")!
+        let spells: [Spell] = try! ViewController.import(url)
+        print("Success")
     }
 }
