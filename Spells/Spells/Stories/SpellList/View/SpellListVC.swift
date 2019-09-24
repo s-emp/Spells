@@ -10,10 +10,13 @@ import UIKit
 
 class SpellListVC: UIViewController {
 
+    // MARK: - Properties
+    private var presenter: SpellListOutput!
+    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        presenter = SpellListPresenter(self, service: SpellService.shared())
     }
 }
 
@@ -22,9 +25,10 @@ extension SpellListVC: SpellListInput {
     
 }
 
+// MARK: - TableViewDataSource
 extension SpellListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return presenter.spells.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -32,6 +36,9 @@ extension SpellListVC: UITableViewDataSource {
     }
 }
 
+// MARK: - TableViewDelegate
 extension SpellListVC: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.selectItem(indexPath)
+    }
 }

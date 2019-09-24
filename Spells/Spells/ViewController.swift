@@ -12,5 +12,10 @@ class ViewController: UIViewController, Imported, Exported {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let service = SpellService.shared()
+        let spellsRealm = service.realm.objects(SpellRealm.self)
+        let spells = Array(spellsRealm.map { Spell.transform($0) })
+        print("Spell in DB: \(spellsRealm.count)")
+        print("Spell in JSON: \(spells.count)")
     }
 }
