@@ -14,7 +14,12 @@ class SearchTextField: UITextField {
         super.draw(rect)
         borderStyle = .none
         layer.cornerRadius = rect.height / 2
-        layer.backgroundColor = UIColor(named: .searchTextField)?.cgColor
+        let imageView = UIImageView(image: UIImage(named: "search")!)
+        imageView.contentMode = .center
+        imageView.frame = CGRect(x: 5, y: 0, width: 22, height: frame.height)
+        leftView = UIView(frame: CGRect(x: 0, y: 0, width: 32, height: frame.height))
+        leftView!.addSubview(imageView)
+        leftViewMode = .always
         clipsToBounds = true
     }
 }

@@ -14,7 +14,6 @@
                 <outlet property="filterButton" destination="0qc-Fg-9nv" id="hc5-DI-CFA"/>
                 <outlet property="headerLabel" destination="NK9-Gl-AXh" id="RJU-an-iPW"/>
                 <outlet property="headerView" destination="kRs-hB-b5v" id="NnC-me-dyS"/>
-                <outlet property="largeHeightConstraint" destination="8wN-rt-sAs" id="htE-u1-OFQ"/>
                 <outlet property="searchTextField" destination="Jeo-kN-whn" id="jxD-gp-Jbq"/>
                 <outlet property="shortHeightConstraint" destination="nDI-JR-Fc2" id="TVC-Pu-OX1"/>
                 <outlet property="spellsTableView" destination="b7D-hq-I00" id="UCM-rk-Cgs"/>
@@ -27,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRs-hB-b5v">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="177"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заклинания" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NK9-Gl-AXh" customClass="Header1" customModule="Spells" customModuleProvider="target">
                             <rect key="frame" x="16" y="64" width="340" height="21"/>
@@ -46,22 +45,23 @@
                                 <action selector="touchFilter:" destination="-1" eventType="touchUpInside" id="ScV-zl-Nw7"/>
                             </connections>
                         </button>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jeo-kN-whn" customClass="SearchTextField" customModule="Spells" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Поиск" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jeo-kN-whn" customClass="SearchTextField" customModule="Spells" customModuleProvider="target">
                             <rect key="frame" x="16" y="101" width="382" height="36"/>
-                            <color key="backgroundColor" name="background"/>
+                            <color key="backgroundColor" name="searchTextField"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="36" id="xlk-dA-hC4"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" name="background"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" name="plusBackground"/>
                     <constraints>
                         <constraint firstItem="0qc-Fg-9nv" firstAttribute="leading" secondItem="NK9-Gl-AXh" secondAttribute="trailing" constant="16" id="18m-NG-UQH"/>
-                        <constraint firstAttribute="height" constant="220" id="8wN-rt-sAs"/>
                         <constraint firstItem="NK9-Gl-AXh" firstAttribute="leading" secondItem="kRs-hB-b5v" secondAttribute="leading" constant="16" id="Mq2-b2-Rj8"/>
                         <constraint firstAttribute="trailing" secondItem="0qc-Fg-9nv" secondAttribute="trailing" constant="16" id="WFh-Rq-vah"/>
+                        <constraint firstAttribute="bottom" secondItem="Jeo-kN-whn" secondAttribute="bottom" constant="40" id="Z91-wc-1ZY"/>
                         <constraint firstAttribute="height" constant="110" id="nDI-JR-Fc2"/>
                         <constraint firstAttribute="trailing" secondItem="Jeo-kN-whn" secondAttribute="trailing" constant="16" id="sGE-5c-ytY"/>
                         <constraint firstItem="Jeo-kN-whn" firstAttribute="leading" secondItem="kRs-hB-b5v" secondAttribute="leading" constant="16" id="vsb-MY-Zcf"/>
@@ -74,7 +74,7 @@
                     </variation>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b7D-hq-I00" customClass="TPKeyboardAvoidingTableView">
-                    <rect key="frame" x="0.0" y="200" width="414" height="696"/>
+                    <rect key="frame" x="0.0" y="157" width="414" height="739"/>
                     <color key="backgroundColor" name="background"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="radius">
@@ -110,6 +110,9 @@
         </namedColor>
         <namedColor name="plusBackground">
             <color red="0.4392156862745098" green="0.68627450980392157" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="searchTextField">
+            <color red="0.7686274509803922" green="0.7686274509803922" blue="0.7686274509803922" alpha="0.23999999463558197" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
