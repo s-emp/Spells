@@ -13,6 +13,7 @@
 		99345D21233A15F5003CFD96 /* SpellListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99345D20233A15F5003CFD96 /* SpellListPresenter.swift */; };
 		99345D26233A27A0003CFD96 /* UIView+Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99345D25233A27A0003CFD96 /* UIView+Radius.swift */; };
 		99345D28233A31EA003CFD96 /* Spell.json in Resources */ = {isa = PBXBuildFile; fileRef = 99345D27233A31E9003CFD96 /* Spell.json */; };
+		99345D2B233A5595003CFD96 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99345D2A233A5595003CFD96 /* SearchTextField.swift */; };
 		99829B4B233A040900E0D725 /* SpellRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99829B4A233A040900E0D725 /* SpellRealm.swift */; };
 		99EDC005233372EB007855C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC004233372EB007855C4 /* AppDelegate.swift */; };
 		99EDC00C233372EB007855C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC00A233372EB007855C4 /* Main.storyboard */; };
@@ -78,6 +79,7 @@
 		99345D20233A15F5003CFD96 /* SpellListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellListPresenter.swift; sourceTree = "<group>"; };
 		99345D25233A27A0003CFD96 /* UIView+Radius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Radius.swift"; sourceTree = "<group>"; };
 		99345D27233A31E9003CFD96 /* Spell.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Spell.json; sourceTree = "<group>"; };
+		99345D2A233A5595003CFD96 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		99829B4A233A040900E0D725 /* SpellRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellRealm.swift; sourceTree = "<group>"; };
 		99EDC001233372EB007855C4 /* Spells.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spells.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99EDC004233372EB007855C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,14 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		99345D29233A557A003CFD96 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				99345D2A233A5595003CFD96 /* SearchTextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
 		99EDBFF8233372EB007855C4 = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +259,7 @@
 		99EDC02923337553007855C4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				99345D29233A557A003CFD96 /* TextField */,
 				99EDC04A23339012007855C4 /* Button */,
 				99EDC02A23337559007855C4 /* Label */,
 			);
@@ -654,6 +665,7 @@
 				99EDC03E23337673007855C4 /* TextBoldFilter.swift in Sources */,
 				B914423F2335209A00C68557 /* SpellListVC.swift in Sources */,
 				B9144246233521C300C68557 /* SpellCell.swift in Sources */,
+				99345D2B233A5595003CFD96 /* SearchTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

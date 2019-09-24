@@ -4,12 +4,19 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpellListVC" customModule="Spells" customModuleProvider="target">
             <connections>
+                <outlet property="filterButton" destination="0qc-Fg-9nv" id="hc5-DI-CFA"/>
+                <outlet property="headerLabel" destination="NK9-Gl-AXh" id="RJU-an-iPW"/>
+                <outlet property="headerView" destination="kRs-hB-b5v" id="NnC-me-dyS"/>
+                <outlet property="largeHeightConstraint" destination="8wN-rt-sAs" id="htE-u1-OFQ"/>
+                <outlet property="searchTextField" destination="Jeo-kN-whn" id="jxD-gp-Jbq"/>
+                <outlet property="shortHeightConstraint" destination="nDI-JR-Fc2" id="TVC-Pu-OX1"/>
                 <outlet property="spellsTableView" destination="b7D-hq-I00" id="UCM-rk-Cgs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,9 +26,61 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b7D-hq-I00">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRs-hB-b5v">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заклинания" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NK9-Gl-AXh" customClass="Header1" customModule="Spells" customModuleProvider="target">
+                            <rect key="frame" x="16" y="64" width="340" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" name="background"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qc-Fg-9nv">
+                            <rect key="frame" x="372" y="64" width="26" height="26"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="26" id="Rzl-G8-QZ7"/>
+                                <constraint firstAttribute="height" constant="26" id="Sqv-A7-G33"/>
+                            </constraints>
+                            <state key="normal" image="filter"/>
+                            <connections>
+                                <action selector="touchFilter:" destination="-1" eventType="touchUpInside" id="ScV-zl-Nw7"/>
+                            </connections>
+                        </button>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jeo-kN-whn" customClass="SearchTextField" customModule="Spells" customModuleProvider="target">
+                            <rect key="frame" x="16" y="101" width="382" height="36"/>
+                            <color key="backgroundColor" name="background"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="xlk-dA-hC4"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" name="plusBackground"/>
+                    <constraints>
+                        <constraint firstItem="0qc-Fg-9nv" firstAttribute="leading" secondItem="NK9-Gl-AXh" secondAttribute="trailing" constant="16" id="18m-NG-UQH"/>
+                        <constraint firstAttribute="height" constant="220" id="8wN-rt-sAs"/>
+                        <constraint firstItem="NK9-Gl-AXh" firstAttribute="leading" secondItem="kRs-hB-b5v" secondAttribute="leading" constant="16" id="Mq2-b2-Rj8"/>
+                        <constraint firstAttribute="trailing" secondItem="0qc-Fg-9nv" secondAttribute="trailing" constant="16" id="WFh-Rq-vah"/>
+                        <constraint firstAttribute="height" constant="110" id="nDI-JR-Fc2"/>
+                        <constraint firstAttribute="trailing" secondItem="Jeo-kN-whn" secondAttribute="trailing" constant="16" id="sGE-5c-ytY"/>
+                        <constraint firstItem="Jeo-kN-whn" firstAttribute="leading" secondItem="kRs-hB-b5v" secondAttribute="leading" constant="16" id="vsb-MY-Zcf"/>
+                        <constraint firstItem="Jeo-kN-whn" firstAttribute="top" secondItem="NK9-Gl-AXh" secondAttribute="bottom" constant="16" id="zfV-1P-G1o"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="nDI-JR-Fc2"/>
+                        </mask>
+                    </variation>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b7D-hq-I00" customClass="TPKeyboardAvoidingTableView">
+                    <rect key="frame" x="0.0" y="200" width="414" height="696"/>
+                    <color key="backgroundColor" name="background"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="G1X-yx-dLC"/>
                         <outlet property="delegate" destination="-1" id="Ufc-gv-RS3"/>
@@ -30,13 +89,27 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="b7D-hq-I00" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1Uf-Re-hC4"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b7D-hq-I00" secondAttribute="trailing" id="9E2-PX-YuA"/>
-                <constraint firstItem="b7D-hq-I00" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="b6W-jJ-Cdu"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="b7D-hq-I00" secondAttribute="bottom" id="r7r-Mk-e9N"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b7D-hq-I00" secondAttribute="trailing" id="15b-gn-LrU"/>
+                <constraint firstItem="NK9-Gl-AXh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="GFv-uE-1xc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kRs-hB-b5v" secondAttribute="trailing" id="KPk-9x-ght"/>
+                <constraint firstItem="b7D-hq-I00" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LVe-hA-JNg"/>
+                <constraint firstItem="b7D-hq-I00" firstAttribute="top" secondItem="kRs-hB-b5v" secondAttribute="bottom" constant="-20" id="X7a-q3-K2v"/>
+                <constraint firstItem="0qc-Fg-9nv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="kUR-07-c0o"/>
+                <constraint firstAttribute="bottom" secondItem="b7D-hq-I00" secondAttribute="bottom" id="ujE-RV-pEK"/>
+                <constraint firstItem="kRs-hB-b5v" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="xXn-WI-Jh8"/>
+                <constraint firstItem="kRs-hB-b5v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zDV-yx-wQT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="127"/>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </view>
     </objects>
+    <resources>
+        <image name="filter" width="26" height="26"/>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="plusBackground">
+            <color red="0.4392156862745098" green="0.68627450980392157" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

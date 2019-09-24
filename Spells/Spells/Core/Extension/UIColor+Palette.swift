@@ -27,5 +27,6 @@ extension UIColor {
         case tabMenuDone
         case text
         case popupBackground
+        case searchTextField
     }
 }
