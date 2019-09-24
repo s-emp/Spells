@@ -59,7 +59,7 @@ extension CustomTBC {
         var imageEdgeTop = (UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 7.0) / 2
         imageEdgeTop = imageEdgeTop == 0.0 ? 7.0 : imageEdgeTop
         
-        let firstVC = ViewController()
+        let firstVC = SpellListVC()
         let firstItem = UITabBarItem(title: nil, image: UIImage(named: listImage), selectedImage: UIImage(named: selectedListImage))
         firstItem.imageInsets = UIEdgeInsets(top: imageEdgeTop, left: -10, bottom: -(imageEdgeTop), right: 10)
         firstVC.tabBarItem = firstItem

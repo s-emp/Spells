@@ -24,15 +24,15 @@ struct Spell: Codable {
     var isConcentration: Bool
     var isRitual: Bool
     var nameQuery: String
+    var language: Language
 }
 
-// MAKR: - Transform
-
+// MARK: - Transform
 extension Spell {
     static func transform(_ spell: SpellRealm) -> Spell {
         let components = spell.components.split(separator: ",").map { Component(rawValue: String($0))! }
         let professions = spell.professions.split(separator: ",").map { Profession(rawValue: String($0))! }
         let books = spell.books.split(separator: ",").map { Book(rawValue: String($0))! }
-        return Spell(uuid: spell.uuid, level: spell.level, name: spell.name, school: School(rawValue: spell.school)!, action: spell.action, duration: spell.duration, range: spell.duration, info: spell.info, components: components, materials: spell.materials, professions: professions, books: books, isConcentration: spell.isConcentration, isRitual: spell.isRitual, nameQuery: spell.nameQuery)
+        return Spell(uuid: spell.uuid, level: spell.level, name: spell.name, school: School(rawValue: spell.school)!, action: spell.action, duration: spell.duration, range: spell.duration, info: spell.info, components: components, materials: spell.materials, professions: professions, books: books, isConcentration: spell.isConcentration, isRitual: spell.isRitual, nameQuery: spell.nameQuery, language: Language(rawValue: spell.language)!)
     }
 }

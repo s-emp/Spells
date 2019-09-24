@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Language {
+enum Language: String, Codable {
     case ru
     case en
 }

@@ -25,6 +25,7 @@ class SpellRealm: Object {
     @objc dynamic var isConcentration: Bool = false
     @objc dynamic var isRitual: Bool = false
     @objc dynamic var nameQuery: String = ""
+    @objc dynamic var language: String = ""
     
     override static func primaryKey() -> String? {
         return "uuid"
@@ -53,6 +54,7 @@ extension SpellRealm {
         result.isConcentration = spell.isConcentration
         result.isRitual = spell.isRitual
         result.nameQuery = spell.nameQuery
+        result.language = spell.language.rawValue
         return result
     }
 }

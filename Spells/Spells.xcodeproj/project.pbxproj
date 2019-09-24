@@ -11,9 +11,9 @@
 		8ECD5FC5CEB918AE440583B8 /* Pods_Spells.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9226616B132CC9327305E6 /* Pods_Spells.framework */; };
 		99345D1F233A15E5003CFD96 /* SpellListOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99345D1E233A15E5003CFD96 /* SpellListOutput.swift */; };
 		99345D21233A15F5003CFD96 /* SpellListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99345D20233A15F5003CFD96 /* SpellListPresenter.swift */; };
-		99345D24233A1AD4003CFD96 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99345D23233A1AD4003CFD96 /* TagView.swift */; };
+		99345D26233A27A0003CFD96 /* UIView+Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99345D25233A27A0003CFD96 /* UIView+Radius.swift */; };
+		99345D28233A31EA003CFD96 /* Spell.json in Resources */ = {isa = PBXBuildFile; fileRef = 99345D27233A31E9003CFD96 /* Spell.json */; };
 		99829B4B233A040900E0D725 /* SpellRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99829B4A233A040900E0D725 /* SpellRealm.swift */; };
-		99829B4D233A0B7A00E0D725 /* Spell.json in Resources */ = {isa = PBXBuildFile; fileRef = 99829B4C233A0B7A00E0D725 /* Spell.json */; };
 		99EDC005233372EB007855C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC004233372EB007855C4 /* AppDelegate.swift */; };
 		99EDC00C233372EB007855C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC00A233372EB007855C4 /* Main.storyboard */; };
 		99EDC00E233372EC007855C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC00D233372EC007855C4 /* Assets.xcassets */; };
@@ -76,9 +76,9 @@
 		89E81C350FE7BF95F8E1BA94 /* Pods-Spells.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spells.debug.xcconfig"; path = "Target Support Files/Pods-Spells/Pods-Spells.debug.xcconfig"; sourceTree = "<group>"; };
 		99345D1E233A15E5003CFD96 /* SpellListOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellListOutput.swift; sourceTree = "<group>"; };
 		99345D20233A15F5003CFD96 /* SpellListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellListPresenter.swift; sourceTree = "<group>"; };
-		99345D23233A1AD4003CFD96 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		99345D25233A27A0003CFD96 /* UIView+Radius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Radius.swift"; sourceTree = "<group>"; };
+		99345D27233A31E9003CFD96 /* Spell.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Spell.json; sourceTree = "<group>"; };
 		99829B4A233A040900E0D725 /* SpellRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellRealm.swift; sourceTree = "<group>"; };
-		99829B4C233A0B7A00E0D725 /* Spell.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Spell.json; sourceTree = "<group>"; };
 		99EDC001233372EB007855C4 /* Spells.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spells.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99EDC004233372EB007855C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99EDC00B233372EB007855C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -170,14 +170,6 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		99345D22233A1AC4003CFD96 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				99345D23233A1AD4003CFD96 /* TagView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		99EDBFF8233372EB007855C4 = {
 			isa = PBXGroup;
 			children = (
@@ -257,7 +249,6 @@
 		99EDC02923337553007855C4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				99345D22233A1AC4003CFD96 /* View */,
 				99EDC04A23339012007855C4 /* Button */,
 				99EDC02A23337559007855C4 /* Label */,
 			);
@@ -303,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				99EDC04E2333910A007855C4 /* UIColor+Palette.swift */,
+				99345D25233A27A0003CFD96 /* UIView+Radius.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -364,7 +356,7 @@
 		B914421E23351F9F00C68557 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				99829B4C233A0B7A00E0D725 /* Spell.json */,
+				99345D27233A31E9003CFD96 /* Spell.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -541,7 +533,7 @@
 				99EDC05D2333CABD007855C4 /* CreateListVC.xib in Resources */,
 				99EDC00E233372EC007855C4 /* Assets.xcassets in Resources */,
 				99EDC0582333A7FE007855C4 /* ViewController.xib in Resources */,
-				99829B4D233A0B7A00E0D725 /* Spell.json in Resources */,
+				99345D28233A31EA003CFD96 /* Spell.json in Resources */,
 				99EDC00C233372EB007855C4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,7 +635,6 @@
 				B98EF36823353D48008E81ED /* Imported.swift in Sources */,
 				99EDC04C23339029007855C4 /* PlusButton.swift in Sources */,
 				99EDC0472333871B007855C4 /* CustomTBC.swift in Sources */,
-				99345D24233A1AD4003CFD96 /* TagView.swift in Sources */,
 				B98EF37323353FF9008E81ED /* Component.swift in Sources */,
 				B98EF37723354436008E81ED /* School.swift in Sources */,
 				99EDC05C2333CABD007855C4 /* CreateListVC.swift in Sources */,
@@ -659,6 +650,7 @@
 				99EDC05423339C96007855C4 /* PopupMenuVC.swift in Sources */,
 				B9144242233520B400C68557 /* SpellListInput.swift in Sources */,
 				B98EF3792335F00C008E81ED /* Spell.swift in Sources */,
+				99345D26233A27A0003CFD96 /* UIView+Radius.swift in Sources */,
 				99EDC03E23337673007855C4 /* TextBoldFilter.swift in Sources */,
 				B914423F2335209A00C68557 /* SpellListVC.swift in Sources */,
 				B9144246233521C300C68557 /* SpellCell.swift in Sources */,
