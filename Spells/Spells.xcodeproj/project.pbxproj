@@ -12,6 +12,10 @@
 		9933793B233B6B6D00907090 /* SpellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99337939233B6B6D00907090 /* SpellVC.swift */; };
 		9933793C233B6B6D00907090 /* SpellVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9933793A233B6B6D00907090 /* SpellVC.xib */; };
 		9933793E233B6B7900907090 /* SpellInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933793D233B6B7900907090 /* SpellInput.swift */; };
+		99337946233B95C600907090 /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99337944233B95C600907090 /* FilterVC.swift */; };
+		99337947233B95C600907090 /* FilterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99337945233B95C600907090 /* FilterVC.xib */; };
+		99337949233B95D400907090 /* FilterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99337948233B95D400907090 /* FilterInput.swift */; };
+		9933794C233BA62900907090 /* FilterLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933794B233BA62900907090 /* FilterLevelView.swift */; };
 		99345D1F233A15E5003CFD96 /* SpellListOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99345D1E233A15E5003CFD96 /* SpellListOutput.swift */; };
 		99345D21233A15F5003CFD96 /* SpellListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99345D20233A15F5003CFD96 /* SpellListPresenter.swift */; };
 		99345D26233A27A0003CFD96 /* UIView+Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99345D25233A27A0003CFD96 /* UIView+Radius.swift */; };
@@ -81,6 +85,10 @@
 		99337939233B6B6D00907090 /* SpellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellVC.swift; sourceTree = "<group>"; };
 		9933793A233B6B6D00907090 /* SpellVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpellVC.xib; sourceTree = "<group>"; };
 		9933793D233B6B7900907090 /* SpellInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellInput.swift; sourceTree = "<group>"; };
+		99337944233B95C600907090 /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
+		99337945233B95C600907090 /* FilterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterVC.xib; sourceTree = "<group>"; };
+		99337948233B95D400907090 /* FilterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterInput.swift; sourceTree = "<group>"; };
+		9933794B233BA62900907090 /* FilterLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterLevelView.swift; sourceTree = "<group>"; };
 		99345D1E233A15E5003CFD96 /* SpellListOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellListOutput.swift; sourceTree = "<group>"; };
 		99345D20233A15F5003CFD96 /* SpellListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellListPresenter.swift; sourceTree = "<group>"; };
 		99345D25233A27A0003CFD96 /* UIView+Radius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Radius.swift"; sourceTree = "<group>"; };
@@ -195,6 +203,40 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		99337941233B95A200907090 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				99337943233B95AD00907090 /* Presenter */,
+				99337942233B95A800907090 /* View */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		99337942233B95A800907090 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				99337948233B95D400907090 /* FilterInput.swift */,
+				99337944233B95C600907090 /* FilterVC.swift */,
+				99337945233B95C600907090 /* FilterVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		99337943233B95AD00907090 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9933794A233BA5ED00907090 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9933794B233BA62900907090 /* FilterLevelView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		99345D1D233A15D4003CFD96 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +333,7 @@
 		99EDC02923337553007855C4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9933794A233BA5ED00907090 /* View */,
 				99345D29233A557A003CFD96 /* TextField */,
 				99EDC04A23339012007855C4 /* Button */,
 				99EDC02A23337559007855C4 /* Label */,
@@ -407,6 +450,7 @@
 		B914423A2335206500C68557 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
+				99337941233B95A200907090 /* Filter */,
 				99337936233B6B2B00907090 /* Spell */,
 				B914423B2335207600C68557 /* SpellList */,
 			);
@@ -569,6 +613,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99337947233B95C600907090 /* FilterVC.xib in Resources */,
 				99EDC011233372EC007855C4 /* LaunchScreen.storyboard in Resources */,
 				99EDC044233378D2007855C4 /* Colors.xcassets in Resources */,
 				B9144247233521C300C68557 /* SpellCell.xib in Resources */,
@@ -663,6 +708,7 @@
 			files = (
 				B91442142335175B00C68557 /* CreateListOutput.swift in Sources */,
 				99EDC03223337583007855C4 /* Text2.swift in Sources */,
+				99337949233B95D400907090 /* FilterInput.swift in Sources */,
 				B91442162335176400C68557 /* CreateListPresenter.swift in Sources */,
 				99EDC02F23337583007855C4 /* Text.swift in Sources */,
 				99345D21233A15F5003CFD96 /* SpellListPresenter.swift in Sources */,
@@ -673,6 +719,7 @@
 				99EDC036233375E1007855C4 /* TextTag.swift in Sources */,
 				B98EF375233541F2008E81ED /* Profession.swift in Sources */,
 				99EDC03A23337613007855C4 /* TextModal.swift in Sources */,
+				9933794C233BA62900907090 /* FilterLevelView.swift in Sources */,
 				99EDC034233375C6007855C4 /* TextPush.swift in Sources */,
 				99EDC04F2333910A007855C4 /* UIColor+Palette.swift in Sources */,
 				B91442122335174D00C68557 /* CreateListInput.swift in Sources */,
@@ -697,6 +744,7 @@
 				9933793E233B6B7900907090 /* SpellInput.swift in Sources */,
 				9933793B233B6B6D00907090 /* SpellVC.swift in Sources */,
 				B98EF3792335F00C008E81ED /* Spell.swift in Sources */,
+				99337946233B95C600907090 /* FilterVC.swift in Sources */,
 				99345D26233A27A0003CFD96 /* UIView+Radius.swift in Sources */,
 				99EDC03E23337673007855C4 /* TextBoldFilter.swift in Sources */,
 				B914423F2335209A00C68557 /* SpellListVC.swift in Sources */,

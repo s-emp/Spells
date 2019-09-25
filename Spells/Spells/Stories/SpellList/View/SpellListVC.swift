@@ -58,7 +58,14 @@ class SpellListVC: UIViewController {
     }
     
     @IBAction func touchFilter(_ sender: Any) {
-        
+        let vc = FilterVC()
+        let transitionDelegate = SPStorkTransitioningDelegate()
+        transitionDelegate.hapticMoments = []
+        transitionDelegate.showCloseButton = false
+        vc.transitioningDelegate = transitionDelegate
+        vc.modalPresentationStyle = .custom
+        vc.modalPresentationCapturesStatusBarAppearance = true
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func searchEditingChanged(_ sender: Any) {
