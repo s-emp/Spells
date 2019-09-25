@@ -20,13 +20,18 @@ extension UIColor {
         case icon
         case level
         case plusBackground
-        case scholl1
-        case scholl2
-        case scholl3
-        case scholl4
         case tabMenuDone
         case text
         case popupBackground
         case searchTextField
+        case abjuration
+        case conjuration
+        case divination
+        case enchantment
+        case evocation
+        case illusion
+        case necromancy
+        case transmutation
+        case other
     }
 }

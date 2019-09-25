@@ -22,6 +22,12 @@ class SpellListPresenter: SpellListOutput {
     
     func search(_ message: String) {
         spells = Spell.transform(Array(service.realm.objects(SpellRealm.self).filter("nameQuery LIKE[c] '*\(message.lowercased())*'")))
+            .filter { $0.language == .ru }
+            .sorted { (lv, rv) -> Bool in
+                if lv.level < rv.level { return true }
+                if lv.level ==  rv.level && lv.name < rv.name { return true }
+                return false
+        }
         view.reloadTableView()
     }
     
@@ -30,5 +36,11 @@ class SpellListPresenter: SpellListOutput {
         self.view = view
         self.service = service
         self.spells = service.getSpells()
+            .filter { $0.language == .ru }
+            .sorted { (lv, rv) -> Bool in
+                if lv.level < rv.level { return true }
+                if lv.level ==  rv.level && lv.name < rv.name { return true }
+                return false
+        }
     }
 }
