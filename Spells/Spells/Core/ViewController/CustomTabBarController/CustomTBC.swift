@@ -25,6 +25,7 @@ class CustomTBC: UITabBarController {
         super.viewDidLoad()
         prepareTabBarItems()
         backgroundImageView = UIImageView(image: UIImage(named: "backgroundTabBar"))
+        backgroundImageView.backgroundColor = UIColor(named: .background)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +43,7 @@ class CustomTBC: UITabBarController {
         plusButtonForPopupMenu.setState(.disclosed, animated: true)
         addChild(popupVC)
         popupVC.show()
+        
     }
     
     @objc func hidePopupMenu() {
@@ -57,7 +59,7 @@ extension CustomTBC {
         var imageEdgeTop = (UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 7.0) / 2
         imageEdgeTop = imageEdgeTop == 0.0 ? 7.0 : imageEdgeTop
         
-        let firstVC = ViewController()
+        let firstVC = SpellListVC()
         let firstItem = UITabBarItem(title: nil, image: UIImage(named: listImage), selectedImage: UIImage(named: selectedListImage))
         firstItem.imageInsets = UIEdgeInsets(top: imageEdgeTop, left: -10, bottom: -(imageEdgeTop), right: 10)
         firstVC.tabBarItem = firstItem
@@ -82,6 +84,12 @@ extension CustomTBC {
         backgroundImageView.frame = CGRect(x: tabBar.bounds.origin.x, y: tabBar.bounds.origin.y, width: tabBar.bounds.width, height: heightTabBar)
         
         tabBar.shadowImage = UIImage()
+        if #available(iOS 13.0, *) {
+            let appearance = self.tabBar.standardAppearance.copy()
+            appearance.shadowImage = UIImage()
+            appearance.shadowColor = UIColor(named: .background)
+            tabBar.standardAppearance = appearance
+        }
         tabBar.backgroundImage = UIImage()
         tabBar.backgroundColor = UIColor(named: .background)
         
@@ -93,10 +101,11 @@ extension CustomTBC {
     fileprivate func preparePopupMenu() {
         let rootView = UIApplication.shared.windows.first!.rootViewController!.view!
         let baseMargin: CGFloat = 20
+        let heightPopupMenu: CGFloat = 120
         popupVC = PopupMenuVC()
-        popupVC.childVC = ViewController()
+        popupVC.childVC = CreateListVC()
         popupVC.startRect = tabBar.convert(plusButton.frame, to: nil)
-        popupVC.endRect = CGRect(x: baseMargin, y: popupVC.startRect!.origin.y - 16 - 175, width: rootView.bounds.width - baseMargin * 2, height: 175)
+        popupVC.endRect = CGRect(x: baseMargin, y: popupVC.startRect!.origin.y - 16 - heightPopupMenu, width: rootView.bounds.width - baseMargin * 2, height: heightPopupMenu)
         
         plusButtonForPopupMenu = PlusButton(frame: tabBar.convert(plusButton.frame, to: nil))
         plusButtonForPopupMenu.addTarget(self, action: #selector(hidePopupMenu), for: .touchUpInside)

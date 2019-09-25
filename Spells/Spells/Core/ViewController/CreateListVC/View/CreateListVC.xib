@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateListVC" customModule="Spells" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="533" height="283"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SRA-DF-YaT">
+                    <rect key="frame" x="0.0" y="0.0" width="533" height="283"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRR-UL-RVs">
+                            <rect key="frame" x="0.0" y="0.0" width="533" height="141"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="listTB" translatesAutoresizingMaskIntoConstraints="NO" id="YOc-VI-qNd">
+                                    <rect key="frame" x="166.5" y="0.0" width="20" height="141"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Создать заклинание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBS-de-Fgi">
+                                    <rect key="frame" x="194.5" y="0.0" width="164.5" height="141"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMr-eT-4Rm">
+                                    <rect key="frame" x="0.0" y="0.0" width="533" height="141"/>
+                                    <connections>
+                                        <action selector="touchCreateSpell:" destination="-1" eventType="touchUpInside" id="eB8-rG-A8u"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="wMr-eT-4Rm" secondAttribute="bottom" id="9Va-ZV-KuT"/>
+                                <constraint firstItem="YOc-VI-qNd" firstAttribute="top" secondItem="xRR-UL-RVs" secondAttribute="top" id="IT0-X0-EcL"/>
+                                <constraint firstItem="YOc-VI-qNd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xRR-UL-RVs" secondAttribute="leading" constant="8" id="Idg-M3-v9y"/>
+                                <constraint firstItem="jBS-de-Fgi" firstAttribute="leading" secondItem="YOc-VI-qNd" secondAttribute="trailing" constant="8" id="Krv-cv-rMH"/>
+                                <constraint firstAttribute="bottom" secondItem="jBS-de-Fgi" secondAttribute="bottom" id="R4V-Zm-9O7"/>
+                                <constraint firstItem="wMr-eT-4Rm" firstAttribute="top" secondItem="xRR-UL-RVs" secondAttribute="top" id="UgM-Ao-RcL"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jBS-de-Fgi" secondAttribute="trailing" constant="8" id="Zqw-0p-gN4"/>
+                                <constraint firstAttribute="trailing" secondItem="wMr-eT-4Rm" secondAttribute="trailing" id="k39-cU-m0u"/>
+                                <constraint firstAttribute="bottom" secondItem="YOc-VI-qNd" secondAttribute="bottom" id="s0a-7z-1dI"/>
+                                <constraint firstItem="wMr-eT-4Rm" firstAttribute="leading" secondItem="xRR-UL-RVs" secondAttribute="leading" id="yBf-ue-7P4"/>
+                                <constraint firstItem="jBS-de-Fgi" firstAttribute="centerX" secondItem="xRR-UL-RVs" secondAttribute="centerX" constant="10" id="yUS-rs-xs2"/>
+                                <constraint firstItem="jBS-de-Fgi" firstAttribute="top" secondItem="xRR-UL-RVs" secondAttribute="top" id="yxQ-ZE-zAg"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAi-hp-QQb">
+                            <rect key="frame" x="0.0" y="141" width="533" height="1"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="a8f-UI-Qa6"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZXA-RM-vLJ">
+                            <rect key="frame" x="0.0" y="142" width="533" height="141"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spellBookTB" translatesAutoresizingMaskIntoConstraints="NO" id="wCT-i4-AS3">
+                                    <rect key="frame" x="191" y="0.0" width="20" height="141"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Создать книгу" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0My-Hb-V96">
+                                    <rect key="frame" x="219" y="0.0" width="115.5" height="141"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oj1-qc-HjW">
+                                    <rect key="frame" x="0.0" y="0.0" width="533" height="141"/>
+                                    <connections>
+                                        <action selector="touchCreateSpellBook:" destination="-1" eventType="touchUpInside" id="VaE-lj-q6n"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="0My-Hb-V96" firstAttribute="top" secondItem="ZXA-RM-vLJ" secondAttribute="top" id="0fw-M9-Yjn"/>
+                                <constraint firstAttribute="bottom" secondItem="wCT-i4-AS3" secondAttribute="bottom" id="54U-JS-Rjf"/>
+                                <constraint firstAttribute="bottom" secondItem="Oj1-qc-HjW" secondAttribute="bottom" id="Iv4-nM-Y0v"/>
+                                <constraint firstAttribute="trailing" secondItem="Oj1-qc-HjW" secondAttribute="trailing" id="Os6-PR-msZ"/>
+                                <constraint firstItem="0My-Hb-V96" firstAttribute="centerX" secondItem="ZXA-RM-vLJ" secondAttribute="centerX" constant="10" id="Zdh-XZ-8wU"/>
+                                <constraint firstItem="0My-Hb-V96" firstAttribute="leading" secondItem="wCT-i4-AS3" secondAttribute="trailing" constant="8" id="clk-IV-dOO"/>
+                                <constraint firstItem="wCT-i4-AS3" firstAttribute="top" secondItem="ZXA-RM-vLJ" secondAttribute="top" id="kMN-16-s1y"/>
+                                <constraint firstItem="Oj1-qc-HjW" firstAttribute="top" secondItem="ZXA-RM-vLJ" secondAttribute="top" id="mCt-e4-SuF"/>
+                                <constraint firstItem="wCT-i4-AS3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZXA-RM-vLJ" secondAttribute="leading" constant="8" id="nvl-zZ-8e3"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0My-Hb-V96" secondAttribute="trailing" constant="8" id="tL2-Zt-fzh"/>
+                                <constraint firstAttribute="bottom" secondItem="0My-Hb-V96" secondAttribute="bottom" id="uaX-w1-VfW"/>
+                                <constraint firstItem="Oj1-qc-HjW" firstAttribute="leading" secondItem="ZXA-RM-vLJ" secondAttribute="leading" id="vKp-AA-bNG"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="ZXA-RM-vLJ" firstAttribute="height" secondItem="xRR-UL-RVs" secondAttribute="height" id="irt-0x-DwV"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="SRA-DF-YaT" secondAttribute="bottom" id="WTS-eI-Ahi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SRA-DF-YaT" secondAttribute="trailing" id="n0J-Zu-LsD"/>
+                <constraint firstItem="SRA-DF-YaT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="r7M-v9-Yll"/>
+                <constraint firstItem="SRA-DF-YaT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="v7R-ek-qfp"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="244.20289855072465" y="-45.200892857142854"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="listTB" width="20" height="20"/>
+        <image name="spellBookTB" width="20" height="20"/>
+    </resources>
+</document>
