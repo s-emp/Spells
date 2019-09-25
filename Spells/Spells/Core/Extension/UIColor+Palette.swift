@@ -33,5 +33,6 @@ extension UIColor {
         case necromancy
         case transmutation
         case other
+        case diceTextColor
     }
 }

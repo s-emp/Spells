@@ -39,7 +39,6 @@ class SpellListVC: UIViewController {
         filterButton.tintColor = UIColor(named: .background)
         presenter = SpellListPresenter(self, service: SpellService.shared())
         prepareTableView()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

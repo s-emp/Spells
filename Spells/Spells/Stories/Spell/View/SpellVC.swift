@@ -89,6 +89,18 @@ class SpellVC: UIViewController {
         infoLabel.text = spell.info
         professionsLabel.text = spell.professions.map { $0.fullName(.ru) }.joined(separator: ", ")
         booksLabel.text = spell.books.map { $0.fullName(.ru) }.joined(separator: ", ")
+        
+        do {
+            let regex = try NSRegularExpression(pattern: "[0-9]{1,}[кd][0-9]{1,}")
+            let result = regex.matches(in: spell.info, range: NSRange(spell.info.startIndex..., in: spell.info))
+            let attributeString = NSMutableAttributedString(string: spell.info, attributes: [.font: UIFont.systemFont(ofSize: 15), .foregroundColor: UIColor(named: .text)!])
+            result.forEach {
+                attributeString.addAttributes([.font: UIFont.boldSystemFont(ofSize: 15), .foregroundColor: UIColor(named: .diceTextColor)!], range: $0.range)
+            }
+            infoLabel.attributedText = attributeString
+        } catch {
+            
+        }
     }
 }
 
