@@ -11,6 +11,31 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpellVC" customModule="Spells" customModuleProvider="target">
             <connections>
+                <outlet property="booksLabel" destination="yAq-I2-lng" id="fTL-R6-HQJ"/>
+                <outlet property="booksNameLabel" destination="ZQd-UG-yfV" id="42X-lo-1MO"/>
+                <outlet property="castLabel" destination="dvI-ND-Eje" id="iyP-BR-VKO"/>
+                <outlet property="castNameLabel" destination="AcS-yp-gUW" id="v5E-Jz-TWf"/>
+                <outlet property="castView" destination="wQl-SR-wXo" id="9EH-jb-LVy"/>
+                <outlet property="componentsLabel" destination="dYn-V0-ES9" id="7Gk-Kc-UY4"/>
+                <outlet property="componentsNameLabel" destination="Dwl-h2-LDL" id="0Ai-kF-Pk2"/>
+                <outlet property="componentsView" destination="O7E-HP-NWz" id="W1Q-ej-z8h"/>
+                <outlet property="durationLabel" destination="reA-DO-ICX" id="k8C-1i-jtg"/>
+                <outlet property="durationNameLabel" destination="kwP-qa-E0g" id="I35-Ax-yBP"/>
+                <outlet property="durationView" destination="7Vv-hz-fNo" id="ng0-Qf-gYO"/>
+                <outlet property="infoLabel" destination="Jh1-w1-HG4" id="uc9-Wg-2mf"/>
+                <outlet property="levelLabel" destination="PFe-Zd-3bb" id="oV9-xd-lyZ"/>
+                <outlet property="levelView" destination="6Z5-xS-IVy" id="byC-FF-ga8"/>
+                <outlet property="materialLabel" destination="c7S-gZ-bZk" id="9Fb-Wp-EFf"/>
+                <outlet property="materialNameLabel" destination="iPG-KC-a5p" id="Iyt-8D-L2q"/>
+                <outlet property="materialView" destination="KSq-I4-kH4" id="bIV-ML-Da1"/>
+                <outlet property="nameLabel" destination="Icm-e8-Dmw" id="qTh-qO-m9d"/>
+                <outlet property="professionsLabel" destination="TQK-RX-NDo" id="2N9-G0-o3J"/>
+                <outlet property="professtionsNameLabel" destination="UoU-dK-FNC" id="yTO-gk-vUl"/>
+                <outlet property="radiusLabel" destination="GT3-kz-ifD" id="cu9-PI-EtM"/>
+                <outlet property="radiusNameLabel" destination="nGg-oR-gKG" id="jEG-al-dut"/>
+                <outlet property="radiusView" destination="u4l-l9-ZWq" id="mw7-V5-KoF"/>
+                <outlet property="schoolLabel" destination="GUK-gb-Vx3" id="mMu-wP-Gt1"/>
+                <outlet property="schoolView" destination="vec-oR-cHD" id="Vd5-fL-13K"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,32 +48,38 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wyo-Yq-IEZ">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="512"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="544.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icm-e8-Dmw" customClass="HeaderBottom" customModule="Spells" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="40" width="278" height="32.5"/>
+                                    <rect key="frame" x="16" y="60" width="278" height="32.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                     <color key="textColor" name="text"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxa-rE-X46">
-                                    <rect key="frame" x="362" y="40" width="36" height="36"/>
+                                    <rect key="frame" x="362" y="60" width="36" height="36"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="36" id="Yyu-Lx-Ncg"/>
                                         <constraint firstAttribute="height" constant="36" id="eZX-wN-BHV"/>
                                     </constraints>
                                     <state key="normal" image="addSpellToBook"/>
+                                    <connections>
+                                        <action selector="touchAddSpellInSpellbook:" destination="-1" eventType="touchUpInside" id="7bW-4j-dU4"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yn4-lf-6oo">
-                                    <rect key="frame" x="310" y="38" width="36" height="36"/>
+                                    <rect key="frame" x="310" y="58" width="36" height="36"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="36" id="IHE-lu-3G6"/>
                                         <constraint firstAttribute="width" constant="36" id="ZeT-tr-JZh"/>
                                     </constraints>
                                     <state key="normal" image="like"/>
+                                    <connections>
+                                        <action selector="touchLike:" destination="-1" eventType="touchUpInside" id="tFn-71-Rcj"/>
+                                    </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Z5-xS-IVy">
-                                    <rect key="frame" x="16" y="80.5" width="58" height="18"/>
+                                    <rect key="frame" x="16" y="100.5" width="58" height="18"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFe-Zd-3bb" customClass="TextTag" customModule="Spells" customModuleProvider="target">
                                             <rect key="frame" x="8" y="0.0" width="42" height="18"/>
@@ -72,7 +103,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vec-oR-cHD">
-                                    <rect key="frame" x="82" y="80.5" width="58" height="18"/>
+                                    <rect key="frame" x="82" y="100.5" width="58" height="18"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUK-gb-Vx3" customClass="TextTag" customModule="Spells" customModuleProvider="target">
                                             <rect key="frame" x="8" y="0.0" width="42" height="18"/>
@@ -96,21 +127,21 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9q-WG-usW">
-                                    <rect key="frame" x="16" y="110.5" width="382" height="166.5"/>
+                                    <rect key="frame" x="16" y="130.5" width="382" height="179"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xMc-4b-dw5">
-                                            <rect key="frame" x="16" y="16" width="350" height="134.5"/>
+                                            <rect key="frame" x="16" y="16" width="350" height="147"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4l-l9-ZWq">
                                                     <rect key="frame" x="0.0" y="0.0" width="350" height="20.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Соматический (Somatic)Соматический (Somatic)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGg-oR-gKG" customClass="Text2" customModule="Spells" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Радиус" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGg-oR-gKG" customClass="Text2" customModule="Spells" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="153" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="textInfo"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Соматический (Somatic)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GT3-kz-ifD" customClass="Text2" customModule="Spells" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Соматический (Somatic)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GT3-kz-ifD" customClass="Text2" customModule="Spells" customModuleProvider="target">
                                                             <rect key="frame" x="153" y="0.0" width="197" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="text"/>
@@ -119,16 +150,16 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Vv-hz-fNo">
-                                                    <rect key="frame" x="0.0" y="28.5" width="350" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="28.5" width="350" height="41"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Соматический (Somatic)Соматический (Somatic)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwP-qa-E0g" customClass="Text2" customModule="Spells" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="153" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Продолжительность" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwP-qa-E0g" customClass="Text2" customModule="Spells" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="175" height="41"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="textInfo"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Соматический (Somatic)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reA-DO-ICX" customClass="Text2" customModule="Spells" customModuleProvider="target">
-                                                            <rect key="frame" x="153" y="0.0" width="197" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Соматический (Somatic)" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reA-DO-ICX" customClass="Text2" customModule="Spells" customModuleProvider="target">
+                                                            <rect key="frame" x="175" y="0.0" width="175" height="41"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="text"/>
                                                             <nil key="highlightedColor"/>
@@ -136,15 +167,15 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wQl-SR-wXo">
-                                                    <rect key="frame" x="0.0" y="57" width="350" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="77.5" width="350" height="20.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Соматический (Somatic)Соматический (Somatic)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcS-yp-gUW" customClass="Text2" customModule="Spells" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Время наложения" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcS-yp-gUW" customClass="Text2" customModule="Spells" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="153" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="textInfo"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Соматический (Somatic)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvI-ND-Eje" customClass="Text2" customModule="Spells" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Соматический (Somatic)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvI-ND-Eje" customClass="Text2" customModule="Spells" customModuleProvider="target">
                                                             <rect key="frame" x="153" y="0.0" width="197" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="text"/>
@@ -153,33 +184,33 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7E-HP-NWz">
-                                                    <rect key="frame" x="0.0" y="85.5" width="350" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="106" width="350" height="41"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Соматический (Somatic)Соматический (Somatic)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwl-h2-LDL" customClass="Text2" customModule="Spells" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="153" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Компоненты" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwl-h2-LDL" customClass="Text2" customModule="Spells" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="175" height="41"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="textInfo"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Соматический (Somatic)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYn-V0-ES9" customClass="Text2" customModule="Spells" customModuleProvider="target">
-                                                            <rect key="frame" x="153" y="0.0" width="197" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Соматический (Somatic)" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYn-V0-ES9" customClass="Text2" customModule="Spells" customModuleProvider="target">
+                                                            <rect key="frame" x="175" y="0.0" width="175" height="41"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="text"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSq-I4-kH4">
-                                                    <rect key="frame" x="0.0" y="114" width="350" height="20.5"/>
+                                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSq-I4-kH4">
+                                                    <rect key="frame" x="0.0" y="147" width="350" height="0.0"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Соматический (Somatic)Соматический (Somatic)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPG-KC-a5p" customClass="Text2" customModule="Spells" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="153" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Материалы" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPG-KC-a5p" customClass="Text2" customModule="Spells" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="153" height="0.0"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="textInfo"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Соматический (Somatic)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7S-gZ-bZk" customClass="Text2" customModule="Spells" customModuleProvider="target">
-                                                            <rect key="frame" x="153" y="0.0" width="197" height="20.5"/>
+                                                            <rect key="frame" x="153" y="0.0" width="197" height="0.0"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="text"/>
                                                             <nil key="highlightedColor"/>
@@ -203,7 +234,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Pf-G2-6sR">
-                                    <rect key="frame" x="16" y="370" width="382" height="122"/>
+                                    <rect key="frame" x="16" y="402.5" width="382" height="122"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Apf-cG-oii">
                                             <rect key="frame" x="16" y="16" width="350" height="90"/>
@@ -211,7 +242,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7D-uh-cWk">
                                                     <rect key="frame" x="0.0" y="0.0" width="350" height="41"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Соматический (Somatic)Соматический (Somatic)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoU-dK-FNC" customClass="Text2" customModule="Spells" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Классы" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoU-dK-FNC" customClass="Text2" customModule="Spells" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="175" height="41"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="textInfo"/>
@@ -228,7 +259,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D7w-c6-cQn">
                                                     <rect key="frame" x="0.0" y="49" width="350" height="41"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Соматический (Somatic)Соматический (Somatic)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQd-UG-yfV" customClass="Text2" customModule="Spells" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Книги" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQd-UG-yfV" customClass="Text2" customModule="Spells" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="175" height="41"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="textInfo"/>
@@ -259,7 +290,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jh1-w1-HG4">
-                                    <rect key="frame" x="16" y="293" width="382" height="61"/>
+                                    <rect key="frame" x="16" y="325.5" width="382" height="61"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -269,15 +300,15 @@
                             <constraints>
                                 <constraint firstItem="vec-oR-cHD" firstAttribute="top" secondItem="Icm-e8-Dmw" secondAttribute="bottom" constant="8" id="0nU-gg-pNv"/>
                                 <constraint firstAttribute="bottom" secondItem="2Pf-G2-6sR" secondAttribute="bottom" constant="20" id="5b3-os-Ekn"/>
-                                <constraint firstItem="Icm-e8-Dmw" firstAttribute="top" secondItem="wyo-Yq-IEZ" secondAttribute="top" constant="40" id="6Df-8e-Jbb"/>
+                                <constraint firstItem="Icm-e8-Dmw" firstAttribute="top" secondItem="wyo-Yq-IEZ" secondAttribute="top" constant="60" id="6Df-8e-Jbb"/>
                                 <constraint firstItem="2Pf-G2-6sR" firstAttribute="leading" secondItem="wyo-Yq-IEZ" secondAttribute="leading" constant="16" id="ANI-sR-GyH"/>
                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vec-oR-cHD" secondAttribute="trailing" constant="16" id="ECx-Gq-pN0"/>
                                 <constraint firstItem="rxa-rE-X46" firstAttribute="leading" secondItem="Yn4-lf-6oo" secondAttribute="trailing" constant="16" id="EKX-nM-myI"/>
                                 <constraint firstAttribute="trailing" secondItem="2Pf-G2-6sR" secondAttribute="trailing" constant="16" id="HL2-sc-gO2"/>
                                 <constraint firstItem="Jh1-w1-HG4" firstAttribute="top" secondItem="F9q-WG-usW" secondAttribute="bottom" constant="16" id="K8g-gC-MXm"/>
                                 <constraint firstAttribute="trailing" secondItem="rxa-rE-X46" secondAttribute="trailing" constant="16" id="QgC-KI-pQ5"/>
-                                <constraint firstItem="Yn4-lf-6oo" firstAttribute="top" secondItem="wyo-Yq-IEZ" secondAttribute="top" constant="38" id="Rxj-oj-Gue"/>
-                                <constraint firstItem="rxa-rE-X46" firstAttribute="top" secondItem="wyo-Yq-IEZ" secondAttribute="top" constant="40" id="UaR-Tk-GC5"/>
+                                <constraint firstItem="Yn4-lf-6oo" firstAttribute="top" secondItem="wyo-Yq-IEZ" secondAttribute="top" constant="58" id="Rxj-oj-Gue"/>
+                                <constraint firstItem="rxa-rE-X46" firstAttribute="top" secondItem="wyo-Yq-IEZ" secondAttribute="top" constant="60" id="UaR-Tk-GC5"/>
                                 <constraint firstItem="Icm-e8-Dmw" firstAttribute="leading" secondItem="wyo-Yq-IEZ" secondAttribute="leading" constant="16" id="XIf-DS-xcw"/>
                                 <constraint firstItem="Yn4-lf-6oo" firstAttribute="leading" secondItem="Icm-e8-Dmw" secondAttribute="trailing" constant="16" id="aH7-o2-DnN"/>
                                 <constraint firstItem="2Pf-G2-6sR" firstAttribute="top" secondItem="Jh1-w1-HG4" secondAttribute="bottom" constant="16" id="b71-eX-iB0"/>
@@ -300,6 +331,9 @@
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="ZRQ-BV-B5Q"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="H7C-vi-cMY"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="UnE-bh-acU"/>
+                    </connections>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" name="background"/>
