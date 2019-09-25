@@ -35,4 +35,8 @@ extension Spell {
         let books = spell.books.split(separator: ",").map { Book(rawValue: String($0))! }
         return Spell(uuid: spell.uuid, level: spell.level, name: spell.name, school: School(rawValue: spell.school)!, action: spell.action, duration: spell.duration, range: spell.duration, info: spell.info, components: components, materials: spell.materials, professions: professions, books: books, isConcentration: spell.isConcentration, isRitual: spell.isRitual, nameQuery: spell.nameQuery, language: Language(rawValue: spell.language)!)
     }
+    
+    static func transform(_ spells: [SpellRealm]) -> [Spell] {
+        return spells.map { Spell.transform($0) }
+    }
 }

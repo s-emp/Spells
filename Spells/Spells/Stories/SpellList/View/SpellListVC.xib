@@ -11,12 +11,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpellListVC" customModule="Spells" customModuleProvider="target">
             <connections>
+                <outlet property="cancelButtonRightConstraint" destination="mhM-Ug-n7h" id="PR2-kk-NYe"/>
                 <outlet property="filterButton" destination="0qc-Fg-9nv" id="hc5-DI-CFA"/>
+                <outlet property="filterButtonSafeAreaTopConstraint" destination="kUR-07-c0o" id="raY-Hj-Pla"/>
+                <outlet property="filterButtonTopConstraint" destination="kuT-vx-pwd" id="TOn-nj-rA4"/>
                 <outlet property="headerLabel" destination="NK9-Gl-AXh" id="RJU-an-iPW"/>
+                <outlet property="headerLabelSafeAreaTopConstraint" destination="GFv-uE-1xc" id="fef-VY-ZsD"/>
+                <outlet property="headerLabelTopConstraint" destination="la2-jS-dYR" id="75Y-pc-gJL"/>
                 <outlet property="headerView" destination="kRs-hB-b5v" id="NnC-me-dyS"/>
                 <outlet property="searchTextField" destination="Jeo-kN-whn" id="jxD-gp-Jbq"/>
-                <outlet property="shortHeightConstraint" destination="nDI-JR-Fc2" id="TVC-Pu-OX1"/>
                 <outlet property="spellsTableView" destination="b7D-hq-I00" id="UCM-rk-Cgs"/>
+                <outlet property="textFieldRightConstraint" destination="sGE-5c-ytY" id="WHz-9i-gyb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,11 +31,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRs-hB-b5v">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="177"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="197"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заклинания" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NK9-Gl-AXh" customClass="Header1" customModule="Spells" customModuleProvider="target">
-                            <rect key="frame" x="16" y="64" width="340" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <rect key="frame" x="16" y="64" width="340" height="41"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                             <color key="textColor" name="background"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -46,7 +51,7 @@
                             </connections>
                         </button>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Поиск" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jeo-kN-whn" customClass="SearchTextField" customModule="Spells" customModuleProvider="target">
-                            <rect key="frame" x="16" y="101" width="382" height="36"/>
+                            <rect key="frame" x="16" y="121" width="382" height="36"/>
                             <color key="backgroundColor" name="searchTextField"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="36" id="xlk-dA-hC4"/>
@@ -54,7 +59,20 @@
                             <color key="textColor" name="background"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                            <connections>
+                                <action selector="searchEditingChanged:" destination="-1" eventType="editingChanged" id="Mpx-fq-12c"/>
+                                <outlet property="delegate" destination="-1" id="sb8-mb-PFN"/>
+                            </connections>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ia6-5n-4UI">
+                            <rect key="frame" x="414" y="124" width="56" height="30"/>
+                            <state key="normal" title="Отмена">
+                                <color key="titleColor" name="background"/>
+                            </state>
+                            <connections>
+                                <action selector="touchCancelSearch:" destination="-1" eventType="touchUpInside" id="vPP-CR-Pi7"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" name="plusBackground"/>
                     <constraints>
@@ -62,19 +80,21 @@
                         <constraint firstItem="NK9-Gl-AXh" firstAttribute="leading" secondItem="kRs-hB-b5v" secondAttribute="leading" constant="16" id="Mq2-b2-Rj8"/>
                         <constraint firstAttribute="trailing" secondItem="0qc-Fg-9nv" secondAttribute="trailing" constant="16" id="WFh-Rq-vah"/>
                         <constraint firstAttribute="bottom" secondItem="Jeo-kN-whn" secondAttribute="bottom" constant="40" id="Z91-wc-1ZY"/>
-                        <constraint firstAttribute="height" constant="110" id="nDI-JR-Fc2"/>
+                        <constraint firstAttribute="trailing" secondItem="ia6-5n-4UI" secondAttribute="trailing" constant="16" id="mhM-Ug-n7h"/>
+                        <constraint firstItem="ia6-5n-4UI" firstAttribute="leading" secondItem="Jeo-kN-whn" secondAttribute="trailing" constant="16" id="oAZ-zq-7Vv"/>
+                        <constraint firstItem="ia6-5n-4UI" firstAttribute="centerY" secondItem="Jeo-kN-whn" secondAttribute="centerY" id="qrj-DI-Sy2"/>
                         <constraint firstAttribute="trailing" secondItem="Jeo-kN-whn" secondAttribute="trailing" constant="16" id="sGE-5c-ytY"/>
                         <constraint firstItem="Jeo-kN-whn" firstAttribute="leading" secondItem="kRs-hB-b5v" secondAttribute="leading" constant="16" id="vsb-MY-Zcf"/>
                         <constraint firstItem="Jeo-kN-whn" firstAttribute="top" secondItem="NK9-Gl-AXh" secondAttribute="bottom" constant="16" id="zfV-1P-G1o"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
-                            <exclude reference="nDI-JR-Fc2"/>
+                            <exclude reference="mhM-Ug-n7h"/>
                         </mask>
                     </variation>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b7D-hq-I00" customClass="TPKeyboardAvoidingTableView">
-                    <rect key="frame" x="0.0" y="157" width="414" height="739"/>
+                    <rect key="frame" x="0.0" y="177" width="414" height="719"/>
                     <color key="backgroundColor" name="background"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="radius">
@@ -95,11 +115,19 @@
                 <constraint firstItem="b7D-hq-I00" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LVe-hA-JNg"/>
                 <constraint firstItem="b7D-hq-I00" firstAttribute="top" secondItem="kRs-hB-b5v" secondAttribute="bottom" constant="-20" id="X7a-q3-K2v"/>
                 <constraint firstItem="0qc-Fg-9nv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="kUR-07-c0o"/>
+                <constraint firstItem="0qc-Fg-9nv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-41" id="kuT-vx-pwd"/>
+                <constraint firstItem="NK9-Gl-AXh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-41" id="la2-jS-dYR"/>
                 <constraint firstAttribute="bottom" secondItem="b7D-hq-I00" secondAttribute="bottom" id="ujE-RV-pEK"/>
                 <constraint firstItem="kRs-hB-b5v" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="xXn-WI-Jh8"/>
                 <constraint firstItem="kRs-hB-b5v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zDV-yx-wQT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="la2-jS-dYR"/>
+                    <exclude reference="kuT-vx-pwd"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </view>
     </objects>

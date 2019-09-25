@@ -10,7 +10,9 @@ import Foundation
 
 protocol SpellListOutput {
     var spells: [Spell] { get }
+    
     func selectItem(_ index: IndexPath)
+    func search(_ message: String)
     
     init(_ view: SpellListInput, service: SpellService)
 }

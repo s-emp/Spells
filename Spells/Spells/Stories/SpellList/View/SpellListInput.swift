@@ -8,4 +8,5 @@
 
 protocol SpellListInput: AnyObject {
     
+    func reloadTableView()
 }

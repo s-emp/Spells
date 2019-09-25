@@ -20,6 +20,11 @@ class SpellListPresenter: SpellListOutput {
         
     }
     
+    func search(_ message: String) {
+        spells = Spell.transform(Array(service.realm.objects(SpellRealm.self).filter("nameQuery LIKE[c] '*\(message.lowercased())*'")))
+        view.reloadTableView()
+    }
+    
     // MARK: - Init
     required init(_ view: SpellListInput, service: SpellService) {
         self.view = view
