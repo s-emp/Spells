@@ -9,7 +9,7 @@
 import UIKit
 
 class SpellCell: UITableViewCell {
-
+    // MARK: - Properties
     var spell: Spell! {
         didSet {
             nameLabel.text = spell.name
@@ -19,25 +19,13 @@ class SpellCell: UITableViewCell {
         }
     }
     
-    // MARK: - IBOutlet
     @IBOutlet private var nameLabel: Header2!
     @IBOutlet private var levelLabel: TextTag!
     @IBOutlet private var schoolView: UIView!
     @IBOutlet private var schoolLabel: TextTag!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    // MARK: - Methods
+    @IBAction func touchAddSpellInSpellbook(_ sender: Any) {
         
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    // MARK: - IBAction
-    @IBAction func touchAddSpellInSpellbook(_ sender: Any) {
-    }
-    
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SPStorkController
 
 fileprivate let identifier = "cell"
 
@@ -25,7 +26,7 @@ class SpellListVC: UIViewController {
     @IBOutlet private var headerLabelTopConstraint: NSLayoutConstraint!
     
     @IBOutlet private var filterButtonSafeAreaTopConstraint: NSLayoutConstraint!
-    @IBOutlet var filterButtonTopConstraint: NSLayoutConstraint!
+    @IBOutlet private var filterButtonTopConstraint: NSLayoutConstraint!
     
     @IBOutlet private var textFieldRightConstraint: NSLayoutConstraint!
     @IBOutlet private var cancelButtonRightConstraint: NSLayoutConstraint!
@@ -38,6 +39,7 @@ class SpellListVC: UIViewController {
         filterButton.tintColor = UIColor(named: .background)
         presenter = SpellListPresenter(self, service: SpellService.shared())
         prepareTableView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -170,7 +172,15 @@ extension SpellListVC: UITableViewDataSource {
 // MARK: - TableViewDelegate
 extension SpellListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.selectItem(indexPath)
+        let vc = SpellVC()
+        vc.spell = presenter.spells[indexPath.row]
+        let transitionDelegate = SPStorkTransitioningDelegate()
+        transitionDelegate.hapticMoments = []
+        transitionDelegate.showCloseButton = false
+        vc.transitioningDelegate = transitionDelegate
+        vc.modalPresentationStyle = .custom
+        vc.modalPresentationCapturesStatusBarAppearance = true
+        self.present(vc, animated: true, completion: nil)
     }
 }
 
