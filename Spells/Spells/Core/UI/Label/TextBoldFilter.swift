@@ -14,7 +14,7 @@ class TextBoldFilter: UILabel {
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        self.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        self.font = UIFont.boldSystemFont(ofSize: 17)
     }
 
 }

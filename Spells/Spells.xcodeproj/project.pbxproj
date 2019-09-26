@@ -22,6 +22,12 @@
 		99345D28233A31EA003CFD96 /* Spell.json in Resources */ = {isa = PBXBuildFile; fileRef = 99345D27233A31E9003CFD96 /* Spell.json */; };
 		99345D2B233A5595003CFD96 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99345D2A233A5595003CFD96 /* SearchTextField.swift */; };
 		99829B4B233A040900E0D725 /* SpellRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99829B4A233A040900E0D725 /* SpellRealm.swift */; };
+		9993D17C233C95FE004C9E03 /* IOTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993D179233C95FE004C9E03 /* IOTagCell.swift */; };
+		9993D17D233C95FE004C9E03 /* IOTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9993D17A233C95FE004C9E03 /* IOTagCell.xib */; };
+		9993D17E233C95FE004C9E03 /* IOTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993D17B233C95FE004C9E03 /* IOTags.swift */; };
+		9993D180233CA357004C9E03 /* FilterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993D17F233CA357004C9E03 /* FilterOutput.swift */; };
+		9993D182233CA360004C9E03 /* FilterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993D181233CA360004C9E03 /* FilterPresenter.swift */; };
+		9993D184233CAC60004C9E03 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993D183233CAC60004C9E03 /* Filter.swift */; };
 		99EDC005233372EB007855C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC004233372EB007855C4 /* AppDelegate.swift */; };
 		99EDC00C233372EB007855C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC00A233372EB007855C4 /* Main.storyboard */; };
 		99EDC00E233372EC007855C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC00D233372EC007855C4 /* Assets.xcassets */; };
@@ -95,6 +101,12 @@
 		99345D27233A31E9003CFD96 /* Spell.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Spell.json; sourceTree = "<group>"; };
 		99345D2A233A5595003CFD96 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		99829B4A233A040900E0D725 /* SpellRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellRealm.swift; sourceTree = "<group>"; };
+		9993D179233C95FE004C9E03 /* IOTagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTagCell.swift; sourceTree = "<group>"; };
+		9993D17A233C95FE004C9E03 /* IOTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IOTagCell.xib; sourceTree = "<group>"; };
+		9993D17B233C95FE004C9E03 /* IOTags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTags.swift; sourceTree = "<group>"; };
+		9993D17F233CA357004C9E03 /* FilterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOutput.swift; sourceTree = "<group>"; };
+		9993D181233CA360004C9E03 /* FilterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPresenter.swift; sourceTree = "<group>"; };
+		9993D183233CAC60004C9E03 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		99EDC001233372EB007855C4 /* Spells.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spells.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99EDC004233372EB007855C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99EDC00B233372EB007855C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -225,6 +237,9 @@
 		99337943233B95AD00907090 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				9993D17F233CA357004C9E03 /* FilterOutput.swift */,
+				9993D181233CA360004C9E03 /* FilterPresenter.swift */,
+				9993D183233CAC60004C9E03 /* Filter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -252,6 +267,16 @@
 				99345D2A233A5595003CFD96 /* SearchTextField.swift */,
 			);
 			path = TextField;
+			sourceTree = "<group>";
+		};
+		9993D178233C95EB004C9E03 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				9993D179233C95FE004C9E03 /* IOTagCell.swift */,
+				9993D17A233C95FE004C9E03 /* IOTagCell.xib */,
+				9993D17B233C95FE004C9E03 /* IOTags.swift */,
+			);
+			path = Tags;
 			sourceTree = "<group>";
 		};
 		99EDBFF8233372EB007855C4 = {
@@ -333,6 +358,7 @@
 		99EDC02923337553007855C4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9993D178233C95EB004C9E03 /* Tags */,
 				9933794A233BA5ED00907090 /* View */,
 				99345D29233A557A003CFD96 /* TextField */,
 				99EDC04A23339012007855C4 /* Button */,
@@ -621,6 +647,7 @@
 				B91442402335209A00C68557 /* SpellListVC.xib in Resources */,
 				99EDC05D2333CABD007855C4 /* CreateListVC.xib in Resources */,
 				99EDC00E233372EC007855C4 /* Assets.xcassets in Resources */,
+				9993D17D233C95FE004C9E03 /* IOTagCell.xib in Resources */,
 				9933793C233B6B6D00907090 /* SpellVC.xib in Resources */,
 				99EDC0582333A7FE007855C4 /* ViewController.xib in Resources */,
 				99345D28233A31EA003CFD96 /* Spell.json in Resources */,
@@ -710,6 +737,7 @@
 				99EDC03223337583007855C4 /* Text2.swift in Sources */,
 				99337949233B95D400907090 /* FilterInput.swift in Sources */,
 				B91442162335176400C68557 /* CreateListPresenter.swift in Sources */,
+				9993D180233CA357004C9E03 /* FilterOutput.swift in Sources */,
 				99EDC02F23337583007855C4 /* Text.swift in Sources */,
 				99345D21233A15F5003CFD96 /* SpellListPresenter.swift in Sources */,
 				99EDC005233372EB007855C4 /* AppDelegate.swift in Sources */,
@@ -722,6 +750,7 @@
 				9933794C233BA62900907090 /* FilterLevelView.swift in Sources */,
 				99EDC034233375C6007855C4 /* TextPush.swift in Sources */,
 				99EDC04F2333910A007855C4 /* UIColor+Palette.swift in Sources */,
+				9993D17E233C95FE004C9E03 /* IOTags.swift in Sources */,
 				B91442122335174D00C68557 /* CreateListInput.swift in Sources */,
 				99EDC042233376B9007855C4 /* HeaderBottom2.swift in Sources */,
 				B98EF36823353D48008E81ED /* Imported.swift in Sources */,
@@ -734,8 +763,10 @@
 				99EDC03C23337635007855C4 /* HeaderBottom.swift in Sources */,
 				B914421C23351E0D00C68557 /* SpellService.swift in Sources */,
 				99EDC0572333A7FE007855C4 /* ViewController.swift in Sources */,
+				9993D182233CA360004C9E03 /* FilterPresenter.swift in Sources */,
 				99EDC038233375F7007855C4 /* TextSearch.swift in Sources */,
 				B98EF37123353F13008E81ED /* Language.swift in Sources */,
+				9993D17C233C95FE004C9E03 /* IOTagCell.swift in Sources */,
 				99EDC03123337583007855C4 /* Header2.swift in Sources */,
 				99EDC04023337695007855C4 /* TextFilter.swift in Sources */,
 				B98EF36923353D48008E81ED /* Exported.swift in Sources */,
@@ -744,6 +775,7 @@
 				9933793E233B6B7900907090 /* SpellInput.swift in Sources */,
 				9933793B233B6B6D00907090 /* SpellVC.swift in Sources */,
 				B98EF3792335F00C008E81ED /* Spell.swift in Sources */,
+				9993D184233CAC60004C9E03 /* Filter.swift in Sources */,
 				99337946233B95C600907090 /* FilterVC.swift in Sources */,
 				99345D26233A27A0003CFD96 /* UIView+Radius.swift in Sources */,
 				99EDC03E23337673007855C4 /* TextBoldFilter.swift in Sources */,

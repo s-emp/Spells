@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+protocol FilterInput: AnyObject {
+    
+    func updateUI()
+    init(_ filter: Filter?)
+}
