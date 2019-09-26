@@ -47,6 +47,6 @@ class SpellService: Exported, Imported {
     
     func getSpells() -> [Spell] {
         let spellsRealm = realm.objects(SpellRealm.self)
-        return Array(spellsRealm.map { Spell.transform($0) })
+        return Array(spellsRealm.map { Spell.transform($0) }).filter { $0.language == Language.systemLanguage }
     }
 }

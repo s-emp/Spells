@@ -16,6 +16,7 @@
                 <outlet property="professionHeightConstraint" destination="psz-ve-oCn" id="uzz-PR-4qq"/>
                 <outlet property="professionTags" destination="s3d-iA-kyQ" id="Qu6-LR-UjX"/>
                 <outlet property="ritualSwitch" destination="70q-bO-XXd" id="VES-Iw-TqF"/>
+                <outlet property="successButton" destination="oJH-le-olR" id="6aW-dk-fSO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="levelViews" destination="PxI-rN-tuJ" collectionClass="NSMutableArray" id="psE-Jc-FfV"/>
                 <outletCollection property="levelViews" destination="rj3-tG-Yfr" collectionClass="NSMutableArray" id="N3i-A5-uJP"/>
@@ -249,7 +250,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGW-TJ-cUY">
                                                     <rect key="frame" x="0.0" y="0.0" width="398" height="1"/>
-                                                    <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="separatorColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="vWb-0T-8YU"/>
                                                     </constraints>
@@ -266,6 +267,9 @@
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qsx-em-dkd">
                                                             <rect key="frame" x="333" y="0.0" width="51" height="31"/>
                                                             <color key="onTintColor" name="plusBackground"/>
+                                                            <connections>
+                                                                <action selector="touchConcentration:" destination="-1" eventType="valueChanged" id="eCD-Ef-0wC"/>
+                                                            </connections>
                                                         </switch>
                                                     </subviews>
                                                 </stackView>
@@ -286,7 +290,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T1a-hD-AJ2">
                                                     <rect key="frame" x="0.0" y="0.0" width="398" height="1"/>
-                                                    <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="separatorColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="oqE-HI-EXb"/>
                                                     </constraints>
@@ -303,6 +307,9 @@
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="70q-bO-XXd">
                                                             <rect key="frame" x="333" y="0.0" width="51" height="31"/>
                                                             <color key="onTintColor" name="plusBackground"/>
+                                                            <connections>
+                                                                <action selector="touchRitual:" destination="-1" eventType="valueChanged" id="FRV-ZL-iVa"/>
+                                                            </connections>
                                                         </switch>
                                                     </subviews>
                                                 </stackView>
@@ -329,7 +336,7 @@
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ho7-WD-3XW">
                                                     <rect key="frame" x="0.0" y="0.0" width="398" height="1"/>
-                                                    <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="separatorColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="t1P-FT-fKj"/>
                                                     </constraints>
@@ -379,7 +386,7 @@
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cB7-jm-zYB">
                                             <rect key="frame" x="0.0" y="192" width="398" height="1"/>
-                                            <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" systemColor="separatorColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="QVb-I8-VR9"/>
                                             </constraints>
@@ -396,6 +403,7 @@
                                     <state key="normal" title="Применить фильры">
                                         <color key="titleColor" name="background"/>
                                     </state>
+                                    <state key="disabled" title="Нет результатов"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="radius">
                                             <real key="value" value="5"/>

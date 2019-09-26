@@ -10,6 +10,8 @@ import UIKit
 
 protocol IOTagsDataSource: AnyObject {
     func components(_ tags: IOTags) -> [CustomStringConvertible]
+    func didSelectedItem(_ index: IndexPath)
+    func didDeselectedItem(_ index: IndexPath)
 }
 
 /// Элемент для расположения тегов в таблице.
@@ -40,9 +42,8 @@ final class IOTags: UICollectionView {
         let label = Text()
         var currentWidth: CGFloat = 0.0
         var result: [String] = []
-        for (index, item) in collection.enumerated() {
+        for (_, item) in collection.enumerated() {
             label.text = item.description
-            print("Widtt item(\(index)): \(label.intrinsicContentSize.width)")
             let newWidth = label.intrinsicContentSize.width + 32
             // Если помещается с расстоянием между ячейкой
             if width >= currentWidth + newWidth + 8 {
@@ -80,11 +81,13 @@ final class IOTags: UICollectionView {
 extension IOTags: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        protocolDataSource?.didSelectedItem(indexPath)
         tapEngine.prepare()
         tapEngine.selectionChanged()
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        protocolDataSource?.didDeselectedItem(indexPath)
         tapEngine.prepare()
         tapEngine.selectionChanged()
     }

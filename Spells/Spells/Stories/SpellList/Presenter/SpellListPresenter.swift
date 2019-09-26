@@ -32,7 +32,7 @@ class SpellListPresenter: SpellListOutput {
     }
     
     // MARK: - Init
-    required init(_ view: SpellListInput, service: SpellService) {
+    required init(_ view: SpellListInput, service: SpellService, filter: Filter) {
         self.view = view
         self.service = service
         self.spells = service.getSpells()

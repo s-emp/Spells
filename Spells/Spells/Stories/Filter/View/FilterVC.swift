@@ -18,6 +18,7 @@ class FilterVC: UIViewController {
     @IBOutlet private var concentrationSwitch: UISwitch!
     @IBOutlet private var ritualSwitch: UISwitch!
     @IBOutlet private var booksLabel: TextFilter!
+    @IBOutlet private var successButton: UIButton!
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
@@ -25,6 +26,7 @@ class FilterVC: UIViewController {
     required convenience init(_ filter: Filter?) {
         self.init()
         presenter = FilterPresenter(self, service: SpellService.shared(), filter: filter ?? Filter(levels: [], professions: [], isConcentration: false, isRitual: false, books: []))
+        
     }
     
     override func viewDidLoad() {
@@ -32,25 +34,34 @@ class FilterVC: UIViewController {
         if presenter == nil {
             presenter = FilterPresenter(self, service: SpellService.shared(), filter: Filter(levels: [], professions: [], isConcentration: false, isRitual: false, books: []))
         }
+        
         professionTags.protocolDataSource = self
+        levelViews.forEach { $0.delegate = self }
+        updateUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(view.bounds)
         prepareProfessionTags()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         prepareProfessionTags()
-        print(view.bounds)
     }
     
     // MARK: - Methods
     @IBAction func resetFilters(_ sender: Any) {
         presenter.resetFilter()
         
+    }
+    
+    @IBAction func touchConcentration(_ sender: Any) {
+        presenter.changeValueConcentration()
+    }
+    
+    @IBAction func touchRitual(_ sender: Any) {
+        presenter.changeValueRitual()
     }
     
     @IBAction func touchSelectedBooks(_ sender: Any) {
@@ -65,6 +76,14 @@ class FilterVC: UIViewController {
 // MARK: - Input
 extension FilterVC: FilterInput {
     func updateUI() {
+        if presenter.resultCount > 0 {
+            successButton.isEnabled = true
+            successButton.backgroundColor = UIColor(named: .plusBackground)
+            successButton.setTitle("Показать \(presenter.resultCount) \(presenter.resultCount.declension(["результат", "рузультата", "результатов"]))", for: .normal)
+        } else {
+            successButton.isEnabled = false
+            successButton.backgroundColor = UIColor(named: .plusBackgroundDisabled)
+        }
         let filter = presenter.filter
         levelViews.forEach { filterLevelView in
             filterLevelView.isSelected = filter.levels.first(where: { level -> Bool in
@@ -77,17 +96,31 @@ extension FilterVC: FilterInput {
             professionTags.selectItem(at: IndexPath(row: row, section: 0), animated: false, scrollPosition: .centeredHorizontally)
         }
         concentrationSwitch.setOn(filter.isConcentration, animated: true)
-        ritualSwitch.setOn(filter.isConcentration, animated: true)
+        ritualSwitch.setOn(filter.isRitual, animated: true)
     }
 }
 
 // MARK: - IOTagsDataSource
 extension FilterVC: IOTagsDataSource {
-    func components(_ tags: IOTags) -> [CustomStringConvertible] {
-        if tags == professionTags {
-            return Profession.allCases.map { $0.fullName(Language.systemLanguage) }
+    func didSelectedItem(_ index: IndexPath) {
+        guard let selectedIndex = professionTags.indexPathsForSelectedItems else {
+            presenter.changeSelectedProfessions([])
+            return
         }
-        return []
+        let professions = selectedIndex
+            .map { professionTags.cellForItem(at: $0) as? IOTagCell }
+            .compactMap { $0 }
+            .map { cell in Profession.allCases.first(where: { $0.fullName(Language.systemLanguage) == cell.title }) }
+            .compactMap { $0 }
+        presenter.changeSelectedProfessions(professions)
+    }
+    
+    func didDeselectedItem(_ index: IndexPath) {
+        presenter.changeSelectedProfessions(professionTags.indexPathsForSelectedItems?.map({ presenter.professions[$0.row] }) ?? [] )
+    }
+    
+    func components(_ tags: IOTags) -> [CustomStringConvertible] {
+        return presenter.professions.map { $0.fullName(Language.systemLanguage) }
     }
 }
 
@@ -98,5 +131,11 @@ extension FilterVC {
         professionTags.prepareSpacingBeetwenCells(view.bounds.width - 32)
         professionTags.reloadData()
         professionHeightConstraint.constant = professionTags.collectionViewLayout.collectionViewContentSize.height
+    }
+}
+
+extension FilterVC: FilterLevelViewDelegate {
+    func tap() {
+        presenter.changeSelectedLevels(levelViews.filter { $0.isSelected }.map { Int($0.title)! })
     }
 }

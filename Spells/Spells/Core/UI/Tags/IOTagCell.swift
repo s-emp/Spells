@@ -18,6 +18,7 @@ class IOTagCell: UICollectionViewCell {
     }
     override var isSelected: Bool {
         willSet {
+            guard title != "" else { return }
             if newValue {
                 mainView.layer.shadowOpacity = 0.0
                 mainView.backgroundColor = UIColor(named: .plusBackground)

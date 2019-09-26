@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol FilterLevelViewDelegate: AnyObject {
+    func tap()
+}
+
 class FilterLevelView: UIView {
     
     // MARK: - Properties
+    weak var delegate: FilterLevelViewDelegate?
     private var titleLabel: Text!
     private var shadowLayer: CAShapeLayer!
     private var tapEngine = UISelectionFeedbackGenerator()
@@ -71,6 +76,7 @@ class FilterLevelView: UIView {
     
     @objc func checkAction(sender : UITapGestureRecognizer) {
         isSelected.toggle()
+        delegate?.tap()
         tapEngine.prepare()
         tapEngine.selectionChanged()
     }
