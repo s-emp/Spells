@@ -21,6 +21,7 @@ class SpellListVC: UIViewController {
     @IBOutlet private var headerLabel: Header1!
     @IBOutlet private var filterButton: UIButton!
     @IBOutlet private var searchTextField: UITextField!
+    @IBOutlet private var cancelButton: UIButton!
     @IBOutlet private var spellsTableView: UITableView!
     
     @IBOutlet private var headerLabelSafeAreaTopConstraint: NSLayoutConstraint!
@@ -84,6 +85,7 @@ class SpellListVC: UIViewController {
         UIView.animate(withDuration: duration) {
             self.headerLabel.alpha = 0
             self.filterButton.alpha = 0
+            self.cancelButton.alpha = 1
             self.textFieldRightConstraint.isActive = false
             self.cancelButtonRightConstraint.isActive = true
             self.headerLabelSafeAreaTopConstraint.isActive = false
@@ -99,6 +101,7 @@ class SpellListVC: UIViewController {
         UIView.animate(withDuration: duration) {
             self.headerLabel.alpha = 1
             self.filterButton.alpha = 1
+            self.cancelButton.alpha = 0
             self.cancelButtonRightConstraint.isActive = false
             self.textFieldRightConstraint.isActive = true
             self.headerLabelTopConstraint.isActive = false

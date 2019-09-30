@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpellListVC" customModule="Spells" customModuleProvider="target">
             <connections>
                 <outlet property="animationContainerView" destination="wXA-dJ-fRq" id="g7E-fv-jxe"/>
+                <outlet property="cancelButton" destination="ia6-5n-4UI" id="oza-vo-nEY"/>
                 <outlet property="cancelButtonRightConstraint" destination="mhM-Ug-n7h" id="PR2-kk-NYe"/>
                 <outlet property="containerViewForError" destination="DOV-e0-49Y" id="AoX-fx-USS"/>
                 <outlet property="filterButton" destination="0qc-Fg-9nv" id="hc5-DI-CFA"/>
