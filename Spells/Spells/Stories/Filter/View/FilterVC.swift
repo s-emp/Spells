@@ -50,7 +50,7 @@ class FilterVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         prepareProfessionTags()
-        updateUI()
+//        updateUI()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -96,11 +96,6 @@ extension FilterVC: FilterInput {
         levelViews.forEach { filterLevelView in
             filterLevelView.isSelected = filter.levels.first(where: { String($0) == filterLevelView.title }) != nil
         }
-        professionTags.indexPathsForSelectedItems?.forEach { professionTags.deselectItem(at: $0, animated: false) }
-        for prof in filter.professions {
-            guard let row = professionTags.correctDataSource.enumerated().first(where: { $0.element == prof.fullName(Language.systemLanguage) })?.offset else { continue }
-            professionTags.selectItem(at: IndexPath(row: row, section: 0), animated: false, scrollPosition: .centeredHorizontally)
-        }
         concentrationSwitch.setOn(filter.isConcentration, animated: true)
         ritualSwitch.setOn(filter.isRitual, animated: true)
     }
@@ -137,6 +132,10 @@ extension FilterVC {
         professionTags.prepareSpacingBeetwenCells(view.bounds.width - 32)
         professionTags.reloadData()
         professionHeightConstraint.constant = professionTags.collectionViewLayout.collectionViewContentSize.height
+        for prof in presenter.filter.professions {
+            guard let row = professionTags.correctDataSource.enumerated().first(where: { $0.element == prof.fullName(Language.systemLanguage) })?.offset else { continue }
+            professionTags.selectItem(at: IndexPath(row: row, section: 0), animated: false, scrollPosition: .centeredHorizontally)
+        }
     }
 }
 
