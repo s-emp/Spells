@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SPStorkController
 
 class FilterVC: UIViewController {
 
@@ -20,6 +21,10 @@ class FilterVC: UIViewController {
     @IBOutlet private var ritualSwitch: UISwitch!
     @IBOutlet private var booksLabel: TextFilter!
     @IBOutlet private var successButton: UIButton!
+    var filter: Filter {
+        get { return presenter.filter }
+        set { presenter.filter = newValue }
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
@@ -73,7 +78,14 @@ class FilterVC: UIViewController {
     }
     
     @IBAction func touchSelectedBooks(_ sender: Any) {
-        updateUI()
+        let vc = FilterBookVC(filterInput: self, filter: presenter.filter)
+        let transitionDelegate = SPStorkTransitioningDelegate()
+        transitionDelegate.hapticMoments = []
+        transitionDelegate.showCloseButton = false
+        vc.transitioningDelegate = transitionDelegate
+        vc.modalPresentationStyle = .custom
+        vc.modalPresentationCapturesStatusBarAppearance = true
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func touchCloseFilter(_ sender: Any) {
@@ -83,6 +95,12 @@ class FilterVC: UIViewController {
 
 // MARK: - Input
 extension FilterVC: FilterInput {
+    
+    
+    func changeBooks(_ selected: [Book]) {
+        presenter.changeBooks(selected)
+    }
+    
     func updateUI() {
         if presenter.resultCount > 0 {
             successButton.isEnabled = true
@@ -96,6 +114,7 @@ extension FilterVC: FilterInput {
         levelViews.forEach { filterLevelView in
             filterLevelView.isSelected = filter.levels.first(where: { String($0) == filterLevelView.title }) != nil
         }
+        booksLabel.text = filter.books.count == 0 ? "Все" : filter.books.map { $0.fullName(Language.systemLanguage) }.joined(separator: ", ")
         concentrationSwitch.setOn(filter.isConcentration, animated: true)
         ritualSwitch.setOn(filter.isRitual, animated: true)
     }

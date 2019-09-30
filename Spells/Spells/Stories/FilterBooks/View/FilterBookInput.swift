@@ -9,5 +9,5 @@
 import Foundation
 
 protocol FilterBookInput: AnyObject {
-    
+    init(filterInput: FilterInput, filter: Filter)
 }

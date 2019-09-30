@@ -11,5 +11,6 @@ import Foundation
 protocol FilterInput: AnyObject {
     
     func updateUI()
+    func changeBooks(_ selected: [Book])
     init(_ filter: Filter, spellList: SpellListInput)
 }
