@@ -22,6 +22,7 @@
 		99345D28233A31EA003CFD96 /* Spell.json in Resources */ = {isa = PBXBuildFile; fileRef = 99345D27233A31E9003CFD96 /* Spell.json */; };
 		99345D2B233A5595003CFD96 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99345D2A233A5595003CFD96 /* SearchTextField.swift */; };
 		9938B23F233CE89A0073B574 /* Int+Declension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938B23E233CE89A0073B574 /* Int+Declension.swift */; };
+		9946330B2342027D0057B879 /* Error.json in Resources */ = {isa = PBXBuildFile; fileRef = 9946330A2342027D0057B879 /* Error.json */; };
 		99829B4B233A040900E0D725 /* SpellRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99829B4A233A040900E0D725 /* SpellRealm.swift */; };
 		9993D17C233C95FE004C9E03 /* IOTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993D179233C95FE004C9E03 /* IOTagCell.swift */; };
 		9993D17D233C95FE004C9E03 /* IOTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9993D17A233C95FE004C9E03 /* IOTagCell.xib */; };
@@ -102,6 +103,7 @@
 		99345D27233A31E9003CFD96 /* Spell.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Spell.json; sourceTree = "<group>"; };
 		99345D2A233A5595003CFD96 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		9938B23E233CE89A0073B574 /* Int+Declension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Declension.swift"; sourceTree = "<group>"; };
+		9946330A2342027D0057B879 /* Error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Error.json; sourceTree = "<group>"; };
 		99829B4A233A040900E0D725 /* SpellRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellRealm.swift; sourceTree = "<group>"; };
 		9993D179233C95FE004C9E03 /* IOTagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTagCell.swift; sourceTree = "<group>"; };
 		9993D17A233C95FE004C9E03 /* IOTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IOTagCell.xib; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 		99EDC0262333745A007855C4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9946330A2342027D0057B879 /* Error.json */,
 				99EDC00D233372EC007855C4 /* Assets.xcassets */,
 				99EDC043233378D2007855C4 /* Colors.xcassets */,
 				99EDC0482333885D007855C4 /* TabBar.xcassets */,
@@ -652,6 +655,7 @@
 				99EDC00E233372EC007855C4 /* Assets.xcassets in Resources */,
 				9993D17D233C95FE004C9E03 /* IOTagCell.xib in Resources */,
 				9933793C233B6B6D00907090 /* SpellVC.xib in Resources */,
+				9946330B2342027D0057B879 /* Error.json in Resources */,
 				99EDC0582333A7FE007855C4 /* ViewController.xib in Resources */,
 				99345D28233A31EA003CFD96 /* Spell.json in Resources */,
 				99EDC00C233372EB007855C4 /* Main.storyboard in Resources */,

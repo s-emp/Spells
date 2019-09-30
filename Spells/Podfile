@@ -8,6 +8,7 @@ target 'Spells' do
   pod 'Kingfisher'
   pod 'SPStorkController', '1.6.5'
   pod 'M13Checkbox'
+  pod 'lottie-ios'
   target 'SpellsTests' do
     inherit! :search_paths
     
