@@ -53,6 +53,8 @@ class SpellVC: UIViewController {
     @IBOutlet var booksNameLabel: Text2!
     @IBOutlet var booksLabel: Text2!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
+    
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()

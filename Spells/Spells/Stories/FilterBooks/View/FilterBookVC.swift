@@ -10,6 +10,7 @@ import UIKit
 
 class FilterBookVC: UIViewController {
 
+    // MARK: - Properties
     private var presenter: FilterBookOutput!
     private weak var filterInput: FilterInput!
     
@@ -18,6 +19,8 @@ class FilterBookVC: UIViewController {
     @IBOutlet private var templeOfElementalEvilSwitch: UISwitch!
     @IBOutlet private var sproutingChaosSwitch: UISwitch!
     @IBOutlet private var homebrewSwitch: UISwitch!
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
     // MARK: - Life cycle
     required convenience init(filterInput: FilterInput, filter: Filter) {

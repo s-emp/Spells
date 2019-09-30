@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpellbookListVC" customModule="Spells" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGA-nT-MOZ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="197"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Книги заклинаний" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ja-3V-AfB" customClass="Header1" customModule="Spells" customModuleProvider="target">
+                            <rect key="frame" x="16" y="64" width="382" height="41"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                            <color key="textColor" name="background"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Поиск" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wm6-cS-gxO" customClass="SearchTextField" customModule="Spells" customModuleProvider="target">
+                            <rect key="frame" x="16" y="121" width="382" height="36"/>
+                            <color key="backgroundColor" name="searchTextField"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="RM4-p8-NaI"/>
+                            </constraints>
+                            <color key="textColor" name="background"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9RF-yQ-gba">
+                            <rect key="frame" x="414" y="124" width="56" height="30"/>
+                            <state key="normal" title="Отмена">
+                                <color key="titleColor" name="background"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="plusBackground"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="9RF-yQ-gba" secondAttribute="trailing" constant="16" id="6bV-gz-XmR"/>
+                        <constraint firstItem="9RF-yQ-gba" firstAttribute="leading" secondItem="wm6-cS-gxO" secondAttribute="trailing" constant="16" id="8Fz-Kb-pDZ"/>
+                        <constraint firstItem="wm6-cS-gxO" firstAttribute="top" secondItem="2Ja-3V-AfB" secondAttribute="bottom" constant="16" id="Jct-X6-t7X"/>
+                        <constraint firstItem="2Ja-3V-AfB" firstAttribute="leading" secondItem="gGA-nT-MOZ" secondAttribute="leading" constant="16" id="LfA-zz-nU4"/>
+                        <constraint firstItem="wm6-cS-gxO" firstAttribute="leading" secondItem="gGA-nT-MOZ" secondAttribute="leading" constant="16" id="N2O-8N-85b"/>
+                        <constraint firstAttribute="bottom" secondItem="wm6-cS-gxO" secondAttribute="bottom" constant="40" id="czH-aB-bWv"/>
+                        <constraint firstAttribute="trailing" secondItem="wm6-cS-gxO" secondAttribute="trailing" constant="16" id="giC-Z4-gp8"/>
+                        <constraint firstAttribute="trailing" secondItem="2Ja-3V-AfB" secondAttribute="trailing" constant="16" id="hNt-LA-tUt"/>
+                        <constraint firstItem="9RF-yQ-gba" firstAttribute="centerY" secondItem="wm6-cS-gxO" secondAttribute="centerY" id="kTX-tX-FaZ"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="6bV-gz-XmR"/>
+                        </mask>
+                    </variation>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fXi-Uu-nOY" customClass="TPKeyboardAvoidingTableView">
+                    <rect key="frame" x="0.0" y="177" width="414" height="719"/>
+                    <color key="backgroundColor" name="background"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="gGA-nT-MOZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5iA-oh-1YM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gGA-nT-MOZ" secondAttribute="trailing" id="FSa-Mi-XjN"/>
+                <constraint firstItem="fXi-Uu-nOY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HAK-CQ-xKa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fXi-Uu-nOY" secondAttribute="trailing" id="Hgj-Ta-zRA"/>
+                <constraint firstItem="gGA-nT-MOZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QhW-Wk-mcU"/>
+                <constraint firstItem="fXi-Uu-nOY" firstAttribute="top" secondItem="gGA-nT-MOZ" secondAttribute="bottom" constant="-20" id="frU-eg-m9K"/>
+                <constraint firstItem="2Ja-3V-AfB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="lsT-na-7CR"/>
+                <constraint firstAttribute="bottom" secondItem="fXi-Uu-nOY" secondAttribute="bottom" id="wn3-bc-Pz9"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="plusBackground">
+            <color red="0.4392156862745098" green="0.68627450980392157" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="searchTextField">
+            <color red="0.7686274509803922" green="0.7686274509803922" blue="0.7686274509803922" alpha="0.23999999463558197" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

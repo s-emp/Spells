@@ -37,6 +37,8 @@ class SpellListVC: UIViewController {
     @IBOutlet private var containerViewForError: UIView!
     @IBOutlet private var animationContainerView: UIView!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
+    
     
     // MARK: - LifeCycle
     
