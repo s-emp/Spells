@@ -20,6 +20,7 @@ extension UIColor {
         case icon
         case level
         case plusBackground
+        case plusBackgroundDisabled
         case tabMenuDone
         case text
         case popupBackground

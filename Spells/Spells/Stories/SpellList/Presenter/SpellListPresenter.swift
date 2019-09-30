@@ -12,6 +12,7 @@ class SpellListPresenter: SpellListOutput {
     // MARK: - Properties
     weak var view: SpellListInput!
     private let service: SpellService
+    var filter: Filter
     
     var spells: [Spell]
     
@@ -20,23 +21,26 @@ class SpellListPresenter: SpellListOutput {
         
     }
     
-    func search(_ message: String) {
-        spells = Spell.transform(Array(service.realm.objects(SpellRealm.self).filter("nameQuery LIKE[c] '*\(message.lowercased())*'")))
-            .filter { $0.language == .ru }
-            .sorted { (lv, rv) -> Bool in
-                if lv.level < rv.level { return true }
-                if lv.level ==  rv.level && lv.name < rv.name { return true }
-                return false
+    func search(_ message: String?) {
+        spells = filter.apply(service.getSpells())
+            .filter { spell in
+                message != nil && !message!.isEmpty ? spell.nameQuery.contains(message!.lowercased()) : true
+        }
+        .sorted { (lv, rv) -> Bool in
+            if lv.level < rv.level { return true }
+            if lv.level ==  rv.level && lv.name < rv.name { return true }
+            return false
         }
         view.reloadTableView()
     }
     
     // MARK: - Init
-    required init(_ view: SpellListInput, service: SpellService) {
+    required init(_ view: SpellListInput, service: SpellService, filter: Filter) {
         self.view = view
         self.service = service
+        self.filter = filter
         self.spells = service.getSpells()
-            .filter { $0.language == .ru }
+            .filter { $0.language == Language.systemLanguage }
             .sorted { (lv, rv) -> Bool in
                 if lv.level < rv.level { return true }
                 if lv.level ==  rv.level && lv.name < rv.name { return true }

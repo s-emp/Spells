@@ -77,18 +77,18 @@ class SpellVC: UIViewController {
         nameLabel.text = spell.name
         levelLabel.text = spell.level == 0 ? "Заговор" : "\(spell.level) уровня"
         schoolView.backgroundColor = UIColor(named: UIColor.Palette(rawValue: spell.school.rawValue)!)
-        schoolLabel.text = spell.school.fullName(.ru)
+        schoolLabel.text = spell.school.fullName(Language.systemLanguage)
         radiusLabel.text = spell.range
         durationLabel.text = spell.duration
         castLabel.text = spell.action
-        componentsLabel.text = spell.components.map { $0.fullName(.ru) }.joined(separator: " ")
+        componentsLabel.text = spell.components.map { $0.fullName(Language.systemLanguage) }.joined(separator: " ")
         if let materials = spell.materials {
             materialView.isHidden = true
             materialLabel.text = materials
         }
         infoLabel.text = spell.info
-        professionsLabel.text = spell.professions.map { $0.fullName(.ru) }.joined(separator: ", ")
-        booksLabel.text = spell.books.map { $0.fullName(.ru) }.joined(separator: ", ")
+        professionsLabel.text = spell.professions.map { $0.fullName(Language.systemLanguage) }.joined(separator: ", ")
+        booksLabel.text = spell.books.map { $0.fullName(Language.systemLanguage) }.joined(separator: ", ")
         
         do {
             let regex = try NSRegularExpression(pattern: "[0-9]{1,}[кd][0-9]{1,}")

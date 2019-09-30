@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Profession: String, Codable {
+enum Profession: String, Codable, CaseIterable {
     case bard
     case cleric
     case druid

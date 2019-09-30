@@ -13,3 +13,6 @@ enum Language: String, Codable {
     case en
 }
 
+extension Language {
+    static var systemLanguage: Language = .ru
+}

@@ -37,7 +37,7 @@ class SpellListVC: UIViewController {
         super.viewDidLoad()
         prepareNotifications()
         filterButton.tintColor = UIColor(named: .background)
-        presenter = SpellListPresenter(self, service: SpellService.shared())
+        presenter = SpellListPresenter(self, service: SpellService.shared(), filter: Filter(levels: [], professions: [], isConcentration: false, isRitual: false, books: []))
         prepareTableView()
     }
     
@@ -58,7 +58,14 @@ class SpellListVC: UIViewController {
     }
     
     @IBAction func touchFilter(_ sender: Any) {
-        
+        let vc = FilterVC(presenter.filter, spellList: self)
+        let transitionDelegate = SPStorkTransitioningDelegate()
+        transitionDelegate.hapticMoments = []
+        transitionDelegate.showCloseButton = false
+        vc.transitioningDelegate = transitionDelegate
+        vc.modalPresentationStyle = .custom
+        vc.modalPresentationCapturesStatusBarAppearance = true
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func searchEditingChanged(_ sender: Any) {
@@ -141,6 +148,12 @@ extension SpellListVC {
 
 // MARK: - Input
 extension SpellListVC: SpellListInput {
+    
+    func applyFilter(_ filter: Filter) {
+        presenter.filter = filter
+        presenter.search(searchTextField.text)
+    }
+    
     func reloadTableView() {
         spellsTableView.reloadData()
     }
@@ -149,7 +162,6 @@ extension SpellListVC: SpellListInput {
 // MARK: - TableViewDataSource
 extension SpellListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Count spells: \(presenter.spells.count)")
         return presenter.spells.count
     }
     

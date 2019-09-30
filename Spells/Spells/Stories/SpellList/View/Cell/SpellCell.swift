@@ -15,7 +15,7 @@ class SpellCell: UITableViewCell {
             nameLabel.text = spell.name
             levelLabel.text = spell.level == 0 ? "Заговор" : "\(spell.level) уровня"
             schoolView.backgroundColor = UIColor(named: UIColor.Palette(rawValue: spell.school.rawValue)!)
-            schoolLabel.text = spell.school.fullName(.ru)
+            schoolLabel.text = spell.school.fullName(Language.systemLanguage)
         }
     }
     
