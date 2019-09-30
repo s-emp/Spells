@@ -16,16 +16,10 @@ class IOTagCell: UICollectionViewCell {
             mainView.isHidden = title.isEmpty
         }
     }
+    
     override var isSelected: Bool {
-        willSet {
-            guard title != "" else { return }
-            if newValue {
-                mainView.layer.shadowOpacity = 0.0
-                mainView.backgroundColor = UIColor(named: .plusBackground)
-            } else {
-                mainView.layer.shadowOpacity = 0.1
-                mainView.backgroundColor = UIColor(named: .background)
-            }
+        didSet {
+            changeBackground()
         }
     }
     @IBOutlet private var titleLabel: UILabel!
@@ -34,10 +28,23 @@ class IOTagCell: UICollectionViewCell {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         clipsToBounds = false
-        mainView.backgroundColor = UIColor(named: .background)
+        prepareShadow()
+        changeBackground()
+    }
+    
+    fileprivate func changeBackground() {
+        if isSelected {
+            mainView.layer.shadowOpacity = 0.0
+            mainView.backgroundColor = UIColor(named: .plusBackground)
+        } else {
+            mainView.layer.shadowOpacity = 0.1
+            mainView.backgroundColor = UIColor(named: .background)
+        }
+    }
+    
+    fileprivate func prepareShadow() {
         mainView.layer.shadowColor = UIColor.black.cgColor
         mainView.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
-        mainView.layer.shadowOpacity = 0.1
         mainView.layer.shadowRadius = 8
     }
 }

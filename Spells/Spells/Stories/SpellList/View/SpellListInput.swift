@@ -7,6 +7,6 @@
 //
 
 protocol SpellListInput: AnyObject {
-    
+    func applyFilter(_ filter: Filter)
     func reloadTableView()
 }

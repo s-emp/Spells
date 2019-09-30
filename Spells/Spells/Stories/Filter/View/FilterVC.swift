@@ -11,6 +11,7 @@ import UIKit
 class FilterVC: UIViewController {
 
     // MARK: - Properties
+    var spellList: SpellListInput!
     private var presenter: FilterOutput!
     @IBOutlet private var levelViews: [FilterLevelView]!
     @IBOutlet private var professionTags: IOTags!
@@ -23,9 +24,10 @@ class FilterVC: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
     // MARK: - Lifecycle
-    required convenience init(_ filter: Filter?) {
+    required convenience init(_ filter: Filter, spellList: SpellListInput) {
         self.init()
-        presenter = FilterPresenter(self, service: SpellService.shared(), filter: filter ?? Filter(levels: [], professions: [], isConcentration: false, isRitual: false, books: []))
+        self.spellList = spellList
+        presenter = FilterPresenter(self, service: SpellService.shared(), filter: filter)
         
     }
     
@@ -37,17 +39,23 @@ class FilterVC: UIViewController {
         
         professionTags.protocolDataSource = self
         levelViews.forEach { $0.delegate = self }
-        updateUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         prepareProfessionTags()
+        updateUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         prepareProfessionTags()
+        updateUI()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        spellList.applyFilter(presenter.filter)
     }
     
     // MARK: - Methods
@@ -65,11 +73,11 @@ class FilterVC: UIViewController {
     }
     
     @IBAction func touchSelectedBooks(_ sender: Any) {
-        
+        updateUI()
     }
     
     @IBAction func touchCloseFilter(_ sender: Any) {
-        
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -86,9 +94,7 @@ extension FilterVC: FilterInput {
         }
         let filter = presenter.filter
         levelViews.forEach { filterLevelView in
-            filterLevelView.isSelected = filter.levels.first(where: { level -> Bool in
-                return String(level) == filterLevelView.title
-                }) != nil
+            filterLevelView.isSelected = filter.levels.first(where: { String($0) == filterLevelView.title }) != nil
         }
         professionTags.indexPathsForSelectedItems?.forEach { professionTags.deselectItem(at: $0, animated: false) }
         for prof in filter.professions {

@@ -11,5 +11,5 @@ import Foundation
 protocol FilterInput: AnyObject {
     
     func updateUI()
-    init(_ filter: Filter?)
+    init(_ filter: Filter, spellList: SpellListInput)
 }

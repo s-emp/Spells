@@ -19,20 +19,13 @@ class FilterLevelView: UIView {
     private var titleLabel: Text!
     private var shadowLayer: CAShapeLayer!
     private var tapEngine = UISelectionFeedbackGenerator()
+    
     @IBInspectable var isSelected: Bool = false {
         didSet {
-            guard let shadowLayer = shadowLayer else { return }
-            if isSelected {
-                shadowLayer.removeFromSuperlayer()
-                clipsToBounds = true
-                backgroundColor = UIColor(named: .plusBackground)
-            } else {
-                layer.insertSublayer(shadowLayer, at: 0)
-                clipsToBounds = false
-                backgroundColor = UIColor(named: .background)
-            }
+            changedSelected()
         }
     }
+    
     @IBInspectable var title: String = "" {
         didSet { titleLabel?.text = title }
     }
@@ -49,20 +42,34 @@ class FilterLevelView: UIView {
     }
     
     // MARK: - Methods
+    fileprivate func prepareShadowLayer() {
+        shadowLayer = CAShapeLayer()
+        shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: 15).cgPath
+        shadowLayer.fillColor = UIColor.white.cgColor
+        shadowLayer.shadowColor = UIColor.black.cgColor
+        shadowLayer.shadowPath = shadowLayer.path
+        shadowLayer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        shadowLayer.shadowOpacity = 0.1
+        shadowLayer.shadowRadius = 8
+    }
+    
+    fileprivate func changedSelected() {
+        if isSelected {
+            shadowLayer?.removeFromSuperlayer()
+            clipsToBounds = true
+            backgroundColor = UIColor(named: .plusBackground)
+        } else {
+            if shadowLayer != nil { layer.insertSublayer(shadowLayer, at: 0) }
+            clipsToBounds = false
+            backgroundColor = UIColor(named: .background)
+        }
+    }
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         titleLabel.frame = bounds
-        if shadowLayer == nil {
-            shadowLayer = CAShapeLayer()
-            shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: 15).cgPath
-            shadowLayer.fillColor = UIColor.white.cgColor
-            shadowLayer.shadowColor = UIColor.black.cgColor
-            shadowLayer.shadowPath = shadowLayer.path
-            shadowLayer.shadowOffset = CGSize(width: 1.0, height: 1.0)
-            shadowLayer.shadowOpacity = 0.1
-            shadowLayer.shadowRadius = 8
-            layer.insertSublayer(shadowLayer, at: 0)
-        }
+        if shadowLayer == nil { prepareShadowLayer() }
+        changedSelected()
     }
     
     func prepareUI() {
