@@ -25,13 +25,16 @@ class SpellService: Exported, Imported {
     private init() {
         realm = try! Realm(configuration: Realm.Configuration.defaultConfiguration)
         if realm.objects(SpellRealm.self).count == 0 {
-            resetDataBase()
+            resetSpellDataBase()
+        }
+        if realm.objects(SpellbookRealm.self).count == 0 {
+            resetSpellbookDataBase()
         }
         print("DataBase url: \(realm.configuration.fileURL?.absoluteString ?? "???")")
     }
     
     // MARK: - Methods
-    func resetDataBase() {
+    func resetSpellDataBase() {
         guard let url = Bundle.main.url(forResource: "Spell", withExtension: "json") else { fatalError("Отсутствует файл Spell.json в Bundle") }
         do {
             let allSpells: [Spell] = try SpellService.import(url)
@@ -45,8 +48,26 @@ class SpellService: Exported, Imported {
         }
     }
     
-    func getSpells() -> [Spell] {
+    func resetSpellbookDataBase() {
+        let favorites = SpellbookRealm()
+        favorites.name = "Избранное"
+        do {
+            try realm.write {
+                realm.delete(realm.objects(SpellbookRealm.self))
+                realm.add(favorites)
+            }
+        } catch let error {
+            fatalError(error.localizedDescription)
+        }
+    }
+    
+    func spells() -> [Spell] {
         let spellsRealm = realm.objects(SpellRealm.self)
         return Array(spellsRealm.map { Spell.transform($0) }).filter { $0.language == Language.systemLanguage }
+    }
+    
+    func spellbooks() -> [Spellbook] {
+        let spellbooksRealm = realm.objects(SpellbookRealm.self)
+        return Array(spellbooksRealm.map { Spellbook.transform($0) })
     }
 }

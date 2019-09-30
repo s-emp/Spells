@@ -64,7 +64,7 @@ extension CustomTBC {
         firstItem.imageInsets = UIEdgeInsets(top: imageEdgeTop, left: -10, bottom: -(imageEdgeTop), right: 10)
         firstVC.tabBarItem = firstItem
         
-        let twoVC = ViewController()
+        let twoVC = SpellbookListVC()
         let twoItem = UITabBarItem(title: nil, image: UIImage(named: spellBookImage), selectedImage: UIImage(named: selectedSpellBookImage))
         twoItem.imageInsets = UIEdgeInsets(top: imageEdgeTop, left: 10, bottom: -(imageEdgeTop), right: -10)
         twoVC.tabBarItem = twoItem

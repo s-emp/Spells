@@ -11,6 +11,8 @@
 		8ECD5FC5CEB918AE440583B8 /* Pods_Spells.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9226616B132CC9327305E6 /* Pods_Spells.framework */; };
 		991358D723423B4300F04668 /* SpellbookListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991358D523423B4300F04668 /* SpellbookListVC.swift */; };
 		991358D823423B4300F04668 /* SpellbookListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991358D623423B4300F04668 /* SpellbookListVC.xib */; };
+		991358DB234251BC00F04668 /* SpellbookRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991358DA234251BC00F04668 /* SpellbookRealm.swift */; };
+		991358DD2342522900F04668 /* Spellbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991358DC2342522900F04668 /* Spellbook.swift */; };
 		9933793B233B6B6D00907090 /* SpellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99337939233B6B6D00907090 /* SpellVC.swift */; };
 		9933793C233B6B6D00907090 /* SpellVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9933793A233B6B6D00907090 /* SpellVC.xib */; };
 		9933793E233B6B7900907090 /* SpellInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933793D233B6B7900907090 /* SpellInput.swift */; };
@@ -99,6 +101,8 @@
 		89E81C350FE7BF95F8E1BA94 /* Pods-Spells.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spells.debug.xcconfig"; path = "Target Support Files/Pods-Spells/Pods-Spells.debug.xcconfig"; sourceTree = "<group>"; };
 		991358D523423B4300F04668 /* SpellbookListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellbookListVC.swift; sourceTree = "<group>"; };
 		991358D623423B4300F04668 /* SpellbookListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpellbookListVC.xib; sourceTree = "<group>"; };
+		991358DA234251BC00F04668 /* SpellbookRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellbookRealm.swift; sourceTree = "<group>"; };
+		991358DC2342522900F04668 /* Spellbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spellbook.swift; sourceTree = "<group>"; };
 		99337939233B6B6D00907090 /* SpellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellVC.swift; sourceTree = "<group>"; };
 		9933793A233B6B6D00907090 /* SpellVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpellVC.xib; sourceTree = "<group>"; };
 		9933793D233B6B7900907090 /* SpellInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellInput.swift; sourceTree = "<group>"; };
@@ -596,6 +600,8 @@
 				B98EF37623354436008E81ED /* School.swift */,
 				B98EF3782335F00C008E81ED /* Spell.swift */,
 				99829B4A233A040900E0D725 /* SpellRealm.swift */,
+				991358DA234251BC00F04668 /* SpellbookRealm.swift */,
+				991358DC2342522900F04668 /* Spellbook.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -822,6 +828,7 @@
 				9946331123420E0C0057B879 /* FilterBookVC.swift in Sources */,
 				99345D21233A15F5003CFD96 /* SpellListPresenter.swift in Sources */,
 				99EDC005233372EB007855C4 /* AppDelegate.swift in Sources */,
+				991358DB234251BC00F04668 /* SpellbookRealm.swift in Sources */,
 				99EDC03023337583007855C4 /* Header1.swift in Sources */,
 				9946331623420E240057B879 /* FilterBookOutput.swift in Sources */,
 				9938B23F233CE89A0073B574 /* Int+Declension.swift in Sources */,
@@ -861,6 +868,7 @@
 				9993D184233CAC60004C9E03 /* Filter.swift in Sources */,
 				99337946233B95C600907090 /* FilterVC.swift in Sources */,
 				99345D26233A27A0003CFD96 /* UIView+Radius.swift in Sources */,
+				991358DD2342522900F04668 /* Spellbook.swift in Sources */,
 				99EDC03E23337673007855C4 /* TextBoldFilter.swift in Sources */,
 				B914423F2335209A00C68557 /* SpellListVC.swift in Sources */,
 				B9144246233521C300C68557 /* SpellCell.swift in Sources */,

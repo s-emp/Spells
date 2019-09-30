@@ -11,6 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpellbookListVC" customModule="Spells" customModuleProvider="target">
             <connections>
+                <outlet property="cancelButton" destination="9RF-yQ-gba" id="Bt6-fv-C4z"/>
+                <outlet property="cancelButtonRightConstraint" destination="6bV-gz-XmR" id="jI4-3o-iry"/>
+                <outlet property="headerLabel" destination="2Ja-3V-AfB" id="dF5-tf-1qq"/>
+                <outlet property="headerLabelSafeAreaTopConstraint" destination="lsT-na-7CR" id="lC3-qd-aXQ"/>
+                <outlet property="headerLabelTopConstraint" destination="WrM-xz-1tD" id="8Ag-U8-GZf"/>
+                <outlet property="headerView" destination="gGA-nT-MOZ" id="ZkV-4G-EwZ"/>
+                <outlet property="searchTextField" destination="wm6-cS-gxO" id="9Sr-Hq-tSd"/>
+                <outlet property="spellbookTableView" destination="fXi-Uu-nOY" id="dSA-eW-5UF"/>
+                <outlet property="textFieldRightConstraint" destination="giC-Z4-gp8" id="2pj-j7-OKw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,12 +46,18 @@
                             <color key="textColor" name="background"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="LHh-YM-2my"/>
+                            </connections>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9RF-yQ-gba">
                             <rect key="frame" x="414" y="124" width="56" height="30"/>
                             <state key="normal" title="Отмена">
                                 <color key="titleColor" name="background"/>
                             </state>
+                            <connections>
+                                <action selector="touchCancel:" destination="-1" eventType="touchUpInside" id="3NT-H6-RuI"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" name="plusBackground"/>
@@ -80,11 +95,17 @@
                 <constraint firstItem="fXi-Uu-nOY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HAK-CQ-xKa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fXi-Uu-nOY" secondAttribute="trailing" id="Hgj-Ta-zRA"/>
                 <constraint firstItem="gGA-nT-MOZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QhW-Wk-mcU"/>
+                <constraint firstItem="2Ja-3V-AfB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-41" id="WrM-xz-1tD"/>
                 <constraint firstItem="fXi-Uu-nOY" firstAttribute="top" secondItem="gGA-nT-MOZ" secondAttribute="bottom" constant="-20" id="frU-eg-m9K"/>
                 <constraint firstItem="2Ja-3V-AfB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="lsT-na-7CR"/>
                 <constraint firstAttribute="bottom" secondItem="fXi-Uu-nOY" secondAttribute="bottom" id="wn3-bc-Pz9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="WrM-xz-1tD"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
         </view>
     </objects>

@@ -22,7 +22,7 @@ class SpellListPresenter: SpellListOutput {
     }
     
     func search(_ message: String?) {
-        spells = filter.apply(service.getSpells())
+        spells = filter.apply(service.spells())
             .filter { spell in
                 message != nil && !message!.isEmpty ? spell.nameQuery.contains(message!.lowercased()) : true
         }
@@ -39,7 +39,7 @@ class SpellListPresenter: SpellListOutput {
         self.view = view
         self.service = service
         self.filter = filter
-        self.spells = service.getSpells()
+        self.spells = service.spells()
             .filter { $0.language == Language.systemLanguage }
             .sorted { (lv, rv) -> Bool in
                 if lv.level < rv.level { return true }
