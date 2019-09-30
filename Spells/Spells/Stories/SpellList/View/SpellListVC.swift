@@ -8,6 +8,7 @@
 
 import UIKit
 import SPStorkController
+import Lottie
 
 fileprivate let identifier = "cell"
 
@@ -31,6 +32,11 @@ class SpellListVC: UIViewController {
     @IBOutlet private var textFieldRightConstraint: NSLayoutConstraint!
     @IBOutlet private var cancelButtonRightConstraint: NSLayoutConstraint!
     
+    
+    @IBOutlet private var containerViewForError: UIView!
+    @IBOutlet private var animationContainerView: UIView!
+    
+    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -44,6 +50,7 @@ class SpellListVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         prepareHeaderView()
+        prepareAnimatinView()
     }
     
     deinit {
@@ -144,6 +151,14 @@ extension SpellListVC {
         spellsTableView.register(UINib(nibName: "SpellCell", bundle: nil), forCellReuseIdentifier: identifier)
         spellsTableView.tableFooterView = UIView()
     }
+    
+    private func prepareAnimatinView() {
+        let animationView = AnimationView(name: "Error")
+        animationView.frame = animationContainerView.frame
+        animationView.loopMode = .loop
+        animationView.play()
+        animationContainerView.addSubview(animationView)
+    }
 }
 
 // MARK: - Input
@@ -162,6 +177,7 @@ extension SpellListVC: SpellListInput {
 // MARK: - TableViewDataSource
 extension SpellListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        containerViewForError.isHidden = presenter.spells.count != 0
         return presenter.spells.count
     }
     

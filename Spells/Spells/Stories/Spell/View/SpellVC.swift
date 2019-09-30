@@ -91,11 +91,30 @@ class SpellVC: UIViewController {
         booksLabel.text = spell.books.map { $0.fullName(Language.systemLanguage) }.joined(separator: ", ")
         
         do {
-            let regex = try NSRegularExpression(pattern: "[0-9]{1,}[кd][0-9]{1,}")
-            let result = regex.matches(in: spell.info, range: NSRange(spell.info.startIndex..., in: spell.info))
+            let diceRegex = try NSRegularExpression(pattern: "[0-9]{1,}[кd][0-9]{1,}")
+            let boldRegex = try NSRegularExpression(pattern: "<b>.*?</b>")
+            let diceResult = diceRegex.matches(in: spell.info, range: NSRange(spell.info.startIndex..., in: spell.info))
+            let boldResult = boldRegex.matches(in: spell.info, range: NSRange(spell.info.startIndex..., in: spell.info))
             let attributeString = NSMutableAttributedString(string: spell.info, attributes: [.font: UIFont.systemFont(ofSize: 15), .foregroundColor: UIColor(named: .text)!])
-            result.forEach {
+            diceResult.forEach {
                 attributeString.addAttributes([.font: UIFont.boldSystemFont(ofSize: 15), .foregroundColor: UIColor(named: .diceTextColor)!], range: $0.range)
+                
+            }
+            var space = 0
+            boldResult.forEach {
+                var boldRange = $0.range
+                boldRange.location += 3 - space
+                boldRange.length -= 7
+                attributeString.addAttributes([.font: UIFont.boldSystemFont(ofSize: 15), .foregroundColor: UIColor(named: .text)!], range: boldRange)
+                var removeRange = $0.range
+                removeRange.location -= space
+                removeRange.length = 3
+                attributeString.replaceCharacters(in: removeRange, with: "")
+                removeRange = $0.range
+                removeRange.location = removeRange.location + removeRange.length - 7 - space
+                removeRange.length = 4
+                attributeString.replaceCharacters(in: removeRange, with: "")
+                space += 7
             }
             infoLabel.attributedText = attributeString
         } catch {

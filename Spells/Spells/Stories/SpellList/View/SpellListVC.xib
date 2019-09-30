@@ -11,7 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpellListVC" customModule="Spells" customModuleProvider="target">
             <connections>
+                <outlet property="animationContainerView" destination="wXA-dJ-fRq" id="g7E-fv-jxe"/>
                 <outlet property="cancelButtonRightConstraint" destination="mhM-Ug-n7h" id="PR2-kk-NYe"/>
+                <outlet property="containerViewForError" destination="DOV-e0-49Y" id="AoX-fx-USS"/>
                 <outlet property="filterButton" destination="0qc-Fg-9nv" id="hc5-DI-CFA"/>
                 <outlet property="filterButtonSafeAreaTopConstraint" destination="kUR-07-c0o" id="raY-Hj-Pla"/>
                 <outlet property="filterButtonTopConstraint" destination="kuT-vx-pwd" id="TOn-nj-rA4"/>
@@ -106,13 +108,43 @@
                         <outlet property="delegate" destination="-1" id="Ufc-gv-RS3"/>
                     </connections>
                 </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DOV-e0-49Y">
+                    <rect key="frame" x="0.0" y="348" width="414" height="200"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXA-dJ-fRq">
+                            <rect key="frame" x="-10" y="0.0" width="424" height="180.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="НЕТУ ТАКИХ ЗАКЛИНАНИЙ!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXv-TQ-qcK" customClass="Header2" customModule="Spells" customModuleProvider="target">
+                            <rect key="frame" x="16" y="180.5" width="382" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" name="text"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="88N-kF-3i6"/>
+                        <constraint firstItem="wXA-dJ-fRq" firstAttribute="leading" secondItem="DOV-e0-49Y" secondAttribute="leading" constant="-10" id="8NM-KC-GDI"/>
+                        <constraint firstAttribute="bottom" secondItem="pXv-TQ-qcK" secondAttribute="bottom" id="Lwr-1w-Mql"/>
+                        <constraint firstItem="pXv-TQ-qcK" firstAttribute="leading" secondItem="DOV-e0-49Y" secondAttribute="leading" constant="16" id="bU9-ls-bWl"/>
+                        <constraint firstAttribute="trailing" secondItem="wXA-dJ-fRq" secondAttribute="trailing" id="e6G-oE-CBa"/>
+                        <constraint firstItem="wXA-dJ-fRq" firstAttribute="top" secondItem="DOV-e0-49Y" secondAttribute="top" id="p6Z-Iw-ySG"/>
+                        <constraint firstAttribute="trailing" secondItem="pXv-TQ-qcK" secondAttribute="trailing" constant="16" id="rSQ-FQ-VkC"/>
+                        <constraint firstItem="pXv-TQ-qcK" firstAttribute="top" secondItem="wXA-dJ-fRq" secondAttribute="bottom" id="vfr-ot-BgB"/>
+                        <constraint firstItem="pXv-TQ-qcK" firstAttribute="top" secondItem="wXA-dJ-fRq" secondAttribute="bottom" id="zbC-ct-uty"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b7D-hq-I00" secondAttribute="trailing" id="15b-gn-LrU"/>
+                <constraint firstItem="DOV-e0-49Y" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="C7B-gT-4sE"/>
+                <constraint firstItem="DOV-e0-49Y" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="F28-6p-jHy"/>
                 <constraint firstItem="NK9-Gl-AXh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="GFv-uE-1xc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kRs-hB-b5v" secondAttribute="trailing" id="KPk-9x-ght"/>
                 <constraint firstItem="b7D-hq-I00" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LVe-hA-JNg"/>
+                <constraint firstItem="DOV-e0-49Y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Odl-Xd-HPH"/>
                 <constraint firstItem="b7D-hq-I00" firstAttribute="top" secondItem="kRs-hB-b5v" secondAttribute="bottom" constant="-20" id="X7a-q3-K2v"/>
                 <constraint firstItem="0qc-Fg-9nv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="kUR-07-c0o"/>
                 <constraint firstItem="0qc-Fg-9nv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-41" id="kuT-vx-pwd"/>
@@ -141,6 +173,9 @@
         </namedColor>
         <namedColor name="searchTextField">
             <color red="0.7686274509803922" green="0.7686274509803922" blue="0.7686274509803922" alpha="0.23999999463558197" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text">
+            <color red="0.12941176470588237" green="0.2627450980392157" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

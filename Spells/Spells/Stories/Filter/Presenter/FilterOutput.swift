@@ -12,12 +12,14 @@ protocol FilterOutput {
     
     var resultCount: Int { get }
     var professions: [Profession] { get }
-    var filter: Filter { get }
+    var filter: Filter { get set }
+    
     func resetFilter()
     func changeSelectedProfessions(_ selected: [Profession])
     func changeSelectedLevels(_ selected: [Int])
     func changeValueConcentration()
     func changeValueRitual()
+    func changeBooks(_ selected: [Book])
     
     init(_ view: FilterInput, service: SpellService, filter: Filter)
 }

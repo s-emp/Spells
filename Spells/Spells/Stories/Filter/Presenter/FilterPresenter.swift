@@ -14,7 +14,7 @@ class FilterPresenter: FilterOutput {
     var resultCount: Int = 0
     weak var view: FilterInput!
     private let service: SpellService
-    private(set) var filter: Filter
+    var filter: Filter
     var professions: [Profession] { return Profession.allCases }
     
     // MARK: - Methods
@@ -40,6 +40,11 @@ class FilterPresenter: FilterOutput {
     
     func changeValueRitual() {
         filter.isRitual.toggle()
+        updateResultCount()
+    }
+    
+    func changeBooks(_ selected: [Book]) {
+        filter.books = selected
         updateResultCount()
     }
     
