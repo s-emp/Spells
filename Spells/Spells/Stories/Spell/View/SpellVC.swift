@@ -13,51 +13,59 @@ class SpellVC: UIViewController {
     
     // MARK: - Properties
     var spell: Spell?
-    @IBOutlet var nameLabel: HeaderBottom!
+    @IBOutlet private var nameLabel: HeaderBottom!
     
-    @IBOutlet var levelView: UIView!
-    @IBOutlet var levelLabel: TextTag!
+    @IBOutlet private var levelView: UIView!
+    @IBOutlet private var levelLabel: TextTag!
     
-    @IBOutlet var schoolView: UIView!
-    @IBOutlet var schoolLabel: TextTag!
+    @IBOutlet private var schoolView: UIView!
+    @IBOutlet private var schoolLabel: TextTag!
     
-    @IBOutlet var radiusView: UIStackView!
-    @IBOutlet var radiusNameLabel: Text2!
-    @IBOutlet var radiusLabel: Text2!
-    
-    
-    @IBOutlet var durationView: UIStackView!
-    @IBOutlet var durationNameLabel: Text2!
-    @IBOutlet var durationLabel: Text2!
+    @IBOutlet private var radiusView: UIStackView!
+    @IBOutlet private var radiusNameLabel: Text2!
+    @IBOutlet private var radiusLabel: Text2!
     
     
-    @IBOutlet var castView: UIStackView!
-    @IBOutlet var castNameLabel: Text2!
-    @IBOutlet var castLabel: Text2!
+    @IBOutlet private var durationView: UIStackView!
+    @IBOutlet private var durationNameLabel: Text2!
+    @IBOutlet private var durationLabel: Text2!
     
     
-    @IBOutlet var componentsView: UIStackView!
-    @IBOutlet var componentsNameLabel: Text2!
-    @IBOutlet var componentsLabel: Text2!
+    @IBOutlet private var castView: UIStackView!
+    @IBOutlet private var castNameLabel: Text2!
+    @IBOutlet private var castLabel: Text2!
     
     
-    @IBOutlet var materialView: UIStackView!
-    @IBOutlet var materialNameLabel: Text2!
-    @IBOutlet var materialLabel: Text2!
+    @IBOutlet private var componentsView: UIStackView!
+    @IBOutlet private var componentsNameLabel: Text2!
+    @IBOutlet private var componentsLabel: Text2!
     
-    @IBOutlet var infoLabel: UILabel!
     
-    @IBOutlet var professtionsNameLabel: Text2!
-    @IBOutlet var professionsLabel: Text2!
+    @IBOutlet private var materialView: UIStackView!
+    @IBOutlet private var materialNameLabel: Text2!
+    @IBOutlet private var materialLabel: Text2!
     
-    @IBOutlet var booksNameLabel: Text2!
-    @IBOutlet var booksLabel: Text2!
+    @IBOutlet private var infoLabel: UILabel!
+    
+    @IBOutlet private var professtionsNameLabel: Text2!
+    @IBOutlet private var professionsLabel: Text2!
+    
+    @IBOutlet private var booksNameLabel: Text2!
+    @IBOutlet private var booksLabel: Text2!
+    
+    @IBOutlet private var likeButton: UIButton!
+    @IBOutlet private var addSpellbookButton: UIButton!
+    
+    var likeButtonHidden: Bool = false
+    var addSpellbookButtonHidden: Bool = false
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        likeButton.isHidden = likeButtonHidden
+        addSpellbookButton.isHidden = addSpellbookButtonHidden
     }
     
     override func viewWillAppear(_ animated: Bool) {

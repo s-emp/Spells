@@ -50,7 +50,8 @@ class SpellService: Exported, Imported {
     
     func resetSpellbookDataBase() {
         let favorites = SpellbookRealm()
-        favorites.name = "Избранное"
+        favorites.name = "Избранные заклинания"
+        favorites.spells.append(realm.objects(SpellRealm.self).first!)
         do {
             try realm.write {
                 realm.delete(realm.objects(SpellbookRealm.self))

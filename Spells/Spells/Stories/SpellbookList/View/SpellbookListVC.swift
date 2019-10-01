@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import SPStorkController
+
+fileprivate let identifier = "SpellbookCell"
 
 class SpellbookListVC: UIViewController {
     
     // MARK: - Properties
+    private var presenter: SpellbookListOutput!
     @IBOutlet var headerView: UIView!
     @IBOutlet var headerLabel: Header1!
     @IBOutlet var searchTextField: SearchTextField!
@@ -27,6 +31,8 @@ class SpellbookListVC: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = SpellbookListPresenter(self, service: SpellService.shared())
+        prepareTableView()
         prepareHeaderView()
         prepareNotifications()
     }
@@ -87,6 +93,11 @@ class SpellbookListVC: UIViewController {
 // MARK: - Prepare
 extension SpellbookListVC {
     
+    private func prepareTableView() {
+        spellbookTableView.register(UINib(nibName: "SpellbookCell", bundle: nil), forCellReuseIdentifier: identifier)
+        spellbookTableView.tableFooterView = UIView()
+    }
+    
     private func prepareNotifications() {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -109,10 +120,49 @@ extension SpellbookListVC {
     }
 }
 
+// MARK: - Input
+extension SpellbookListVC: SpellbookListInput {
+    
+}
+
 // MARK: - TextFieldDelegate
 extension SpellbookListVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.resignFirstResponder()
         return true
+    }
+}
+
+// MARK: - TableViewDataSource
+extension SpellbookListVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.spellbooks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? SpellbookCell else { return }
+        cell.spellbook = presenter.spellbooks[indexPath.row]
+    }
+}
+
+// MARK: - TableViewDelegate
+extension SpellbookListVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = SpellbookVC(presenter.spellbooks[indexPath.row])
+        let transitionDelegate = SPStorkTransitioningDelegate()
+        transitionDelegate.hapticMoments = []
+        transitionDelegate.showCloseButton = false
+        vc.transitioningDelegate = transitionDelegate
+        vc.modalPresentationStyle = .custom
+        vc.modalPresentationCapturesStatusBarAppearance = true
+        self.present(vc, animated: true, completion: nil)
     }
 }
