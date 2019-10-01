@@ -71,4 +71,20 @@ class SpellService: Exported, Imported {
         let spellbooksRealm = realm.objects(SpellbookRealm.self)
         return Array(spellbooksRealm.map { Spellbook.transform($0) })
     }
+    
+    func addSpellInSpellbook(_ spell: Spell, spellbook: Spellbook) {
+        guard let spellbookRealm = realm.objects(SpellbookRealm.self).first(where: { $0.name == spellbook.name }) else {
+            fatalError("Не найдена книга заклинаний [\(spellbook)] в Realm")
+        }
+        guard let spellRealm = realm.objects(SpellRealm.self).first(where: { $0.uuid == spell.uuid }) else {
+            fatalError("Не найдено заклинание [\(spell)] в Realm")
+        }
+        do {
+            try realm.write {
+                spellbookRealm.spells.append(spellRealm)
+            }
+        } catch let error {
+            fatalError(error.localizedDescription)
+        }
+    }
 }

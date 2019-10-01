@@ -15,12 +15,14 @@ fileprivate let selectedSpellBookImage = "spellBookTBS"
 
 class CustomTBC: UITabBarController {
 
+    // MARK: - Properties
     private var backgroundImageView: UIImageView!
     private var plusButton: PlusButton!
     private var menuList: UIView!
-    private var popupVC: PopupMenuVC!
+    var popupVC: PopupMenuVC!
     private var plusButtonForPopupMenu: PlusButton!
     
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareTabBarItems()
@@ -38,12 +40,22 @@ class CustomTBC: UITabBarController {
         preparePopupMenu()
     }
     
-    @objc func touchShowPopupMenu() {
+    // MARK: - Methods
+    fileprivate func showPopupMenu() {
         plusButton.setState(.disclosed, animated: true)
         plusButtonForPopupMenu.setState(.disclosed, animated: true)
         addChild(popupVC)
         popupVC.show()
-        
+    }
+    
+    func showInMenu(_ vc: UIViewController) {
+        popupVC.childVC = vc
+        showPopupMenu()
+    }
+    
+    @objc private func touchShowPopupMenu() {
+        popupVC.childVC = CreateListVC()
+        showPopupMenu()
     }
     
     @objc func hidePopupMenu() {

@@ -33,6 +33,8 @@ class SpellCell: UITableViewCell {
     
     // MARK: - Methods
     @IBAction func touchAddSpellInSpellbook(_ sender: Any) {
-        
+        guard let tb = UIApplication.shared.windows[0].rootViewController as? CustomTBC else { fatalError() }
+        let vc = AddInSpellbookVC(tb.popupVC, spell: spell)
+        tb.showInMenu(vc)
     }
 }
