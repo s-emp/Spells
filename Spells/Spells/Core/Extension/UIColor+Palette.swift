@@ -35,5 +35,7 @@ extension UIColor {
         case transmutation
         case other
         case diceTextColor
+        case spellbookDescription
+        case iconBlue
     }
 }

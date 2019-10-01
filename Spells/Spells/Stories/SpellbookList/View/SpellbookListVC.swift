@@ -1,59 +1,40 @@
 //
-//  SpellListVC.swift
+//  SpellbookListVC.swift
 //  Spells
 //
-//  Created by Сергей Мельников on 20/09/2019.
+//  Created by Sergey Melnikov on 30/09/2019.
 //  Copyright © 2019 Sergey Melnikov. All rights reserved.
 //
 
 import UIKit
 import SPStorkController
-import Lottie
 
-fileprivate let identifier = "cell"
+fileprivate let identifier = "SpellbookCell"
 
-class SpellListVC: UIViewController {
-
+class SpellbookListVC: UIViewController {
+    
     // MARK: - Properties
-    private var presenter: SpellListOutput!
+    private var presenter: SpellbookListOutput!
+    @IBOutlet var headerView: UIView!
+    @IBOutlet var headerLabel: Header1!
+    @IBOutlet var searchTextField: SearchTextField!
+    @IBOutlet var cancelButton: UIButton!
+    @IBOutlet var textFieldRightConstraint: NSLayoutConstraint!
+    @IBOutlet var cancelButtonRightConstraint: NSLayoutConstraint!
+    @IBOutlet var headerLabelSafeAreaTopConstraint: NSLayoutConstraint!
+    @IBOutlet var headerLabelTopConstraint: NSLayoutConstraint!
     
-    @IBOutlet private var headerView: UIView!
-    @IBOutlet private var headerLabel: Header1!
-    @IBOutlet private var filterButton: UIButton!
-    @IBOutlet private var searchTextField: UITextField!
-    @IBOutlet private var cancelButton: UIButton!
-    @IBOutlet private var spellsTableView: UITableView!
-    
-    @IBOutlet private var headerLabelSafeAreaTopConstraint: NSLayoutConstraint!
-    @IBOutlet private var headerLabelTopConstraint: NSLayoutConstraint!
-    
-    @IBOutlet private var filterButtonSafeAreaTopConstraint: NSLayoutConstraint!
-    @IBOutlet private var filterButtonTopConstraint: NSLayoutConstraint!
-    
-    @IBOutlet private var textFieldRightConstraint: NSLayoutConstraint!
-    @IBOutlet private var cancelButtonRightConstraint: NSLayoutConstraint!
-    
-    
-    @IBOutlet private var containerViewForError: UIView!
-    @IBOutlet private var animationContainerView: UIView!
+    @IBOutlet var spellbookTableView: UITableView!
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
-    
-    
-    // MARK: - LifeCycle
-    
+
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        prepareNotifications()
-        filterButton.tintColor = UIColor(named: .background)
-        presenter = SpellListPresenter(self, service: SpellService.shared(), filter: Filter(levels: [], professions: [], isConcentration: false, isRitual: false, books: []))
+        presenter = SpellbookListPresenter(self, service: SpellService.shared())
         prepareTableView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         prepareHeaderView()
-        prepareAnimatinView()
+        prepareNotifications()
     }
     
     deinit {
@@ -62,38 +43,21 @@ class SpellListVC: UIViewController {
     }
     
     // MARK: - Methods
-    @IBAction func touchCancelSearch(_ sender: Any) {
+    
+    @IBAction func touchCancel(_ sender: Any) {
         searchTextField.insertText("")
         searchTextField.resignFirstResponder()
-    }
-    
-    @IBAction func touchFilter(_ sender: Any) {
-        let vc = FilterVC(presenter.filter, spellList: self)
-        let transitionDelegate = SPStorkTransitioningDelegate()
-        transitionDelegate.hapticMoments = []
-        transitionDelegate.showCloseButton = false
-        vc.transitioningDelegate = transitionDelegate
-        vc.modalPresentationStyle = .custom
-        vc.modalPresentationCapturesStatusBarAppearance = true
-        self.present(vc, animated: true, completion: nil)
-    }
-    
-    @IBAction func searchEditingChanged(_ sender: Any) {
-        presenter.search(searchTextField.text ?? "")
     }
     
     // MARK: - AnimationShow
     fileprivate func animationKeyboardShow(_ duration: TimeInterval) {
         UIView.animate(withDuration: duration) {
             self.headerLabel.alpha = 0
-            self.filterButton.alpha = 0
             self.cancelButton.alpha = 1
             self.textFieldRightConstraint.isActive = false
             self.cancelButtonRightConstraint.isActive = true
             self.headerLabelSafeAreaTopConstraint.isActive = false
             self.headerLabelTopConstraint.isActive = true
-            self.filterButtonSafeAreaTopConstraint.isActive = false
-            self.filterButtonTopConstraint.isActive = true
             self.view.layoutIfNeeded()
         }
     }
@@ -102,22 +66,19 @@ class SpellListVC: UIViewController {
     fileprivate func animationKeyboardHide(_ duration: TimeInterval) {
         UIView.animate(withDuration: duration) {
             self.headerLabel.alpha = 1
-            self.filterButton.alpha = 1
             self.cancelButton.alpha = 0
             self.cancelButtonRightConstraint.isActive = false
             self.textFieldRightConstraint.isActive = true
             self.headerLabelTopConstraint.isActive = false
             self.headerLabelSafeAreaTopConstraint.isActive = true
-            self.filterButtonTopConstraint.isActive = false
-            self.filterButtonSafeAreaTopConstraint.isActive = true
             self.view.layoutIfNeeded()
         }
     }
-    
+
     @objc func keyboardWillShow(_ notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             
-            spellsTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+            spellbookTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
             let animateDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber
             animationKeyboardShow(TimeInterval(truncating: animateDuration ?? 0.2))
         }
@@ -130,7 +91,13 @@ class SpellListVC: UIViewController {
 }
 
 // MARK: - Prepare
-extension SpellListVC {
+extension SpellbookListVC {
+    
+    private func prepareTableView() {
+        spellbookTableView.register(UINib(nibName: "SpellbookCell", bundle: nil), forCellReuseIdentifier: identifier)
+        spellbookTableView.tableFooterView = UIView()
+    }
+    
     private func prepareNotifications() {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -151,39 +118,25 @@ extension SpellListVC {
         layer0.position = view.center
         headerView.layer.insertSublayer(layer0, at: 0)
     }
-    
-    private func prepareTableView() {
-        spellsTableView.register(UINib(nibName: "SpellCell", bundle: nil), forCellReuseIdentifier: identifier)
-        spellsTableView.tableFooterView = UIView()
-    }
-    
-    private func prepareAnimatinView() {
-        let animationView = AnimationView(name: "Error")
-        animationView.frame = animationContainerView.frame
-        animationView.loopMode = .loop
-        animationView.play()
-        animationContainerView.addSubview(animationView)
-    }
 }
 
 // MARK: - Input
-extension SpellListVC: SpellListInput {
+extension SpellbookListVC: SpellbookListInput {
     
-    func applyFilter(_ filter: Filter) {
-        presenter.filter = filter
-        presenter.search(searchTextField.text)
-    }
-    
-    func reloadTableView() {
-        spellsTableView.reloadData()
+}
+
+// MARK: - TextFieldDelegate
+extension SpellbookListVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.resignFirstResponder()
+        return true
     }
 }
 
 // MARK: - TableViewDataSource
-extension SpellListVC: UITableViewDataSource {
+extension SpellbookListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        containerViewForError.isHidden = presenter.spells.count != 0
-        return presenter.spells.count
+        return presenter.spellbooks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -195,17 +148,15 @@ extension SpellListVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let cell = cell as? SpellCell else { return }
-        
-        cell.spell = presenter.spells[indexPath.row]
+        guard let cell = cell as? SpellbookCell else { return }
+        cell.spellbook = presenter.spellbooks[indexPath.row]
     }
 }
 
 // MARK: - TableViewDelegate
-extension SpellListVC: UITableViewDelegate {
+extension SpellbookListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = SpellVC()
-        vc.spell = presenter.spells[indexPath.row]
+        let vc = SpellbookVC(presenter.spellbooks[indexPath.row])
         let transitionDelegate = SPStorkTransitioningDelegate()
         transitionDelegate.hapticMoments = []
         transitionDelegate.showCloseButton = false
@@ -213,17 +164,5 @@ extension SpellListVC: UITableViewDelegate {
         vc.modalPresentationStyle = .custom
         vc.modalPresentationCapturesStatusBarAppearance = true
         self.present(vc, animated: true, completion: nil)
-    }
-}
-
-// MARK: - TextFieldDelegate
-extension SpellListVC: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        return true
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchTextField.resignFirstResponder()
-        return true
     }
 }

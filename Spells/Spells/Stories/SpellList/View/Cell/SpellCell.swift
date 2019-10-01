@@ -19,10 +19,17 @@ class SpellCell: UITableViewCell {
         }
     }
     
+    var addSpellbookButtonHidden: Bool {
+        get { return addSpellbookButton.isHidden }
+        set { addSpellbookButton.isHidden = newValue }
+    }
+    
     @IBOutlet private var nameLabel: Header2!
     @IBOutlet private var levelLabel: TextTag!
     @IBOutlet private var schoolView: UIView!
     @IBOutlet private var schoolLabel: TextTag!
+    @IBOutlet private var addSpellbookButton: UIButton!
+    
     
     // MARK: - Methods
     @IBAction func touchAddSpellInSpellbook(_ sender: Any) {

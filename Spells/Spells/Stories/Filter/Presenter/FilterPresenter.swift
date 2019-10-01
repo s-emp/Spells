@@ -49,7 +49,7 @@ class FilterPresenter: FilterOutput {
     }
     
     private func updateResultCount() {
-        resultCount = filter.apply(service.getSpells()).count
+        resultCount = filter.apply(service.spells()).count
         view.updateUI()
     }
     
@@ -57,6 +57,6 @@ class FilterPresenter: FilterOutput {
         self.view = view
         self.service = service
         self.filter = filter
-        resultCount = filter.apply(service.getSpells()).count
+        resultCount = filter.apply(service.spells()).count
     }
 }
