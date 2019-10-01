@@ -48,7 +48,6 @@ class SpellbookListVC: UIViewController {
     }
     
     // MARK: - Methods
-    
     @IBAction func touchCancel(_ sender: Any) {
         searchTextField.insertText("")
         searchTextField.resignFirstResponder()
