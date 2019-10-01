@@ -15,7 +15,7 @@ class SpellbookCell: UITableViewCell {
             nameSpellbookLabel.text = spellbook.name
             let countSpell = spellbook.spells.count
             countSpellsLabel.text = "\(countSpell) \(countSpell.declension(["заклинание", "заклинания", "заклинаний"]))"
-            likeImageView.isHidden = spellbook.name != "Избранные заклинания"
+            likeImageView.isHidden = spellbook.name != Spellbook.favorites
         }
     }
     

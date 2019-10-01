@@ -39,6 +39,10 @@
 		9993D180233CA357004C9E03 /* FilterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993D17F233CA357004C9E03 /* FilterOutput.swift */; };
 		9993D182233CA360004C9E03 /* FilterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993D181233CA360004C9E03 /* FilterPresenter.swift */; };
 		9993D184233CAC60004C9E03 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993D183233CAC60004C9E03 /* Filter.swift */; };
+		99A9854123437D9B00849B4A /* TabBarWithPopupMenuOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A9854023437D9B00849B4A /* TabBarWithPopupMenuOutput.swift */; };
+		99A9854323437DA600849B4A /* TabBarWithPopupMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A9854223437DA600849B4A /* TabBarWithPopupMenuPresenter.swift */; };
+		99A98545234384DC00849B4A /* SpellOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A98544234384DC00849B4A /* SpellOutput.swift */; };
+		99A98547234384E900849B4A /* SpellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A98546234384E900849B4A /* SpellPresenter.swift */; };
 		99B76BB4234332CF00397846 /* SpellbookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B76BB2234332CF00397846 /* SpellbookCell.swift */; };
 		99B76BB5234332CF00397846 /* SpellbookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99B76BB3234332CF00397846 /* SpellbookCell.xib */; };
 		99B76BB72343369200397846 /* SpellbookListOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B76BB62343369200397846 /* SpellbookListOutput.swift */; };
@@ -57,6 +61,7 @@
 		99B76BD92343675500397846 /* SpellbookInMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B76BD72343675500397846 /* SpellbookInMenuCell.swift */; };
 		99B76BDA2343675500397846 /* SpellbookInMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99B76BD82343675500397846 /* SpellbookInMenuCell.xib */; };
 		99B76BDD23437BBB00397846 /* TabBarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B76BDC23437BBB00397846 /* TabBarService.swift */; };
+		99B76BDF23437D3300397846 /* TabBarWithPopupMenuInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B76BDE23437D3300397846 /* TabBarWithPopupMenuInput.swift */; };
 		99EDC005233372EB007855C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC004233372EB007855C4 /* AppDelegate.swift */; };
 		99EDC00C233372EB007855C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC00A233372EB007855C4 /* Main.storyboard */; };
 		99EDC00E233372EC007855C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC00D233372EC007855C4 /* Assets.xcassets */; };
@@ -75,7 +80,7 @@
 		99EDC04023337695007855C4 /* TextFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC03F23337695007855C4 /* TextFilter.swift */; };
 		99EDC042233376B9007855C4 /* HeaderBottom2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC041233376B9007855C4 /* HeaderBottom2.swift */; };
 		99EDC044233378D2007855C4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC043233378D2007855C4 /* Colors.xcassets */; };
-		99EDC0472333871B007855C4 /* CustomTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC0462333871B007855C4 /* CustomTBC.swift */; };
+		99EDC0472333871B007855C4 /* TabBarWithPopupMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC0462333871B007855C4 /* TabBarWithPopupMenu.swift */; };
 		99EDC0492333885D007855C4 /* TabBar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EDC0482333885D007855C4 /* TabBar.xcassets */; };
 		99EDC04C23339029007855C4 /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC04B23339029007855C4 /* PlusButton.swift */; };
 		99EDC04F2333910A007855C4 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EDC04E2333910A007855C4 /* UIColor+Palette.swift */; };
@@ -147,6 +152,10 @@
 		9993D17F233CA357004C9E03 /* FilterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOutput.swift; sourceTree = "<group>"; };
 		9993D181233CA360004C9E03 /* FilterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPresenter.swift; sourceTree = "<group>"; };
 		9993D183233CAC60004C9E03 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		99A9854023437D9B00849B4A /* TabBarWithPopupMenuOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarWithPopupMenuOutput.swift; sourceTree = "<group>"; };
+		99A9854223437DA600849B4A /* TabBarWithPopupMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarWithPopupMenuPresenter.swift; sourceTree = "<group>"; };
+		99A98544234384DC00849B4A /* SpellOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellOutput.swift; sourceTree = "<group>"; };
+		99A98546234384E900849B4A /* SpellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellPresenter.swift; sourceTree = "<group>"; };
 		99B76BB2234332CF00397846 /* SpellbookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellbookCell.swift; sourceTree = "<group>"; };
 		99B76BB3234332CF00397846 /* SpellbookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpellbookCell.xib; sourceTree = "<group>"; };
 		99B76BB62343369200397846 /* SpellbookListOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellbookListOutput.swift; sourceTree = "<group>"; };
@@ -165,6 +174,7 @@
 		99B76BD72343675500397846 /* SpellbookInMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellbookInMenuCell.swift; sourceTree = "<group>"; };
 		99B76BD82343675500397846 /* SpellbookInMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpellbookInMenuCell.xib; sourceTree = "<group>"; };
 		99B76BDC23437BBB00397846 /* TabBarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarService.swift; sourceTree = "<group>"; };
+		99B76BDE23437D3300397846 /* TabBarWithPopupMenuInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarWithPopupMenuInput.swift; sourceTree = "<group>"; };
 		99EDC001233372EB007855C4 /* Spells.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spells.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99EDC004233372EB007855C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99EDC00B233372EB007855C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -187,7 +197,7 @@
 		99EDC03F23337695007855C4 /* TextFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFilter.swift; sourceTree = "<group>"; };
 		99EDC041233376B9007855C4 /* HeaderBottom2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBottom2.swift; sourceTree = "<group>"; };
 		99EDC043233378D2007855C4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		99EDC0462333871B007855C4 /* CustomTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTBC.swift; sourceTree = "<group>"; };
+		99EDC0462333871B007855C4 /* TabBarWithPopupMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarWithPopupMenu.swift; sourceTree = "<group>"; };
 		99EDC0482333885D007855C4 /* TabBar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TabBar.xcassets; sourceTree = "<group>"; };
 		99EDC04B23339029007855C4 /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
 		99EDC04E2333910A007855C4 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
@@ -298,6 +308,8 @@
 		99337938233B6B5600907090 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				99A98544234384DC00849B4A /* SpellOutput.swift */,
+				99A98546234384E900849B4A /* SpellPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -468,6 +480,24 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		99B76BE023437D4300397846 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				99A9854023437D9B00849B4A /* TabBarWithPopupMenuOutput.swift */,
+				99A9854223437DA600849B4A /* TabBarWithPopupMenuPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		99B76BE123437D4A00397846 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				99EDC0462333871B007855C4 /* TabBarWithPopupMenu.swift */,
+				99B76BDE23437D3300397846 /* TabBarWithPopupMenuInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		99E79A912343328700A0995B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,7 +618,8 @@
 		99EDC045233386EA007855C4 /* CustomTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				99EDC0462333871B007855C4 /* CustomTBC.swift */,
+				99B76BE023437D4300397846 /* Presenter */,
+				99B76BE123437D4A00397846 /* View */,
 			);
 			path = CustomTabBarController;
 			sourceTree = "<group>";
@@ -957,6 +988,7 @@
 				99B76BB92343369C00397846 /* SpellbookListPresenter.swift in Sources */,
 				9946331423420E170057B879 /* FilterBookInput.swift in Sources */,
 				99EDC02F23337583007855C4 /* Text.swift in Sources */,
+				99B76BDF23437D3300397846 /* TabBarWithPopupMenuInput.swift in Sources */,
 				9946331123420E0C0057B879 /* FilterBookVC.swift in Sources */,
 				99345D21233A15F5003CFD96 /* SpellListPresenter.swift in Sources */,
 				99EDC005233372EB007855C4 /* AppDelegate.swift in Sources */,
@@ -974,6 +1006,7 @@
 				99B76BDD23437BBB00397846 /* TabBarService.swift in Sources */,
 				99EDC034233375C6007855C4 /* TextPush.swift in Sources */,
 				99EDC04F2333910A007855C4 /* UIColor+Palette.swift in Sources */,
+				99A9854123437D9B00849B4A /* TabBarWithPopupMenuOutput.swift in Sources */,
 				9993D17E233C95FE004C9E03 /* IOTags.swift in Sources */,
 				B91442122335174D00C68557 /* CreateListInput.swift in Sources */,
 				99EDC042233376B9007855C4 /* HeaderBottom2.swift in Sources */,
@@ -984,17 +1017,19 @@
 				99B76BD92343675500397846 /* SpellbookInMenuCell.swift in Sources */,
 				99B76BC423433E5900397846 /* SpellbookInput.swift in Sources */,
 				99B76BCE234352B400397846 /* AddInSpellbookVC.swift in Sources */,
-				99EDC0472333871B007855C4 /* CustomTBC.swift in Sources */,
+				99EDC0472333871B007855C4 /* TabBarWithPopupMenu.swift in Sources */,
 				B98EF37323353FF9008E81ED /* Component.swift in Sources */,
 				B98EF37723354436008E81ED /* School.swift in Sources */,
 				99B76BB72343369200397846 /* SpellbookListOutput.swift in Sources */,
 				99EDC05C2333CABD007855C4 /* CreateListVC.swift in Sources */,
 				99345D1F233A15E5003CFD96 /* SpellListOutput.swift in Sources */,
 				99EDC03C23337635007855C4 /* HeaderBottom.swift in Sources */,
+				99A9854323437DA600849B4A /* TabBarWithPopupMenuPresenter.swift in Sources */,
 				B914421C23351E0D00C68557 /* SpellService.swift in Sources */,
 				99EDC0572333A7FE007855C4 /* ViewController.swift in Sources */,
 				9993D182233CA360004C9E03 /* FilterPresenter.swift in Sources */,
 				99EDC038233375F7007855C4 /* TextSearch.swift in Sources */,
+				99A98547234384E900849B4A /* SpellPresenter.swift in Sources */,
 				B98EF37123353F13008E81ED /* Language.swift in Sources */,
 				99B76BC623433E6C00397846 /* SpellbookOutput.swift in Sources */,
 				9993D17C233C95FE004C9E03 /* IOTagCell.swift in Sources */,
@@ -1011,6 +1046,7 @@
 				B98EF3792335F00C008E81ED /* Spell.swift in Sources */,
 				9993D184233CAC60004C9E03 /* Filter.swift in Sources */,
 				99337946233B95C600907090 /* FilterVC.swift in Sources */,
+				99A98545234384DC00849B4A /* SpellOutput.swift in Sources */,
 				99345D26233A27A0003CFD96 /* UIView+Radius.swift in Sources */,
 				991358DD2342522900F04668 /* Spellbook.swift in Sources */,
 				99EDC03E23337673007855C4 /* TextBoldFilter.swift in Sources */,

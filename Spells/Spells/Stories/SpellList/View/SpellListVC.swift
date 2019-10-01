@@ -196,7 +196,6 @@ extension SpellListVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let cell = cell as? SpellCell else { return }
-        
         cell.spell = presenter.spells[indexPath.row]
     }
 }
@@ -204,8 +203,7 @@ extension SpellListVC: UITableViewDataSource {
 // MARK: - TableViewDelegate
 extension SpellListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = SpellVC()
-        vc.spell = presenter.spells[indexPath.row]
+        let vc = SpellVC(presenter.spells[indexPath.row])
         let transitionDelegate = SPStorkTransitioningDelegate()
         transitionDelegate.hapticMoments = []
         transitionDelegate.showCloseButton = false

@@ -14,11 +14,11 @@ class AddInSpellbookVC: UIViewController {
 
     // MARK: - Properties
     private var presenter: AddInSpellbookOutput!
-    private weak var menu: PopupMenuVC!
+    private weak var menu: TabBarWithPopupMenuInput!
     @IBOutlet private var spellbooksTableView: UITableView!
     
     // MARK: - Life cycle
-    required convenience init(_ menu: PopupMenuVC, spell: Spell) {
+    required convenience init(_ menu: TabBarWithPopupMenuInput, spell: Spell) {
         self.init()
         self.menu = menu
         presenter = AddInSpellbookPresenter(self, service: SpellService.shared(), spell: spell)
@@ -35,14 +35,25 @@ class AddInSpellbookVC: UIViewController {
 extension AddInSpellbookVC {
     private func prepareTableView() {
         spellbooksTableView.register(UINib(nibName: "SpellbookInMenuCell", bundle: nil), forCellReuseIdentifier: identifier)
-        
     }
 }
 
 // MARK: - Input
 extension AddInSpellbookVC: AddInSpellbookInput {
     func hide() {
-        menu.hide()
+        menu.hidePopupMenu()
+    }
+}
+
+// MARK: - PopupMenuItem
+extension AddInSpellbookVC: PopupMenuItem {
+    var heightItem: CGFloat {
+        let result: CGFloat = presenter.spellbooks.count * 56 + 56 > 300 ? 300 : CGFloat(presenter.spellbooks.count * 56 + 56)
+        return result
+    }
+    
+    var viewControllerItem: UIViewController {
+        return self
     }
 }
 

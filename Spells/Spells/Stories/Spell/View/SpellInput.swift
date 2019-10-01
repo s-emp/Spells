@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SpellInput: AnyObject {
-    
+    func notification(_ message: String)
 }

@@ -78,10 +78,9 @@ extension SpellbookVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = SpellVC()
+        let vc = SpellVC(presenter.spellbook.spells[indexPath.row])
         vc.addSpellbookButtonHidden = true
         vc.likeButtonHidden = true
-        vc.spell = presenter.spellbook.spells[indexPath.row]
         let transitionDelegate = SPStorkTransitioningDelegate()
         transitionDelegate.hapticMoments = []
         transitionDelegate.showCloseButton = false

@@ -12,7 +12,7 @@ import SPStorkController
 class SpellVC: UIViewController {
     
     // MARK: - Properties
-    var spell: Spell?
+    private var presenter: SpellOutput!
     @IBOutlet private var nameLabel: HeaderBottom!
     
     @IBOutlet private var levelView: UIView!
@@ -62,8 +62,13 @@ class SpellVC: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
     // MARK: - Life cycle
+    required convenience init(_ spell: Spell) {
+        self.init()
+        presenter = SpellPresenter(self, service: SpellService.shared(), spell: spell)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        likeButton.setImage(presenter.isFavorites ? UIImage(named: "likeOn") : UIImage(named: "like"), for: .normal)
         likeButton.isHidden = likeButtonHidden
         addSpellbookButton.isHidden = addSpellbookButtonHidden
     }
@@ -75,7 +80,7 @@ class SpellVC: UIViewController {
 
     // MARK: - Methods
     @IBAction func touchLike(_ sender: Any) {
-        
+        presenter.changeFavorite()
     }
     
     @IBAction func touchAddSpellInSpellbook(_ sender: Any) {
@@ -83,7 +88,7 @@ class SpellVC: UIViewController {
     }
     
     private func updateUI() {
-        guard let spell = spell else { return }
+        let spell = presenter.spell
         nameLabel.text = spell.name
         levelLabel.text = spell.level == 0 ? "Заговор" : "\(spell.level) уровня"
         schoolView.backgroundColor = UIColor(named: UIColor.Palette(rawValue: spell.school.rawValue)!)
@@ -133,6 +138,15 @@ class SpellVC: UIViewController {
     }
 }
 
+// MARK: - Input
+extension SpellVC: SpellInput {
+    func notification(_ message: String) {
+        likeButton.setImage(presenter.isFavorites ? UIImage(named: "likeOn") : UIImage(named: "like"), for: .normal)
+        print(message)
+    }
+}
+
+// MARK: - ScrollViewDelegate
 extension SpellVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         SPStorkController.scrollViewDidScroll(scrollView)

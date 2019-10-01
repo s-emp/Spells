@@ -29,3 +29,9 @@ class CreateListVC: UIViewController {
 extension CreateListVC: CreateListInput {
     
 }
+
+// MARK: - PopupMenuItem
+extension CreateListVC: PopupMenuItem {
+    var heightItem: CGFloat { return 120.0 }
+    var viewControllerItem: UIViewController { return self }
+}

@@ -9,7 +9,9 @@
 import Foundation
 
 class SpellbookListPresenter: SpellbookListOutput {
-    var spellbooks: [Spellbook]
+    var spellbooks: [Spellbook] {
+        return service.spellbooks()
+    }
     
     // MARK: - Properties
     weak var view: SpellbookListInput!
@@ -19,6 +21,5 @@ class SpellbookListPresenter: SpellbookListOutput {
     required init(_ view: SpellbookListInput, service: SpellService) {
         self.view = view
         self.service = service
-        spellbooks = service.spellbooks()
     }
 }
