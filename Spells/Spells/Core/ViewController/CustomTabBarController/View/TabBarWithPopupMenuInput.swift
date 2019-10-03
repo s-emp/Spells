@@ -15,6 +15,7 @@ protocol PopupMenuItem {
 
 protocol TabBarWithPopupMenuInput: AnyObject {
     
+    func hidePopupMenuAndShowVC(_ vc: UIViewController)
     func hidePopupMenu()
     func showPopupMenu(with item: PopupMenuItem)
 }

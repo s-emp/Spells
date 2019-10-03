@@ -41,9 +41,11 @@ class PopupMenuVC: UIViewController {
             self.view.alpha = 0
             self.popupMenu.frame = self.startRect ?? .zero
             self.popupMenu.alpha = 0
-            self.childVC?.view.layoutIfNeeded()
         }) { _ in
+            self.childVC?.view.removeFromSuperview()
             self.childVC?.removeFromParent()
+            self.view.removeFromSuperview()
+            self.removeFromParent()
         }
     }
     
@@ -55,6 +57,10 @@ class PopupMenuVC: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         preparePopupMenu()
+    }
+    
+    deinit {
+        print("Popupmenu deinit!")
     }
     
     override func viewDidLoad() {

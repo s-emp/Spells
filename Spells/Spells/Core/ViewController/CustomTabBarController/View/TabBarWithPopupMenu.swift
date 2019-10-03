@@ -107,22 +107,32 @@ extension TabBarWithPopupMenu {
         popupVC.startRect = tabBar.convert(plusButton.frame, to: nil)
         popupVC.endRect = CGRect(x: baseMargin, y: popupVC.startRect!.origin.y - 16 - heightPopupMenu, width: rootView.bounds.width - baseMargin * 2, height: heightPopupMenu)
         
-        plusButtonForPopupMenu = PlusButton(frame: tabBar.convert(plusButton.frame, to: nil))
-        plusButtonForPopupMenu.addTarget(self, action: #selector(touchHidePopupMenu), for: .touchUpInside)
-        popupVC.view.addSubview(plusButtonForPopupMenu)
     }
 }
 
 // MARK: - Input
 extension TabBarWithPopupMenu: TabBarWithPopupMenuInput {
     
+    func hidePopupMenuAndShowVC(_ vc: UIViewController) {
+        print(tabBar.subviews.count)
+        
+        hidePopupMenu()
+        present(vc, animated: true)
+        
+    }
+    
     func hidePopupMenu() {
         popupVC.hide()
-        plusButtonForPopupMenu.setState(.rolledUp, animated: true)
+        plusButtonForPopupMenu.removeTarget(self, action: #selector(touchHidePopupMenu), for: .touchUpInside)
+        plusButtonForPopupMenu.removeFromSuperview()
+        plusButtonForPopupMenu = nil
         plusButton.setState(.rolledUp, animated: true)
     }
     
     func showPopupMenu(with item: PopupMenuItem) {
+        plusButtonForPopupMenu = PlusButton(frame: tabBar.convert(plusButton.frame, to: nil))
+        plusButtonForPopupMenu.addTarget(self, action: #selector(touchHidePopupMenu), for: .touchUpInside)
+        popupVC.view.addSubview(plusButtonForPopupMenu)
         popupVC.childVC = item.viewControllerItem
         popupVC.endRect = CGRect(x: popupVC.endRect.origin.x, y: popupVC.startRect!.origin.y - 16 - item.heightItem, width: popupVC.endRect.width, height: item.heightItem)
         plusButton.setState(.disclosed, animated: true)

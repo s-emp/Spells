@@ -108,4 +108,17 @@ class SpellService: Exported, Imported {
             fatalError(error.localizedDescription)
         }
     }
+    
+    func addSpellbook(_ spellbook: Spellbook) {
+        guard spellbooks().first(where: { $0.name == spellbook.name }) == nil else { return }
+        let spellbookRealm = SpellbookRealm()
+        spellbookRealm.name = spellbook.name
+        do {
+            try realm.write {
+                realm.add(spellbookRealm)
+            }
+        } catch let error {
+            fatalError(error.localizedDescription)
+        }
+    }
 }

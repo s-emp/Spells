@@ -14,7 +14,7 @@ class CreateListPresenter: CreateListOutput {
     }
     
     func createSpellbook() {
-        print("CreateSpellbook")
+        view.showAddSpellbookVC()
     }
     
     required init(_ view: CreateListInput) {
