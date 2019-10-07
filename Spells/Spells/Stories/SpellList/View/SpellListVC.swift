@@ -44,7 +44,6 @@ class SpellListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        prepareNotifications()
         filterButton.tintColor = UIColor(named: .background)
         presenter = SpellListPresenter(self, service: SpellService.shared(), filter: Filter(levels: [], professions: [], isConcentration: false, isRitual: false, books: []))
         prepareTableView()
@@ -52,13 +51,18 @@ class SpellListVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        prepareNotifications()
         prepareHeaderView()
         prepareAnimatinView()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        removeNotification()
+        super.viewWillDisappear(animated)
+    }
+    
     deinit {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        removeNotification()
     }
     
     // MARK: - Methods
@@ -69,9 +73,7 @@ class SpellListVC: UIViewController {
     
     @IBAction func touchFilter(_ sender: Any) {
         let vc = FilterVC(presenter.filter, spellList: self)
-        let transitionDelegate = SPStorkTransitioningDelegate()
-        transitionDelegate.hapticMoments = []
-        transitionDelegate.showCloseButton = false
+        let transitionDelegate = SPStorkTransitioningDelegate.default
         vc.transitioningDelegate = transitionDelegate
         vc.modalPresentationStyle = .custom
         vc.modalPresentationCapturesStatusBarAppearance = true
@@ -80,6 +82,11 @@ class SpellListVC: UIViewController {
     
     @IBAction func searchEditingChanged(_ sender: Any) {
         presenter.search(searchTextField.text ?? "")
+    }
+    
+    private func removeNotification() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     // MARK: - AnimationShow
@@ -204,9 +211,7 @@ extension SpellListVC: UITableViewDataSource {
 extension SpellListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = SpellVC(presenter.spells[indexPath.row])
-        let transitionDelegate = SPStorkTransitioningDelegate()
-        transitionDelegate.hapticMoments = []
-        transitionDelegate.showCloseButton = false
+        let transitionDelegate = SPStorkTransitioningDelegate.default
         vc.transitioningDelegate = transitionDelegate
         vc.modalPresentationStyle = .custom
         vc.modalPresentationCapturesStatusBarAppearance = true

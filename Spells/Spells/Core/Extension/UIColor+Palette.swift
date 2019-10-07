@@ -37,5 +37,6 @@ extension UIColor {
         case diceTextColor
         case spellbookDescription
         case iconBlue
+        case placeholder
     }
 }

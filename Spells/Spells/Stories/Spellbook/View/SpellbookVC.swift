@@ -81,9 +81,7 @@ extension SpellbookVC: UITableViewDelegate {
         let vc = SpellVC(presenter.spellbook.spells[indexPath.row])
         vc.addSpellbookButtonHidden = true
         vc.likeButtonHidden = true
-        let transitionDelegate = SPStorkTransitioningDelegate()
-        transitionDelegate.hapticMoments = []
-        transitionDelegate.showCloseButton = false
+        let transitionDelegate = SPStorkTransitioningDelegate.default
         vc.transitioningDelegate = transitionDelegate
         vc.modalPresentationStyle = .custom
         vc.modalPresentationCapturesStatusBarAppearance = true

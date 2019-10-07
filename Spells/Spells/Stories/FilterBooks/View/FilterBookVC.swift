@@ -19,6 +19,7 @@ class FilterBookVC: UIViewController {
     @IBOutlet private var templeOfElementalEvilSwitch: UISwitch!
     @IBOutlet private var sproutingChaosSwitch: UISwitch!
     @IBOutlet private var homebrewSwitch: UISwitch!
+    @IBOutlet private var backButton: UIButton!
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
@@ -58,6 +59,15 @@ class FilterBookVC: UIViewController {
     
     @IBAction func touchHomebrew(_ sender: Any) {
         presenter.homebrew.toggle()
+    }
+    
+    @IBAction func touchBack(_ sender: Any) {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.view.frame = CGRect(x: self.view.frame.width, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        }) { _ in
+            self.view.removeFromSuperview()
+            self.removeFromParent()
+        }
     }
 }
 

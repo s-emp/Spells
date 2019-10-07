@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterBookVC" customModule="Spells" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="K7s-UK-bHv" id="Df1-n2-80m"/>
                 <outlet property="homebrewSwitch" destination="Mfi-TU-Tgo" id="4oJ-HO-mrb"/>
                 <outlet property="playersHandbookSwitch" destination="29c-Ho-yde" id="FOf-UW-vPX"/>
                 <outlet property="sproutingChaosSwitch" destination="w7g-Ij-aVo" id="00m-sS-4cr"/>
@@ -27,7 +28,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Источники" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpM-UR-4eK" customClass="HeaderBottom2" customModule="Spells" customModuleProvider="target">
                     <rect key="frame" x="164" y="104" width="86.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" name="text"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Fru-O0-2y8">
@@ -232,12 +233,25 @@
                         </view>
                     </subviews>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7s-UK-bHv">
+                    <rect key="frame" x="16" y="93.5" width="50" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="c4I-om-BIf"/>
+                    </constraints>
+                    <color key="tintColor" name="text"/>
+                    <state key="normal" image="arrow"/>
+                    <connections>
+                        <action selector="touchBack:" destination="-1" eventType="touchUpInside" id="fVG-Pz-mMs"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="EpM-UR-4eK" firstAttribute="centerY" secondItem="K7s-UK-bHv" secondAttribute="centerY" id="3Xf-ye-So1"/>
                 <constraint firstItem="Fru-O0-2y8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="8Pn-7n-Bdz"/>
                 <constraint firstItem="Fru-O0-2y8" firstAttribute="top" secondItem="EpM-UR-4eK" secondAttribute="bottom" constant="20" id="C60-hL-ouG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fru-O0-2y8" secondAttribute="trailing" id="WBt-Ri-sg1"/>
+                <constraint firstItem="K7s-UK-bHv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="aWG-kD-vsX"/>
                 <constraint firstItem="EpM-UR-4eK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hNC-Ko-AtN"/>
                 <constraint firstItem="EpM-UR-4eK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="jkz-HX-xeV"/>
             </constraints>
@@ -246,6 +260,7 @@
         </view>
     </objects>
     <resources>
+        <image name="arrow" width="12" height="21"/>
         <namedColor name="plusBackground">
             <color red="0.4392156862745098" green="0.68627450980392157" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

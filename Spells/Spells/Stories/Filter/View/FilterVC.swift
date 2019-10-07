@@ -105,7 +105,6 @@ class FilterVC: UIViewController {
 // MARK: - Input
 extension FilterVC: FilterInput {
     
-    
     func changeBooks(_ selected: [Book]) {
         presenter.changeBooks(selected)
     }
@@ -167,8 +166,16 @@ extension FilterVC {
     }
 }
 
+// MARK: - FilterLevelViewDelegate
 extension FilterVC: FilterLevelViewDelegate {
     func tap() {
         presenter.changeSelectedLevels(levelViews.filter { $0.isSelected }.map { Int($0.title)! })
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+extension FilterVC: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        SPStorkController.scrollViewDidScroll(scrollView)
     }
 }

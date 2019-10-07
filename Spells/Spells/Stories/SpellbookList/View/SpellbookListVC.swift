@@ -161,9 +161,7 @@ extension SpellbookListVC: UITableViewDataSource {
 extension SpellbookListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = SpellbookVC(presenter.spellbooks[indexPath.row])
-        let transitionDelegate = SPStorkTransitioningDelegate()
-        transitionDelegate.hapticMoments = []
-        transitionDelegate.showCloseButton = false
+        let transitionDelegate = SPStorkTransitioningDelegate.default
         vc.transitioningDelegate = transitionDelegate
         vc.modalPresentationStyle = .custom
         vc.modalPresentationCapturesStatusBarAppearance = true

@@ -12,12 +12,13 @@ class AddSpellbookVC: UIViewController {
 
     // MARK: - Properties
     private var presenter: AddSpellbookOutput!
-    @IBOutlet var textField: UITextField!
-    @IBOutlet var cancelButton: UIButton!
+    @IBOutlet private var textField: UITextField!
+    @IBOutlet private var cancelButton: UIButton!
     
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        textField.attributedPlaceholder = NSAttributedString(string: "Введите название книги", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: .placeholder)!])
         presenter = AddSpellbookPresenter(self, service: SpellService.shared())
     }
 
@@ -30,6 +31,8 @@ class AddSpellbookVC: UIViewController {
     @IBAction func touchCancel(_ sender: Any) {
         hide()
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .default }
 }
 
 // MARK: - Input
