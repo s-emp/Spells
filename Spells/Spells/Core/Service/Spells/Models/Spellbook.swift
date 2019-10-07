@@ -14,6 +14,7 @@ struct Spellbook {
 }
 
 extension Spellbook {
+    static let favorites = "Избранные заклинания"
     static func transform(_ spellbook: SpellbookRealm) -> Spellbook {
         let spells = Array(spellbook.spells.map { Spell.transform($0) })
         return Spellbook(name: spellbook.name, spells: spells)

@@ -1,5 +1,5 @@
 //
-//  CustomTBC.swift
+//  TabBarWithPopupMenu.swift
 //  Spells
 //
 //  Created by Sergey Melnikov on 19/09/2019.
@@ -13,16 +13,24 @@ fileprivate let selectedListImage = "listTBS"
 fileprivate let spellBookImage = "spellBookTB"
 fileprivate let selectedSpellBookImage = "spellBookTBS"
 
-class CustomTBC: UITabBarController {
+class TabBarWithPopupMenu: UITabBarController {
 
+    // MARK: - Properties
     private var backgroundImageView: UIImageView!
-    private var plusButton: PlusButton!
+    private var plusButton: PlusButton! {
+        didSet {
+            print("NewValue")
+        }
+    }
     private var menuList: UIView!
     private var popupVC: PopupMenuVC!
     private var plusButtonForPopupMenu: PlusButton!
+    private var presenter: TabBarWithPopupMenuOutput!
     
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = TabBarWithPopupMenuPresenter(self)
         prepareTabBarItems()
         backgroundImageView = UIImageView(image: UIImage(named: "backgroundTabBar"))
         backgroundImageView.backgroundColor = UIColor(named: .background)
@@ -38,23 +46,19 @@ class CustomTBC: UITabBarController {
         preparePopupMenu()
     }
     
-    @objc func touchShowPopupMenu() {
-        plusButton.setState(.disclosed, animated: true)
-        plusButtonForPopupMenu.setState(.disclosed, animated: true)
-        addChild(popupVC)
-        popupVC.show()
-        
+    // MARK: - Methods
+    
+    @objc private func touchShowPopupMenu() {
+        showPopupMenu(with: CreateListVC())
     }
     
-    @objc func hidePopupMenu() {
-        popupVC.hide()
-        plusButtonForPopupMenu.setState(.rolledUp, animated: true)
-        plusButton.setState(.rolledUp, animated: true)
+    @objc private func touchHidePopupMenu() {
+        hidePopupMenu()
     }
 }
 
 // MARK: - Prepare
-extension CustomTBC {
+extension TabBarWithPopupMenu {
     fileprivate func prepareTabBarItems() {
         var imageEdgeTop = (UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 7.0) / 2
         imageEdgeTop = imageEdgeTop == 0.0 ? 7.0 : imageEdgeTop
@@ -72,14 +76,19 @@ extension CustomTBC {
         viewControllers = [firstVC, twoVC]
     }
     
+    fileprivate func prepareButton(_ heightButton: CGFloat, _ heightTabBar: CGFloat) {
+        guard plusButton == nil else { return }
+        plusButton = PlusButton(frame: CGRect(x: tabBar.center.x - heightButton / 2, y: -(heightButton / 2 - (10 * heightTabBar / 93)), width: heightButton, height: heightButton))
+        plusButton.addTarget(self, action: #selector(touchShowPopupMenu), for: .touchUpInside)
+    }
+    
     fileprivate func prepareTabBar() {
         let window = UIApplication.shared.windows.first
         let heightTabBar = tabBar.bounds.height + (window?.safeAreaInsets.bottom ?? 0.0)
         let baseButtonWidth: CGFloat = 56
         let baseTabBarWidth: CGFloat = 375
         let heightButton = baseButtonWidth * tabBar.bounds.width / baseTabBarWidth
-        plusButton = PlusButton(frame: CGRect(x: tabBar.center.x - heightButton / 2, y: -(heightButton / 2 - (10 * heightTabBar / 93)), width: heightButton, height: heightButton))
-        plusButton.addTarget(self, action: #selector(touchShowPopupMenu), for: .touchUpInside)
+        prepareButton(heightButton, heightTabBar)
         
         backgroundImageView.frame = CGRect(x: tabBar.bounds.origin.x, y: tabBar.bounds.origin.y, width: tabBar.bounds.width, height: heightTabBar)
         
@@ -103,12 +112,37 @@ extension CustomTBC {
         let baseMargin: CGFloat = 20
         let heightPopupMenu: CGFloat = 120
         popupVC = PopupMenuVC()
-        popupVC.childVC = CreateListVC()
+        popupVC.childVC = nil
         popupVC.startRect = tabBar.convert(plusButton.frame, to: nil)
         popupVC.endRect = CGRect(x: baseMargin, y: popupVC.startRect!.origin.y - 16 - heightPopupMenu, width: rootView.bounds.width - baseMargin * 2, height: heightPopupMenu)
-        
+    }
+}
+
+// MARK: - Input
+extension TabBarWithPopupMenu: TabBarWithPopupMenuInput {
+    
+    func hidePopupMenuAndShowVC(_ vc: UIViewController) {
+        hidePopupMenu()
+        present(vc, animated: true)
+    }
+    
+    func hidePopupMenu() {
+        popupVC.hide()
+        plusButtonForPopupMenu.removeTarget(self, action: nil, for: .touchUpInside)
+        plusButtonForPopupMenu.removeFromSuperview()
+        plusButtonForPopupMenu = nil
+        plusButton.setState(.rolledUp, animated: true)
+    }
+    
+    func showPopupMenu(with item: PopupMenuItem) {
         plusButtonForPopupMenu = PlusButton(frame: tabBar.convert(plusButton.frame, to: nil))
-        plusButtonForPopupMenu.addTarget(self, action: #selector(hidePopupMenu), for: .touchUpInside)
+        plusButtonForPopupMenu.addTarget(self, action: #selector(touchHidePopupMenu), for: .touchUpInside)
         popupVC.view.addSubview(plusButtonForPopupMenu)
+        popupVC.childVC = item.viewControllerItem
+        popupVC.endRect = CGRect(x: popupVC.endRect.origin.x, y: popupVC.startRect!.origin.y - 16 - item.heightItem, width: popupVC.endRect.width, height: item.heightItem)
+        plusButton.setState(.disclosed, animated: true)
+        plusButtonForPopupMenu.setState(.disclosed, animated: true)
+        addChild(popupVC)
+        popupVC.show()
     }
 }

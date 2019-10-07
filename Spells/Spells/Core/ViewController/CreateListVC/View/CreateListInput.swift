@@ -9,5 +9,5 @@
 import Foundation
 
 protocol CreateListInput: AnyObject {
-    
+    func showAddSpellbookVC()
 }

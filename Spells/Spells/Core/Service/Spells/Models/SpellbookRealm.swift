@@ -11,4 +11,8 @@ import RealmSwift
 class SpellbookRealm: Object {
     @objc dynamic var name: String = ""
     var spells = List<SpellRealm>()
+    
+    override static func primaryKey() -> String? {
+        return "name"
+    }
 }

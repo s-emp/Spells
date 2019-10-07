@@ -50,7 +50,7 @@ class SpellService: Exported, Imported {
     
     func resetSpellbookDataBase() {
         let favorites = SpellbookRealm()
-        favorites.name = "Избранные заклинания"
+        favorites.name = Spellbook.favorites
         favorites.spells.append(realm.objects(SpellRealm.self).first!)
         do {
             try realm.write {
@@ -70,5 +70,55 @@ class SpellService: Exported, Imported {
     func spellbooks() -> [Spellbook] {
         let spellbooksRealm = realm.objects(SpellbookRealm.self)
         return Array(spellbooksRealm.map { Spellbook.transform($0) })
+    }
+    
+    var favorites: Spellbook {
+        return Spellbook.transform(realm.objects(SpellbookRealm.self).first(where: { $0.name == Spellbook.favorites })!)
+    }
+    
+    func addSpellInSpellbook(_ spell: Spell, spellbook: Spellbook) {
+        guard let spellbookRealm = realm.objects(SpellbookRealm.self).first(where: { $0.name == spellbook.name }) else {
+            fatalError("Не найдена книга заклинаний [\(spellbook)] в Realm")
+        }
+        guard let spellRealm = realm.objects(SpellRealm.self).first(where: { $0.uuid == spell.uuid }) else {
+            fatalError("Не найдено заклинание [\(spell)] в Realm")
+        }
+        do {
+            try realm.write {
+                spellbookRealm.spells.append(spellRealm)
+            }
+        } catch let error {
+            fatalError(error.localizedDescription)
+        }
+    }
+    
+    func removeSpellInSpellbook(_ spell: Spell, spellbook: Spellbook) {
+        guard let spellbookRealm = realm.objects(SpellbookRealm.self).first(where: { $0.name == spellbook.name }) else {
+            fatalError("Не найдена книга заклинаний [\(spellbook)] в Realm")
+        }
+        guard let spellRealm = realm.objects(SpellRealm.self).first(where: { $0.uuid == spell.uuid }) else {
+            fatalError("Не найдено заклинание [\(spell)] в Realm")
+        }
+        do {
+            guard let index = spellbookRealm.spells.index(of: spellRealm) else { return }
+            try realm.write {
+                spellbookRealm.spells.remove(at: index)
+            }
+        } catch let error {
+            fatalError(error.localizedDescription)
+        }
+    }
+    
+    func addSpellbook(_ spellbook: Spellbook) {
+        guard spellbooks().first(where: { $0.name == spellbook.name }) == nil else { return }
+        let spellbookRealm = SpellbookRealm()
+        spellbookRealm.name = spellbook.name
+        do {
+            try realm.write {
+                realm.add(spellbookRealm)
+            }
+        } catch let error {
+            fatalError(error.localizedDescription)
+        }
     }
 }

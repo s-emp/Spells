@@ -14,7 +14,7 @@ class PopupMenuVC: UIViewController {
     
     var startRect: CGRect?
     var endRect: CGRect!
-    var childVC: UIViewController?
+    weak var childVC: UIViewController?
     
     private var popupMenu: UIView!
     
@@ -36,12 +36,17 @@ class PopupMenuVC: UIViewController {
     }
     
     func hide() {
+        
         UIView.animate(withDuration: 0.2, animations: {
             self.view.alpha = 0
             self.popupMenu.frame = self.startRect ?? .zero
             self.popupMenu.alpha = 0
-            self.childVC!.view.layoutIfNeeded()
-        })
+        }) { _ in
+            self.childVC?.view.removeFromSuperview()
+            self.childVC?.removeFromParent()
+            self.view.removeFromSuperview()
+            self.removeFromParent()
+        }
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -52,6 +57,10 @@ class PopupMenuVC: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         preparePopupMenu()
+    }
+    
+    deinit {
+        print("Popupmenu deinit!")
     }
     
     override func viewDidLoad() {

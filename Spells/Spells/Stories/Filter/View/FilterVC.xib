@@ -274,7 +274,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" name="background"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="PGW-TJ-cUY" secondAttribute="trailing" id="2Vo-8N-AGG"/>
                                                 <constraint firstItem="Zvu-hq-cer" firstAttribute="top" secondItem="PGW-TJ-cUY" secondAttribute="bottom" constant="16" id="5n1-uO-T6V"/>
@@ -314,7 +314,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" name="background"/>
                                             <constraints>
                                                 <constraint firstItem="T1a-hD-AJ2" firstAttribute="top" secondItem="PQr-DX-Ygn" secondAttribute="top" id="BHb-SX-b0O"/>
                                                 <constraint firstAttribute="trailing" secondItem="T1a-hD-AJ2" secondAttribute="trailing" id="Bw2-En-Xkp"/>
@@ -369,7 +369,7 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" name="background"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="EQq-XW-8Wo" secondAttribute="trailing" id="EOX-HA-nEv"/>
                                                 <constraint firstItem="EQq-XW-8Wo" firstAttribute="leading" secondItem="CQX-dQ-p6L" secondAttribute="leading" id="VWa-P8-sgm"/>
@@ -414,7 +414,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" name="background"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="THE-XA-vbq" secondAttribute="trailing" constant="16" id="964-oT-YDS"/>
                                 <constraint firstItem="Oa5-B4-pgj" firstAttribute="top" secondItem="gQK-oK-0JP" secondAttribute="top" constant="60" id="ATW-vx-e08"/>
@@ -449,6 +449,9 @@
                         <constraint firstItem="gQK-oK-0JP" firstAttribute="leading" secondItem="iEi-aM-hz1" secondAttribute="leading" id="WiQ-AE-6Gw"/>
                         <constraint firstAttribute="trailing" secondItem="gQK-oK-0JP" secondAttribute="trailing" id="XgQ-aX-bEH"/>
                     </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="IHc-LK-s2V"/>
+                    </connections>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -79,13 +79,22 @@ class FilterVC: UIViewController {
     
     @IBAction func touchSelectedBooks(_ sender: Any) {
         let vc = FilterBookVC(filterInput: self, filter: presenter.filter)
-        let transitionDelegate = SPStorkTransitioningDelegate()
-        transitionDelegate.hapticMoments = []
-        transitionDelegate.showCloseButton = false
-        vc.transitioningDelegate = transitionDelegate
-        vc.modalPresentationStyle = .custom
-        vc.modalPresentationCapturesStatusBarAppearance = true
-        self.present(vc, animated: true, completion: nil)
+//        vc.modalPresentationStyle = .overFullScreen
+//        vc.modalTransitionStyle = .coverVertical
+//        let transitionDelegate = SPStorkTransitioningDelegate()
+//        transitionDelegate.hapticMoments = []
+//        transitionDelegate.showCloseButton = false
+//        vc.transitioningDelegate = transitionDelegate
+//        vc.modalPresentationStyle = .custom
+//        vc.modalPresentationCapturesStatusBarAppearance = true
+//        self.present(vc, animated: true, completion: nil)
+        addChild(vc)
+        vc.view.frame = CGRect(x: view.bounds.width, y: 0, width: view.bounds.width, height: view.bounds.height)
+        view.addSubview(vc.view)
+        UIView.animate(withDuration: 0.2) {
+            vc.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+        }
+        
     }
     
     @IBAction func touchCloseFilter(_ sender: Any) {
@@ -95,7 +104,6 @@ class FilterVC: UIViewController {
 
 // MARK: - Input
 extension FilterVC: FilterInput {
-    
     
     func changeBooks(_ selected: [Book]) {
         presenter.changeBooks(selected)
@@ -158,8 +166,16 @@ extension FilterVC {
     }
 }
 
+// MARK: - FilterLevelViewDelegate
 extension FilterVC: FilterLevelViewDelegate {
     func tap() {
         presenter.changeSelectedLevels(levelViews.filter { $0.isSelected }.map { Int($0.title)! })
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+extension FilterVC: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        SPStorkController.scrollViewDidScroll(scrollView)
     }
 }

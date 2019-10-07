@@ -37,13 +37,17 @@ class SpellbookListVC: UIViewController {
         prepareNotifications()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        spellbookTableView.reloadData()
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     // MARK: - Methods
-    
     @IBAction func touchCancel(_ sender: Any) {
         searchTextField.insertText("")
         searchTextField.resignFirstResponder()
@@ -157,9 +161,7 @@ extension SpellbookListVC: UITableViewDataSource {
 extension SpellbookListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = SpellbookVC(presenter.spellbooks[indexPath.row])
-        let transitionDelegate = SPStorkTransitioningDelegate()
-        transitionDelegate.hapticMoments = []
-        transitionDelegate.showCloseButton = false
+        let transitionDelegate = SPStorkTransitioningDelegate.default
         vc.transitioningDelegate = transitionDelegate
         vc.modalPresentationStyle = .custom
         vc.modalPresentationCapturesStatusBarAppearance = true
