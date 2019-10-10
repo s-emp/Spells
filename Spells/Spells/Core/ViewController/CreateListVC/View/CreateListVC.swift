@@ -28,7 +28,7 @@ class CreateListVC: UIViewController {
 // MARK: - Input
 extension CreateListVC: CreateListInput {
     func showAddSpellbookVC() {
-        let vc = AddSpellbookVC()
+        let vc = CreateSpellbookVC()
         vc.modalPresentationStyle = .fullScreen
         TabBarService.shared().tabBar.hidePopupMenuAndShowVC(vc)
     }

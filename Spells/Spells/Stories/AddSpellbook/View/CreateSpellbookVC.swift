@@ -8,10 +8,10 @@
 
 import UIKit
 
-class AddSpellbookVC: UIViewController {
+class CreateSpellbookVC: UIViewController {
 
     // MARK: - Properties
-    private var presenter: AddSpellbookOutput!
+    private var presenter: CreateSpellbookOutput!
     @IBOutlet private var textField: UITextField!
     @IBOutlet private var cancelButton: UIButton!
     
@@ -19,7 +19,7 @@ class AddSpellbookVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.attributedPlaceholder = NSAttributedString(string: "Введите название книги", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: .placeholder)!])
-        presenter = AddSpellbookPresenter(self, service: SpellService.shared())
+        presenter = CreateSpellbookPresenter(self, service: SpellService.shared())
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -36,7 +36,7 @@ class AddSpellbookVC: UIViewController {
 }
 
 // MARK: - Input
-extension AddSpellbookVC: AddSpellbookInput {
+extension CreateSpellbookVC: CreateSpellbookInput {
     func hide() {
         dismiss(animated: true)
     }
@@ -53,7 +53,7 @@ extension AddSpellbookVC: AddSpellbookInput {
 }
 
 // MARK: - TextFieldDelegate
-extension AddSpellbookVC: UITextFieldDelegate {
+extension CreateSpellbookVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         presenter.createSpellbook(textField.text ?? "")
         return true

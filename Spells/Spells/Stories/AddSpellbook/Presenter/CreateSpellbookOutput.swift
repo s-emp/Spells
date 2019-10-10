@@ -1,5 +1,5 @@
 //
-//  AddSpellbookOutput.swift
+//  CreateSpellbookOutput.swift
 //  Spells
 //
 //  Created by Sergey Melnikov on 03/10/2019.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol AddSpellbookOutput {
+protocol CreateSpellbookOutput {
 
     func createSpellbook(_ name: String)
     
-    init(_ view: AddSpellbookInput, service: SpellService)
+    init(_ view: CreateSpellbookInput, service: SpellService)
 }
 

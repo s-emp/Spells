@@ -1,5 +1,5 @@
 //
-//  AddSpellbookInput.swift
+//  CreateSpellbookInput.swift
 //  Spells
 //
 //  Created by Sergey Melnikov on 03/10/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AddSpellbookInput: AnyObject {
+protocol CreateSpellbookInput: AnyObject {
     func hide()
     func error(_ message: String)
 }
