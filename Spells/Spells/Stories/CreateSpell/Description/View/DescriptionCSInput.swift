@@ -10,4 +10,7 @@ import Foundation
 
 protocol DescriptionCSInput: AnyObject {
     
+    var spell: Spell! { get set }
+    
+    func showNextVC()
 }

@@ -10,6 +10,9 @@ import Foundation
 
 protocol DescriptionCSOutput {
     
+    var spell: Spell! { get set }
+    
+    func saveInformation(_ info: String?)
     init(_ view: DescriptionCSInput)
 }
 

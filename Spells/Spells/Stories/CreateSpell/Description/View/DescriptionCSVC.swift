@@ -10,21 +10,46 @@ import UIKit
 
 class DescriptionCSVC: UIViewController {
 
+    // MARK: - Properties
+    private var presenter: DescriptionCSOutput!
+    @IBOutlet var descriptionTextField: UITextField!
+    
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        descriptionTextField.becomeFirstResponder()
     }
 
+    // MARK: - Methods
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+// MARK: - Input
+extension DescriptionCSVC: DescriptionCSInput {
+    var spell: Spell! {
+        get {
+            return presenter.spell
+        }
+        set {
+            if presenter == nil {
+                presenter = DescriptionCSPresenter(self)
+            }
+            presenter.spell = newValue
+        }
     }
-    */
+    
+    func showNextVC() {
+        performSegue(withIdentifier: "Params", sender: presenter.spell)
+    }
+}
 
+// MARK: - UITextFieldDelegate
+extension DescriptionCSVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        presenter.saveInformation(descriptionTextField.text)
+        return true
+    }
 }

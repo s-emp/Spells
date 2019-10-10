@@ -9,10 +9,17 @@
 import Foundation
 
 class DescriptionCSPresenter: DescriptionCSOutput {
+    var spell: Spell!
+    
     // MARK: - Properties
     weak var view: DescriptionCSInput!
     
     // MARK: - Methods
+    func saveInformation(_ info: String?) {
+        spell.info = info ?? ""
+        view.showNextVC()
+    }
+    
     required init(_ view: DescriptionCSInput) {
         self.view = view
     }
