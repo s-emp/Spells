@@ -18,7 +18,7 @@ class CreateSpellbookVC: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        textField.attributedPlaceholder = NSAttributedString(string: "Введите название книги", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: .placeholder)!])
+        textField.attributedPlaceholder = NSAttributedString(string: "Введите название книги", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: .placeholder)])
         presenter = CreateSpellbookPresenter(self, service: SpellService.shared())
     }
 
@@ -42,11 +42,7 @@ extension CreateSpellbookVC: CreateSpellbookInput {
     }
     
     func error(_ message: String) {
-        let alerVC = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-        alerVC.addAction(UIAlertAction(title: "ОК", style: .default, handler: { (action) in
-            alerVC.dismiss(animated: true, completion: nil)
-        }))
-        present(alerVC, animated: true, completion: nil)
+        UIAlertController.showDefaultErrorAlert(message, vc: self)
     }
     
     
