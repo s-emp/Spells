@@ -1,5 +1,5 @@
 //
-//  CreateSpellbookPresenter.swift
+//  AddInSpellbookPresenter.swift
 //  Spells
 //
 //  Created by Sergey Melnikov on 01/10/2019.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-class CreateSpellbookPresenter: CreateSpellbookOutput {
+class AddInSpellbookPresenter: AddInSpellbookOutput {
     // MARK: - Properties
     private let service: SpellService
     private let spell: Spell
-    weak var view: CreateSpellbookInput!
+    weak var view: AddInSpellbookInput!
     var spellbooks: [Spellbook]
     
     // MARK: - Methods
@@ -22,7 +22,7 @@ class CreateSpellbookPresenter: CreateSpellbookOutput {
         view.hide()
     }
     
-    required init(_ view: CreateSpellbookInput, service: SpellService, spell: Spell) {
+    required init(_ view: AddInSpellbookInput, service: SpellService, spell: Spell) {
         self.view = view
         self.service = service
         self.spell = spell

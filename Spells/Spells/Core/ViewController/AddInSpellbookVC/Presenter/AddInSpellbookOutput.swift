@@ -1,5 +1,5 @@
 //
-//  CreateSpellbookOutput.swift
+//  AddInSpellbookOutput.swift
 //  Spells
 //
 //  Created by Sergey Melnikov on 01/10/2019.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol CreateSpellbookOutput {
+protocol AddInSpellbookOutput {
     
     var spellbooks: [Spellbook] { get }
     
     func touchItem(_ index: Int)
     
-    init(_ view: CreateSpellbookInput, service: SpellService, spell: Spell)
+    init(_ view: AddInSpellbookInput, service: SpellService, spell: Spell)
 }
 
