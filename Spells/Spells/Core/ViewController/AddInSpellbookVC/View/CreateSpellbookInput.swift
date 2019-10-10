@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol AddInSpellbookInput: AnyObject {
+protocol CreateSpellbookInput: AnyObject {
     func hide()
 }

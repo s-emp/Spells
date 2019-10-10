@@ -1,5 +1,5 @@
 //
-//  AddInSpellbookVC.swift
+//  CreateSpellbookVC.swift
 //  Spells
 //
 //  Created by Sergey Melnikov on 01/10/2019.
@@ -10,10 +10,10 @@ import UIKit
 
 fileprivate let identifier = "cell"
 
-class AddInSpellbookVC: UIViewController {
+class CreateSpellbookVC: UIViewController {
 
     // MARK: - Properties
-    private var presenter: AddInSpellbookOutput!
+    private var presenter: CreateSpellbookOutput! 
     private weak var menu: TabBarWithPopupMenuInput!
     @IBOutlet private var spellbooksTableView: UITableView!
     
@@ -21,7 +21,7 @@ class AddInSpellbookVC: UIViewController {
     required convenience init(_ menu: TabBarWithPopupMenuInput, spell: Spell) {
         self.init()
         self.menu = menu
-        presenter = AddInSpellbookPresenter(self, service: SpellService.shared(), spell: spell)
+        presenter = CreateSpellbookPresenter(self, service: SpellService.shared(), spell: spell)
     }
     
     override func viewDidLoad() {
@@ -32,21 +32,21 @@ class AddInSpellbookVC: UIViewController {
 }
 
 // MARK: - Prepare
-extension AddInSpellbookVC {
+extension CreateSpellbookVC {
     private func prepareTableView() {
         spellbooksTableView.register(UINib(nibName: "SpellbookInMenuCell", bundle: nil), forCellReuseIdentifier: identifier)
     }
 }
 
 // MARK: - Input
-extension AddInSpellbookVC: AddInSpellbookInput {
+extension CreateSpellbookVC: CreateSpellbookInput {
     func hide() {
         menu.hidePopupMenu()
     }
 }
 
 // MARK: - PopupMenuItem
-extension AddInSpellbookVC: PopupMenuItem {
+extension CreateSpellbookVC: PopupMenuItem {
     var heightItem: CGFloat {
         let result: CGFloat = presenter.spellbooks.count * 56 + 56 > 300 ? 300 : CGFloat(presenter.spellbooks.count * 56 + 56)
         return result
@@ -58,7 +58,7 @@ extension AddInSpellbookVC: PopupMenuItem {
 }
 
 // MARK: - UITableViewDataSource
-extension AddInSpellbookVC: UITableViewDataSource {
+extension CreateSpellbookVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.spellbooks.count
     }
@@ -78,7 +78,7 @@ extension AddInSpellbookVC: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-extension AddInSpellbookVC: UITableViewDelegate {
+extension CreateSpellbookVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.touchItem(indexPath.row)
     }
