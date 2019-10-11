@@ -54,13 +54,31 @@
                     <navigationItem key="navigationItem" title="Описание" largeTitleDisplayMode="always" id="CLv-wC-1j2">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="aWx-IJ-MNI"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="W9U-yr-IpU" kind="show" identifier="Params" id="8go-wZ-epA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNn-WM-S9z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="641" y="27"/>
         </scene>
+        <!--Параметры-->
+        <scene sceneID="cBh-UD-yEH">
+            <objects>
+                <viewController id="W9U-yr-IpU" customClass="ParamsVC" customModule="Spells" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Параметры" id="eN4-2E-vHp">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="r2Y-4Q-N6E"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hok-3Q-XYk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1461" y="27"/>
+        </scene>
     </scenes>
     <resources>
+        <namedColor name="text">
+            <color red="0.12941176470588237" green="0.2627450980392157" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="text">
             <color red="0.12941176470588237" green="0.2627450980392157" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

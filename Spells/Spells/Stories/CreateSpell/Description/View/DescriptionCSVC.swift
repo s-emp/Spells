@@ -25,6 +25,9 @@ class DescriptionCSVC: UIViewController {
     }
 
     // MARK: - Methods
+    @IBAction func touchCancel() {
+        descriptionTextField.resignFirstResponder()
+    }
 }
 
 // MARK: - Input

@@ -68,6 +68,11 @@
 		99B76BDA2343675500397846 /* SpellbookInMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99B76BD82343675500397846 /* SpellbookInMenuCell.xib */; };
 		99B76BDD23437BBB00397846 /* TabBarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B76BDC23437BBB00397846 /* TabBarService.swift */; };
 		99B76BDF23437D3300397846 /* TabBarWithPopupMenuInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B76BDE23437D3300397846 /* TabBarWithPopupMenuInput.swift */; };
+		99C627B023509D5000108411 /* ParamsInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C627AF23509D5000108411 /* ParamsInput.swift */; };
+		99C627B323509D6400108411 /* ParamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C627B123509D6400108411 /* ParamsVC.swift */; };
+		99C627B423509D6400108411 /* ParamsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99C627B223509D6400108411 /* ParamsVC.xib */; };
+		99C627B623509D9200108411 /* ParamsOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C627B523509D9200108411 /* ParamsOutput.swift */; };
+		99C627B823509D9E00108411 /* ParamsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C627B723509D9E00108411 /* ParamsPresenter.swift */; };
 		99D60640234F20EE004AA4A4 /* NameCSInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6063F234F20EE004AA4A4 /* NameCSInput.swift */; };
 		99D60643234F2104004AA4A4 /* NameCSVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D60641234F2104004AA4A4 /* NameCSVC.swift */; };
 		99D60644234F2104004AA4A4 /* NameCSVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99D60642234F2104004AA4A4 /* NameCSVC.xib */; };
@@ -202,6 +207,11 @@
 		99B76BD82343675500397846 /* SpellbookInMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpellbookInMenuCell.xib; sourceTree = "<group>"; };
 		99B76BDC23437BBB00397846 /* TabBarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarService.swift; sourceTree = "<group>"; };
 		99B76BDE23437D3300397846 /* TabBarWithPopupMenuInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarWithPopupMenuInput.swift; sourceTree = "<group>"; };
+		99C627AF23509D5000108411 /* ParamsInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsInput.swift; sourceTree = "<group>"; };
+		99C627B123509D6400108411 /* ParamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsVC.swift; sourceTree = "<group>"; };
+		99C627B223509D6400108411 /* ParamsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParamsVC.xib; sourceTree = "<group>"; };
+		99C627B523509D9200108411 /* ParamsOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsOutput.swift; sourceTree = "<group>"; };
+		99C627B723509D9E00108411 /* ParamsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsPresenter.swift; sourceTree = "<group>"; };
 		99D6063F234F20EE004AA4A4 /* NameCSInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCSInput.swift; sourceTree = "<group>"; };
 		99D60641234F2104004AA4A4 /* NameCSVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCSVC.swift; sourceTree = "<group>"; };
 		99D60642234F2104004AA4A4 /* NameCSVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NameCSVC.xib; sourceTree = "<group>"; };
@@ -555,9 +565,38 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		99C627AC23509D3500108411 /* Params */ = {
+			isa = PBXGroup;
+			children = (
+				99C627AE23509D4200108411 /* Presenter */,
+				99C627AD23509D3C00108411 /* View */,
+			);
+			path = Params;
+			sourceTree = "<group>";
+		};
+		99C627AD23509D3C00108411 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				99C627AF23509D5000108411 /* ParamsInput.swift */,
+				99C627B123509D6400108411 /* ParamsVC.swift */,
+				99C627B223509D6400108411 /* ParamsVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		99C627AE23509D4200108411 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				99C627B523509D9200108411 /* ParamsOutput.swift */,
+				99C627B723509D9E00108411 /* ParamsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		99D6063B234F201D004AA4A4 /* CreateSpell */ = {
 			isa = PBXGroup;
 			children = (
+				99C627AC23509D3500108411 /* Params */,
 				998C0A99234F3B6B00BAD31D /* Description */,
 				99D6063C234F202E004AA4A4 /* Name */,
 				99D6064B234F2680004AA4A4 /* CreateSpell.storyboard */,
@@ -1015,6 +1054,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99337947233B95C600907090 /* FilterVC.xib in Resources */,
+				99C627B423509D6400108411 /* ParamsVC.xib in Resources */,
 				99EDC011233372EC007855C4 /* LaunchScreen.storyboard in Resources */,
 				99EDC044233378D2007855C4 /* Colors.xcassets in Resources */,
 				B9144247233521C300C68557 /* SpellCell.xib in Resources */,
@@ -1142,12 +1182,14 @@
 				9938B23F233CE89A0073B574 /* Int+Declension.swift in Sources */,
 				B98EF36D23353E6C008E81ED /* Book.swift in Sources */,
 				99829B4B233A040900E0D725 /* SpellRealm.swift in Sources */,
+				99C627B323509D6400108411 /* ParamsVC.swift in Sources */,
 				99D60640234F20EE004AA4A4 /* NameCSInput.swift in Sources */,
 				99EDC036233375E1007855C4 /* TextTag.swift in Sources */,
 				B98EF375233541F2008E81ED /* Profession.swift in Sources */,
 				99EDC03A23337613007855C4 /* TextModal.swift in Sources */,
 				99B76BD5234352ED00397846 /* AddInSpellbookPresenter.swift in Sources */,
 				9933794C233BA62900907090 /* FilterLevelView.swift in Sources */,
+				99C627B823509D9E00108411 /* ParamsPresenter.swift in Sources */,
 				99B76BDD23437BBB00397846 /* TabBarService.swift in Sources */,
 				99EDC034233375C6007855C4 /* TextPush.swift in Sources */,
 				99EDC04F2333910A007855C4 /* UIColor+Palette.swift in Sources */,
@@ -1164,6 +1206,7 @@
 				99B76BC423433E5900397846 /* SpellbookInput.swift in Sources */,
 				99D60646234F2145004AA4A4 /* NameCSOutput.swift in Sources */,
 				99B76BCE234352B400397846 /* AddInSpellbookVC.swift in Sources */,
+				99C627B623509D9200108411 /* ParamsOutput.swift in Sources */,
 				99EDC0472333871B007855C4 /* TabBarWithPopupMenu.swift in Sources */,
 				B98EF37323353FF9008E81ED /* Component.swift in Sources */,
 				B98EF37723354436008E81ED /* School.swift in Sources */,
@@ -1183,6 +1226,7 @@
 				998C0AA6234F3BD900BAD31D /* DescriptionCSPresenter.swift in Sources */,
 				998C0AA4234F3BCB00BAD31D /* DescriptionCSOutput.swift in Sources */,
 				99F69F52234627B200A077DE /* CreateSpellbookInput.swift in Sources */,
+				99C627B023509D5000108411 /* ParamsInput.swift in Sources */,
 				9993D17C233C95FE004C9E03 /* IOTagCell.swift in Sources */,
 				99EDC03123337583007855C4 /* Header2.swift in Sources */,
 				99B76BD3234352E200397846 /* AddInSpellbookOutput.swift in Sources */,
