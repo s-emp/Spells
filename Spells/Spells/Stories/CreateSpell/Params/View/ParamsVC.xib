@@ -46,13 +46,15 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yZ-Oa-Ru1">
                                                     <rect key="frame" x="323" y="11" width="59" height="30"/>
-                                                    <state key="normal" title="Заговор"/>
+                                                    <state key="normal" title="Заговор">
+                                                        <color key="titleColor" name="buttonEnabled"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="touchChangeLevel:" destination="-1" eventType="touchUpInside" id="O0j-cC-gyp"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" name="background"/>
                                             <constraints>
                                                 <constraint firstItem="6yZ-Oa-Ru1" firstAttribute="centerY" secondItem="XrR-uv-CCG" secondAttribute="centerY" id="OVu-NG-cng"/>
                                                 <constraint firstItem="XrR-uv-CCG" firstAttribute="top" secondItem="EPS-yT-zIe" secondAttribute="top" constant="16" id="T8X-AU-WUZ"/>
@@ -89,13 +91,15 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USU-f8-QeW">
                                                     <rect key="frame" x="327" y="11" width="55" height="30"/>
-                                                    <state key="normal" title="Призыв"/>
+                                                    <state key="normal" title="Призыв">
+                                                        <color key="titleColor" name="buttonEnabled"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="touchChangeSchool:" destination="-1" eventType="touchUpInside" id="DKB-zz-9HA"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" name="background"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="55" id="17J-TB-FsX"/>
                                                 <constraint firstItem="RXz-Lt-9MV" firstAttribute="top" secondItem="CuV-YH-Whq" secondAttribute="top" constant="16" id="SOQ-v6-OZB"/>
@@ -135,11 +139,12 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="36" id="hgQ-ce-nic"/>
                                                     </constraints>
+                                                    <color key="textColor" name="text"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                 </textField>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" name="background"/>
                                             <constraints>
                                                 <constraint firstItem="HKX-IT-TXd" firstAttribute="centerY" secondItem="Sfx-RP-Yip" secondAttribute="centerY" id="2Qo-lA-IWu"/>
                                                 <constraint firstItem="Sfx-RP-Yip" firstAttribute="top" secondItem="W20-3j-vNv" secondAttribute="top" constant="16" id="LOX-5U-3ad"/>
@@ -170,11 +175,12 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="36" id="4Tp-px-dRo"/>
                                                     </constraints>
+                                                    <color key="textColor" name="text"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                 </textField>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" name="background"/>
                                             <constraints>
                                                 <constraint firstItem="wWE-Bx-YqX" firstAttribute="top" secondItem="xgj-lx-nj1" secondAttribute="top" constant="16" id="3mW-Op-O8N"/>
                                                 <constraint firstItem="SyB-FQ-TCo" firstAttribute="centerY" secondItem="wWE-Bx-YqX" secondAttribute="centerY" id="7mM-S3-iVu"/>
@@ -205,6 +211,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="36" id="6P5-fk-4TB"/>
                                                     </constraints>
+                                                    <color key="textColor" name="text"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                     <connections>
@@ -212,7 +219,7 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" name="background"/>
                                             <constraints>
                                                 <constraint firstItem="xMc-L6-wH7" firstAttribute="top" secondItem="32q-lz-6wg" secondAttribute="top" constant="16" id="3Lh-vT-5uX"/>
                                                 <constraint firstItem="f25-io-F3z" firstAttribute="centerY" secondItem="xMc-L6-wH7" secondAttribute="centerY" id="8KV-oU-8Ob"/>
@@ -242,7 +249,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" name="background"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="qXz-cQ-Iga" secondAttribute="bottom" constant="40" id="D32-nZ-o2J"/>
                                 <constraint firstAttribute="trailing" secondItem="p3k-fh-BFh" secondAttribute="trailing" id="PKp-Qj-3dA"/>
@@ -262,7 +269,7 @@
                     </constraints>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="background"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mqs-AQ-2GI" secondAttribute="trailing" id="DBo-3C-ENB"/>
                 <constraint firstItem="mqs-AQ-2GI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="XHg-1J-iXf"/>
@@ -282,6 +289,12 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="buttonEnabled">
+            <color red="0.43900001049041748" green="0.68599998950958252" blue="0.80800002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="separator">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

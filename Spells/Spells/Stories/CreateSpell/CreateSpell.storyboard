@@ -73,10 +73,25 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="GNb-iV-8zd" kind="show" identifier="Components" id="Vii-yD-su0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hok-3Q-XYk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1461" y="27"/>
+        </scene>
+        <!--Компоненты-->
+        <scene sceneID="lRE-N1-DOp">
+            <objects>
+                <viewController id="GNb-iV-8zd" customClass="ComponentsVC" customModule="Spells" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Компоненты" id="ecW-jb-tzG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="WTV-PN-QSi"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkK-Eh-CrH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2329" y="27"/>
         </scene>
     </scenes>
     <resources>

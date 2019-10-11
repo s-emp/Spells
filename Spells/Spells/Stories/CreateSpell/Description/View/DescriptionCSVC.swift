@@ -8,6 +8,8 @@
 
 import UIKit
 
+fileprivate let paramsSegue = "Params"
+
 class DescriptionCSVC: UIViewController {
 
     // MARK: - Properties
@@ -50,7 +52,7 @@ extension DescriptionCSVC: DescriptionCSInput {
     }
     
     func showNextVC() {
-        performSegue(withIdentifier: "Params", sender: presenter.spell)
+        performSegue(withIdentifier: paramsSegue, sender: presenter.spell)
     }
 }
 

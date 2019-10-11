@@ -8,6 +8,8 @@
 
 import UIKit
 
+fileprivate let informationSegue = "Desc"
+
 class NameCSVC: UIViewController {
     
     // MARK: - Properties
@@ -40,7 +42,7 @@ class NameCSVC: UIViewController {
 // MARK: - Input
 extension NameCSVC: NameCSInput {
     func showNextVC() {
-        performSegue(withIdentifier: "Desc", sender: presenter.spell)
+        performSegue(withIdentifier: informationSegue, sender: presenter.spell)
     }
     
     func error(_ message: String) {

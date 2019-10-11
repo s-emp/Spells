@@ -8,6 +8,8 @@
 
 import UIKit
 
+fileprivate let componentsSegue = "Components"
+
 class ParamsVC: UIViewController {
 
     // MARK: - Properties
@@ -23,6 +25,11 @@ class ParamsVC: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? ComponentsInput, let spell = sender as? Spell else { fatalError() }
+        vc.spell = spell
     }
     
     // MARK: - Methods
@@ -72,7 +79,7 @@ extension ParamsVC: ParamsInput {
     }
     
     func showNextVC() {
-        performSegue(withIdentifier: "Components", sender: presenter.spell)
+        performSegue(withIdentifier: componentsSegue, sender: presenter.spell)
     }
     
     func error(_ message: String) {
