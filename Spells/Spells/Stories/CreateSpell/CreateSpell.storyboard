@@ -67,7 +67,11 @@
             <objects>
                 <viewController id="W9U-yr-IpU" customClass="ParamsVC" customModule="Spells" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Параметры" id="eN4-2E-vHp">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="r2Y-4Q-N6E"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="r2Y-4Q-N6E">
+                            <connections>
+                                <action selector="touchCancel" destination="W9U-yr-IpU" id="9mY-dL-1Z1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hok-3Q-XYk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

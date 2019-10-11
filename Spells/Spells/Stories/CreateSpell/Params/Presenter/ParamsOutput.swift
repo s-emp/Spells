@@ -10,6 +10,9 @@ import Foundation
 
 protocol ParamsOutput {
     
+    var spell: Spell! { get set }
+    
+    func saveParams(_ level: Int, school: School, range: String?, duration: String?, action: String?)
     init(_ view: ParamsInput)
 }
 

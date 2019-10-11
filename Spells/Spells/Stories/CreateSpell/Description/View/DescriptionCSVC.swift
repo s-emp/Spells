@@ -23,6 +23,11 @@ class DescriptionCSVC: UIViewController {
         super.viewDidAppear(animated)
         descriptionTextField.becomeFirstResponder()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? ParamsInput, let spell = sender as? Spell else { fatalError() }
+        vc.spell = spell
+    }
 
     // MARK: - Methods
     @IBAction func touchCancel() {

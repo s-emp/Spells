@@ -41,5 +41,6 @@ extension UIColor {
         case buttonDisabled
         case buttonTitleEnabled
         case buttonTitleDisabled
+        case separator
     }
 }

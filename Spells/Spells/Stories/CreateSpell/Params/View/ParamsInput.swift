@@ -9,5 +9,8 @@
 import Foundation
 
 protocol ParamsInput: AnyObject {
+    var spell: Spell! { get set }
     
+    func showNextVC()
+    func error(_ message: String)
 }
