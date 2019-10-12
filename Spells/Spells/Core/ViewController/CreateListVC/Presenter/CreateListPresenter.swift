@@ -10,11 +10,11 @@ class CreateListPresenter: CreateListOutput {
     private weak var view: CreateListInput!
     
     func createSpell() {
-        print("CreateSpell")
+        view.showCreateSpellVC()
     }
     
     func createSpellbook() {
-        view.showAddSpellbookVC()
+        view.showCreateSpellbookVC()
     }
     
     required init(_ view: CreateListInput) {

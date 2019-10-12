@@ -24,6 +24,10 @@ class ComponentsVC: UIViewController {
     }
     
     // MARK: - Methods
+    @IBAction func touchCancel() {
+        dismiss(animated: true)
+    }
+    
     @IBAction func changedMaterialComponent(_ sender: Any) {
         UIView.animate(withDuration: 0.2) {
             self.materialTextField.isHidden = !self.mSwitch.isOn

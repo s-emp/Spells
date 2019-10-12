@@ -27,7 +27,14 @@ class CreateListVC: UIViewController {
 
 // MARK: - Input
 extension CreateListVC: CreateListInput {
-    func showAddSpellbookVC() {
+    func showCreateSpellVC() {
+        let storyboard = UIStoryboard(name: "CreateSpell", bundle: nil)
+        guard let vc = storyboard.instantiateInitialViewController() else { return }
+        vc.modalPresentationStyle = .fullScreen
+        TabBarService.shared().tabBar.hidePopupMenuAndShowVC(vc)
+    }
+    
+    func showCreateSpellbookVC() {
         let vc = CreateSpellbookVC()
         vc.modalPresentationStyle = .fullScreen
         TabBarService.shared().tabBar.hidePopupMenuAndShowVC(vc)

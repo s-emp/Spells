@@ -86,7 +86,11 @@
             <objects>
                 <viewController id="GNb-iV-8zd" customClass="ComponentsVC" customModule="Spells" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Компоненты" id="ecW-jb-tzG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="WTV-PN-QSi"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="WTV-PN-QSi">
+                            <connections>
+                                <action selector="touchCancel" destination="GNb-iV-8zd" id="lbM-06-z2v"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkK-Eh-CrH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -34,7 +34,7 @@ class ParamsVC: UIViewController {
     
     // MARK: - Methods
     @IBAction func touchCancel() {
-        
+        dismiss(animated: true)
     }
     
     private func showLevelPicker() {

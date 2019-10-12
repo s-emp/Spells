@@ -35,7 +35,7 @@ class NameCSVC: UIViewController {
     
     // MARK: - Methods
     @IBAction func touchCancel() {
-        nameTextField.resignFirstResponder()
+        dismiss(animated: true)
     }
 }
 
