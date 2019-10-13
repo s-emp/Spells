@@ -134,6 +134,11 @@
 		B98EF375233541F2008E81ED /* Profession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98EF374233541F2008E81ED /* Profession.swift */; };
 		B98EF37723354436008E81ED /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98EF37623354436008E81ED /* School.swift */; };
 		B98EF3792335F00C008E81ED /* Spell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98EF3782335F00C008E81ED /* Spell.swift */; };
+		B99260232351C133000EE878 /* ProfessionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99260222351C133000EE878 /* ProfessionInput.swift */; };
+		B99260262351C16B000EE878 /* ProfessionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99260242351C16B000EE878 /* ProfessionsVC.swift */; };
+		B99260272351C16B000EE878 /* ProfessionsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99260252351C16B000EE878 /* ProfessionsVC.xib */; };
+		B99260292351C1A8000EE878 /* ProfessionsOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99260282351C1A8000EE878 /* ProfessionsOutput.swift */; };
+		B992602B2353AAE2000EE878 /* ProfessionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992602A2353AAE2000EE878 /* ProfessionsPresenter.swift */; };
 		F67D503C5600D139881FE953 /* Pods_Spells.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74DDF22D573CA7006A845975 /* Pods_Spells.framework */; };
 /* End PBXBuildFile section */
 
@@ -284,6 +289,11 @@
 		B98EF374233541F2008E81ED /* Profession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profession.swift; sourceTree = "<group>"; };
 		B98EF37623354436008E81ED /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		B98EF3782335F00C008E81ED /* Spell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spell.swift; sourceTree = "<group>"; };
+		B99260222351C133000EE878 /* ProfessionInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionInput.swift; sourceTree = "<group>"; };
+		B99260242351C16B000EE878 /* ProfessionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionsVC.swift; sourceTree = "<group>"; };
+		B99260252351C16B000EE878 /* ProfessionsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfessionsVC.xib; sourceTree = "<group>"; };
+		B99260282351C1A8000EE878 /* ProfessionsOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionsOutput.swift; sourceTree = "<group>"; };
+		B992602A2353AAE2000EE878 /* ProfessionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionsPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -634,6 +644,7 @@
 		99D6063B234F201D004AA4A4 /* CreateSpell */ = {
 			isa = PBXGroup;
 			children = (
+				B992601F2351C10D000EE878 /* Professions */,
 				99C627B92350BD9B00108411 /* Components */,
 				99C627AC23509D3500108411 /* Params */,
 				998C0A99234F3B6B00BAD31D /* Description */,
@@ -988,6 +999,34 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		B992601F2351C10D000EE878 /* Professions */ = {
+			isa = PBXGroup;
+			children = (
+				B99260212351C11B000EE878 /* Presenter */,
+				B99260202351C117000EE878 /* View */,
+			);
+			path = Professions;
+			sourceTree = "<group>";
+		};
+		B99260202351C117000EE878 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B99260222351C133000EE878 /* ProfessionInput.swift */,
+				B99260242351C16B000EE878 /* ProfessionsVC.swift */,
+				B99260252351C16B000EE878 /* ProfessionsVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B99260212351C11B000EE878 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B99260282351C1A8000EE878 /* ProfessionsOutput.swift */,
+				B992602A2353AAE2000EE878 /* ProfessionsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		C05196CEA92E5FBEF63857ED /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1103,6 +1142,7 @@
 				99D6064C234F2680004AA4A4 /* CreateSpell.storyboard in Resources */,
 				99B76BDA2343675500397846 /* SpellbookInMenuCell.xib in Resources */,
 				99B76BCF234352B400397846 /* AddInSpellbookVC.xib in Resources */,
+				B99260272351C16B000EE878 /* ProfessionsVC.xib in Resources */,
 				B91442402335209A00C68557 /* SpellListVC.xib in Resources */,
 				99EDC05D2333CABD007855C4 /* CreateListVC.xib in Resources */,
 				99EDC00E233372EC007855C4 /* Assets.xcassets in Resources */,
@@ -1280,6 +1320,7 @@
 				99EDC0572333A7FE007855C4 /* ViewController.swift in Sources */,
 				9993D182233CA360004C9E03 /* FilterPresenter.swift in Sources */,
 				99EDC038233375F7007855C4 /* TextSearch.swift in Sources */,
+				B99260292351C1A8000EE878 /* ProfessionsOutput.swift in Sources */,
 				99A98547234384E900849B4A /* SpellPresenter.swift in Sources */,
 				B98EF37123353F13008E81ED /* Language.swift in Sources */,
 				99C627C52350BE0900108411 /* ComponentsPresenter.swift in Sources */,
@@ -1288,7 +1329,9 @@
 				998C0AA4234F3BCB00BAD31D /* DescriptionCSOutput.swift in Sources */,
 				99F69F52234627B200A077DE /* CreateSpellbookInput.swift in Sources */,
 				99C627B023509D5000108411 /* ParamsInput.swift in Sources */,
+				B99260232351C133000EE878 /* ProfessionInput.swift in Sources */,
 				9993D17C233C95FE004C9E03 /* IOTagCell.swift in Sources */,
+				B992602B2353AAE2000EE878 /* ProfessionsPresenter.swift in Sources */,
 				99EDC03123337583007855C4 /* Header2.swift in Sources */,
 				99B76BD3234352E200397846 /* AddInSpellbookOutput.swift in Sources */,
 				99F69F552346348F00A077DE /* CreateSpellbookVC.swift in Sources */,
@@ -1301,6 +1344,7 @@
 				B9144242233520B400C68557 /* SpellListInput.swift in Sources */,
 				9933793E233B6B7900907090 /* SpellInput.swift in Sources */,
 				99F69F5C2346412900A077DE /* CreateSpellbookPresenter.swift in Sources */,
+				B99260262351C16B000EE878 /* ProfessionsVC.swift in Sources */,
 				9933793B233B6B6D00907090 /* SpellVC.swift in Sources */,
 				B98EF3792335F00C008E81ED /* Spell.swift in Sources */,
 				99D6064A234F2195004AA4A4 /* NextButton.swift in Sources */,
