@@ -110,9 +110,9 @@ class SpellVC: UIViewController {
             let boldRegex = try NSRegularExpression(pattern: "<b>.*?</b>")
             let diceResult = diceRegex.matches(in: spell.info, range: NSRange(spell.info.startIndex..., in: spell.info))
             let boldResult = boldRegex.matches(in: spell.info, range: NSRange(spell.info.startIndex..., in: spell.info))
-            let attributeString = NSMutableAttributedString(string: spell.info, attributes: [.font: UIFont.systemFont(ofSize: 15), .foregroundColor: UIColor(named: .text)!])
+            let attributeString = NSMutableAttributedString(string: spell.info, attributes: [.font: UIFont.systemFont(ofSize: 15), .foregroundColor: UIColor(named: .text)])
             diceResult.forEach {
-                attributeString.addAttributes([.font: UIFont.boldSystemFont(ofSize: 15), .foregroundColor: UIColor(named: .diceTextColor)!], range: $0.range)
+                attributeString.addAttributes([.font: UIFont.boldSystemFont(ofSize: 15), .foregroundColor: UIColor(named: .diceTextColor)], range: $0.range)
                 
             }
             var space = 0
@@ -120,7 +120,7 @@ class SpellVC: UIViewController {
                 var boldRange = $0.range
                 boldRange.location += 3 - space
                 boldRange.length -= 7
-                attributeString.addAttributes([.font: UIFont.boldSystemFont(ofSize: 15), .foregroundColor: UIColor(named: .text)!], range: boldRange)
+                attributeString.addAttributes([.font: UIFont.boldSystemFont(ofSize: 15), .foregroundColor: UIColor(named: .text)], range: boldRange)
                 var removeRange = $0.range
                 removeRange.location -= space
                 removeRange.length = 3

@@ -17,11 +17,7 @@ class TabBarWithPopupMenu: UITabBarController {
 
     // MARK: - Properties
     private var backgroundImageView: UIImageView!
-    private var plusButton: PlusButton! {
-        didSet {
-            print("NewValue")
-        }
-    }
+    private var plusButton: PlusButton!
     private var menuList: UIView!
     private var popupVC: PopupMenuVC!
     private var plusButtonForPopupMenu: PlusButton!

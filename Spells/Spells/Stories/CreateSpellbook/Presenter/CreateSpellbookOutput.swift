@@ -14,4 +14,3 @@ protocol CreateSpellbookOutput {
     
     init(_ view: CreateSpellbookInput, service: SpellService)
 }
-

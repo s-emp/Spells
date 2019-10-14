@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum School: String, Codable {
+enum School: String, Codable, CaseIterable {
     case conjuration
     case abjuration
     case necromancy

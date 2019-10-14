@@ -10,13 +10,12 @@ import UIKit
 
 extension UIColor {
     
-    convenience init?(named: UIColor.Palette) {
-        self.init(named: named.rawValue)
+    convenience init(named: UIColor.Palette) {
+        self.init(named: named.rawValue)!
     }
     
     enum Palette: String {
         case background
-        case buttonDisabled
         case icon
         case level
         case plusBackground
@@ -38,5 +37,10 @@ extension UIColor {
         case spellbookDescription
         case iconBlue
         case placeholder
+        case buttonEnabled
+        case buttonDisabled
+        case buttonTitleEnabled
+        case buttonTitleDisabled
+        case separator
     }
 }
