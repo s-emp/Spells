@@ -33,6 +33,10 @@ class SpellListVC: UIViewController {
     @IBOutlet private var textFieldRightConstraint: NSLayoutConstraint!
     @IBOutlet private var cancelButtonRightConstraint: NSLayoutConstraint!
     
+    @IBOutlet var languageSegmented: UISegmentedControl!
+    @IBOutlet var segmentBottomConstraint: NSLayoutConstraint!
+    @IBOutlet var textFieldBottomConstraint: NSLayoutConstraint!
+    
     
     @IBOutlet private var containerViewForError: UIView!
     @IBOutlet private var animationContainerView: UIView!
@@ -56,6 +60,7 @@ class SpellListVC: UIViewController {
         prepareNotifications()
         prepareHeaderView()
         prepareAnimatinView()
+        languageSegmented.alpha = 0
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -87,6 +92,11 @@ class SpellListVC: UIViewController {
         presenter.search(searchTextField.text ?? "")
     }
     
+    @IBAction func languageChanged(_ sender: Any) {
+        Language.systemLanguage = languageSegmented.selectedSegmentIndex == 0 ? .ru : .en
+        presenter.search(searchTextField.text ?? "")
+    }
+    
     private func removeNotification() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -98,12 +108,18 @@ class SpellListVC: UIViewController {
             self.headerLabel.alpha = 0
             self.filterButton.alpha = 0
             self.cancelButton.alpha = 1
+            self.languageSegmented.alpha = 1
             self.textFieldRightConstraint.isActive = false
             self.cancelButtonRightConstraint.isActive = true
             self.headerLabelSafeAreaTopConstraint.isActive = false
             self.headerLabelTopConstraint.isActive = true
             self.filterButtonSafeAreaTopConstraint.isActive = false
             self.filterButtonTopConstraint.isActive = true
+            
+            self.textFieldBottomConstraint.isActive = false
+            self.segmentBottomConstraint.isActive = true
+            
+            
             self.view.layoutIfNeeded()
         }
     }
@@ -114,12 +130,17 @@ class SpellListVC: UIViewController {
             self.headerLabel.alpha = 1
             self.filterButton.alpha = 1
             self.cancelButton.alpha = 0
+            self.languageSegmented.alpha = 0
             self.cancelButtonRightConstraint.isActive = false
             self.textFieldRightConstraint.isActive = true
             self.headerLabelTopConstraint.isActive = false
             self.headerLabelSafeAreaTopConstraint.isActive = true
             self.filterButtonTopConstraint.isActive = false
             self.filterButtonSafeAreaTopConstraint.isActive = true
+            
+            self.segmentBottomConstraint.isActive = false
+            self.textFieldBottomConstraint.isActive = true
+            
             self.view.layoutIfNeeded()
         }
     }

@@ -22,8 +22,11 @@
                 <outlet property="headerLabelSafeAreaTopConstraint" destination="GFv-uE-1xc" id="fef-VY-ZsD"/>
                 <outlet property="headerLabelTopConstraint" destination="la2-jS-dYR" id="75Y-pc-gJL"/>
                 <outlet property="headerView" destination="kRs-hB-b5v" id="NnC-me-dyS"/>
+                <outlet property="languageSegmented" destination="60c-It-zzL" id="JVC-AM-QHr"/>
                 <outlet property="searchTextField" destination="Jeo-kN-whn" id="jxD-gp-Jbq"/>
+                <outlet property="segmentBottomConstraint" destination="kwn-1z-P7R" id="ZAD-zE-ANC"/>
                 <outlet property="spellsTableView" destination="b7D-hq-I00" id="UCM-rk-Cgs"/>
+                <outlet property="textFieldBottomConstraint" destination="Z91-wc-1ZY" id="IoE-9K-I2W"/>
                 <outlet property="textFieldRightConstraint" destination="sGE-5c-ytY" id="WHz-9i-gyb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -36,6 +39,19 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRs-hB-b5v">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="197"/>
                     <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="60c-It-zzL">
+                            <rect key="frame" x="16" y="165" width="382" height="33"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="eoO-qh-Rxr"/>
+                            </constraints>
+                            <segments>
+                                <segment title="Русский"/>
+                                <segment title="English"/>
+                            </segments>
+                            <connections>
+                                <action selector="languageChanged:" destination="-1" eventType="valueChanged" id="5r0-Ng-nGd"/>
+                            </connections>
+                        </segmentedControl>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заклинания" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NK9-Gl-AXh" customClass="Header1" customModule="Spells" customModuleProvider="target">
                             <rect key="frame" x="16" y="64" width="340" height="41"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
@@ -80,18 +96,23 @@
                     <color key="backgroundColor" name="plusBackground"/>
                     <constraints>
                         <constraint firstItem="0qc-Fg-9nv" firstAttribute="leading" secondItem="NK9-Gl-AXh" secondAttribute="trailing" constant="16" id="18m-NG-UQH"/>
+                        <constraint firstItem="60c-It-zzL" firstAttribute="top" secondItem="Jeo-kN-whn" secondAttribute="bottom" constant="8" id="BBa-px-JdL"/>
+                        <constraint firstItem="60c-It-zzL" firstAttribute="leading" secondItem="kRs-hB-b5v" secondAttribute="leading" constant="16" id="BJ2-v8-Ptn"/>
                         <constraint firstItem="NK9-Gl-AXh" firstAttribute="leading" secondItem="kRs-hB-b5v" secondAttribute="leading" constant="16" id="Mq2-b2-Rj8"/>
                         <constraint firstAttribute="trailing" secondItem="0qc-Fg-9nv" secondAttribute="trailing" constant="16" id="WFh-Rq-vah"/>
                         <constraint firstAttribute="bottom" secondItem="Jeo-kN-whn" secondAttribute="bottom" constant="40" id="Z91-wc-1ZY"/>
+                        <constraint firstAttribute="bottom" secondItem="60c-It-zzL" secondAttribute="bottom" constant="32" id="kwn-1z-P7R"/>
                         <constraint firstAttribute="trailing" secondItem="ia6-5n-4UI" secondAttribute="trailing" constant="16" id="mhM-Ug-n7h"/>
                         <constraint firstItem="ia6-5n-4UI" firstAttribute="leading" secondItem="Jeo-kN-whn" secondAttribute="trailing" constant="16" id="oAZ-zq-7Vv"/>
                         <constraint firstItem="ia6-5n-4UI" firstAttribute="centerY" secondItem="Jeo-kN-whn" secondAttribute="centerY" id="qrj-DI-Sy2"/>
                         <constraint firstAttribute="trailing" secondItem="Jeo-kN-whn" secondAttribute="trailing" constant="16" id="sGE-5c-ytY"/>
                         <constraint firstItem="Jeo-kN-whn" firstAttribute="leading" secondItem="kRs-hB-b5v" secondAttribute="leading" constant="16" id="vsb-MY-Zcf"/>
                         <constraint firstItem="Jeo-kN-whn" firstAttribute="top" secondItem="NK9-Gl-AXh" secondAttribute="bottom" constant="16" id="zfV-1P-G1o"/>
+                        <constraint firstAttribute="trailing" secondItem="60c-It-zzL" secondAttribute="trailing" constant="16" id="zrf-Ld-lqG"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
+                            <exclude reference="kwn-1z-P7R"/>
                             <exclude reference="mhM-Ug-n7h"/>
                         </mask>
                     </variation>
@@ -140,13 +161,13 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b7D-hq-I00" secondAttribute="trailing" id="15b-gn-LrU"/>
+                <constraint firstItem="b7D-hq-I00" firstAttribute="top" secondItem="kRs-hB-b5v" secondAttribute="bottom" constant="-20" id="B7K-SU-GCa"/>
                 <constraint firstItem="DOV-e0-49Y" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="C7B-gT-4sE"/>
                 <constraint firstItem="DOV-e0-49Y" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="F28-6p-jHy"/>
                 <constraint firstItem="NK9-Gl-AXh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="GFv-uE-1xc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kRs-hB-b5v" secondAttribute="trailing" id="KPk-9x-ght"/>
                 <constraint firstItem="b7D-hq-I00" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LVe-hA-JNg"/>
                 <constraint firstItem="DOV-e0-49Y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Odl-Xd-HPH"/>
-                <constraint firstItem="b7D-hq-I00" firstAttribute="top" secondItem="kRs-hB-b5v" secondAttribute="bottom" constant="-20" id="X7a-q3-K2v"/>
                 <constraint firstItem="0qc-Fg-9nv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="kUR-07-c0o"/>
                 <constraint firstItem="0qc-Fg-9nv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-41" id="kuT-vx-pwd"/>
                 <constraint firstItem="NK9-Gl-AXh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-41" id="la2-jS-dYR"/>
