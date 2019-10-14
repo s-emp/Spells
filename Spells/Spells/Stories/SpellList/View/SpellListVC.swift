@@ -224,6 +224,19 @@ extension SpellListVC: UITableViewDelegate {
         vc.modalPresentationCapturesStatusBarAppearance = true
         self.present(vc, animated: true, completion: nil)
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            presenter.removeSpell(presenter.spells[indexPath.row])
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if presenter.spells[indexPath.row].books.contains(.HB) {
+            return .delete
+        }
+        return .none
+    }
 }
 
 // MARK: - TextFieldDelegate

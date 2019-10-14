@@ -14,6 +14,7 @@ protocol SpellListOutput {
     
     func selectItem(_ index: IndexPath)
     func search(_ message: String?)
+    func removeSpell(_ spell: Spell)
     
     init(_ view: SpellListInput, service: SpellService, filter: Filter)
 }

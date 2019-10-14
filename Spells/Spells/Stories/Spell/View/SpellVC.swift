@@ -115,7 +115,7 @@ class SpellVC: UIViewController {
         castLabel.text = spell.action
         componentsLabel.text = spell.components.map { $0.fullName(Language.systemLanguage) }.joined(separator: " ")
         if let materials = spell.materials {
-            materialView.isHidden = true
+            materialView.isHidden = false
             materialLabel.text = materials
         }
         infoLabel.text = spell.info

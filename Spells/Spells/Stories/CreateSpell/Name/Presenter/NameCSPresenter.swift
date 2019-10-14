@@ -25,6 +25,7 @@ class NameCSPresenter: NameCSOutput {
             return
         }
         spell.name = name!
+        spell.nameQuery = name!.lowercased()
         view.showNextVC()
     }
     

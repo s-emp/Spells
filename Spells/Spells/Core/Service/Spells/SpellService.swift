@@ -144,4 +144,15 @@ class SpellService: Exported, Imported {
             fatalError(error.localizedDescription)
         }
     }
+    
+    func removeSpell(_ spell: Spell) {
+        guard let spellRealm = realm.objects(SpellRealm.self).first(where: { $0.uuid == spell.uuid }) else { return }
+        do {
+            try realm.write {
+                realm.delete(spellRealm)
+            }
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+    }
 }
