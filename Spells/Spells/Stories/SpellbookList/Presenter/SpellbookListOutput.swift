@@ -11,6 +11,7 @@ import Foundation
 protocol SpellbookListOutput {
     
     var spellbooks: [Spellbook] { get }
+    func remove(_ spellboook: Spellbook)
     init(_ view: SpellbookListInput, service: SpellService)
 }
 

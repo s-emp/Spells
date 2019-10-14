@@ -18,6 +18,10 @@ class SpellbookListPresenter: SpellbookListOutput {
     let service: SpellService
     
     // MARK: - Methods
+    func remove(_ spellboook: Spellbook) {
+        service.removeSpellbook(spellboook)
+    }
+    
     required init(_ view: SpellbookListInput, service: SpellService) {
         self.view = view
         self.service = service

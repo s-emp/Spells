@@ -167,4 +167,16 @@ extension SpellbookListVC: UITableViewDelegate {
         vc.modalPresentationCapturesStatusBarAppearance = true
         self.present(vc, animated: true, completion: nil)
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if indexPath.row == 0 { return .none }
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            presenter.remove(presenter.spellbooks[indexPath.row])
+            spellbookTableView.reloadData()
+        }
+    }
 }

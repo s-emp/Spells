@@ -122,6 +122,17 @@ class SpellService: Exported, Imported {
         }
     }
     
+    func removeSpellbook(_ spellbook: Spellbook) {
+        guard let spellbookRealm = realm.objects(SpellbookRealm.self).first(where: { $0.name == spellbook.name} ) else { return }
+        do {
+            try realm.write {
+                realm.delete(spellbookRealm)
+            }
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+    }
+    
     func addSpell(_ spell: Spell) {
         guard spells().first(where: { $0.name == spell.name || $0.uuid == spell.uuid }) == nil else { return }
         let spellRealm = SpellRealm.transform(spell)
