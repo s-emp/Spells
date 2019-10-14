@@ -12,7 +12,7 @@ class NameCSPresenter: NameCSOutput {
     // MARK: - Properties
     weak var view: NameCSInput!
     let service: SpellService
-    var spell = Spell(uuid: UUID().uuidString, level: 0, name: "", school: School.other, action: "", duration: "", range: "", info: "", components: [], materials: nil, professions: [], books: [], isConcentration: false, isRitual: false, nameQuery: "", language: .ru)
+    var spell = Spell(uuid: UUID().uuidString, level: 0, name: "", school: School.other, action: "", duration: "", range: "", info: "", components: [], materials: nil, professions: [], books: [.HB], isConcentration: false, isRitual: false, nameQuery: "", language: .ru)
     
     // MARK: - Methods
     func saveName(_ name: String?) {

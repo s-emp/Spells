@@ -8,6 +8,8 @@
 
 import UIKit
 
+fileprivate let professionsSugue = "Professions"
+
 class ComponentsVC: UIViewController {
 
     // MARK: - Properties
@@ -21,6 +23,11 @@ class ComponentsVC: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? ProfessionsInput, let spell = sender as? Spell else { fatalError() }
+        vc.spell = spell
     }
     
     // MARK: - Methods
@@ -53,7 +60,7 @@ extension ComponentsVC: ComponentsInput {
     }
     
     func showNextVC() {
-        performSegue(withIdentifier: "Class", sender: presenter.spell)
+        performSegue(withIdentifier: professionsSugue, sender: presenter.spell)
     }
 }
 

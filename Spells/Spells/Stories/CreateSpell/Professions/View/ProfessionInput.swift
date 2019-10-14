@@ -9,5 +9,7 @@
 import Foundation
 
 protocol ProfessionsInput: AnyObject {
+    var spell: Spell! { get set }
     
+    func success()
 }

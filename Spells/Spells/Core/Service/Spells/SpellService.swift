@@ -121,4 +121,16 @@ class SpellService: Exported, Imported {
             fatalError(error.localizedDescription)
         }
     }
+    
+    func addSpell(_ spell: Spell) {
+        guard spells().first(where: { $0.name == spell.name || $0.uuid == spell.uuid }) == nil else { return }
+        let spellRealm = SpellRealm.transform(spell)
+        do {
+            try realm.write {
+                realm.add(spellRealm)
+            }
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+    }
 }

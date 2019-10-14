@@ -21,7 +21,7 @@ DEPENDENCIES:
   - TPKeyboardAvoiding (= 1.3.2)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Kingfisher
     - lottie-ios
     - M13Checkbox
@@ -41,4 +41,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: b0d27960c95084b63d8b18f089bf69aac954a40d
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.8.3

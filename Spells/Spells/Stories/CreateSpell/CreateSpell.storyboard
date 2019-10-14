@@ -92,10 +92,29 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="RhG-k3-FFL" kind="show" identifier="Professions" id="VNW-V8-Iwv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkK-Eh-CrH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2329" y="27"/>
+        </scene>
+        <!--Классы-->
+        <scene sceneID="Pxm-Z6-T9T">
+            <objects>
+                <viewController id="RhG-k3-FFL" customClass="ProfessionsVC" customModule="Spells" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Классы" id="V79-Qk-05N">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="cxj-gS-Nrs">
+                            <connections>
+                                <action selector="touchCancel" destination="RhG-k3-FFL" id="SCG-H7-j4S"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Klo-zY-NXW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3213" y="27"/>
         </scene>
     </scenes>
     <resources>

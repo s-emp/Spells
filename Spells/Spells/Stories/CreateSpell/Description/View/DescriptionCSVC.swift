@@ -14,7 +14,7 @@ class DescriptionCSVC: UIViewController {
 
     // MARK: - Properties
     private var presenter: DescriptionCSOutput!
-    @IBOutlet var descriptionTextField: UITextField!
+    @IBOutlet var descriptionTextView: UITextView!
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -23,7 +23,7 @@ class DescriptionCSVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        descriptionTextField.becomeFirstResponder()
+        descriptionTextView.becomeFirstResponder()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -34,6 +34,10 @@ class DescriptionCSVC: UIViewController {
     // MARK: - Methods
     @IBAction func touchCancel() {
         dismiss(animated: true)
+    }
+    
+    @IBAction func touchNext(_ sender: Any) {
+        presenter.saveInformation(descriptionTextView.text)
     }
 }
 
@@ -53,13 +57,5 @@ extension DescriptionCSVC: DescriptionCSInput {
     
     func showNextVC() {
         performSegue(withIdentifier: paramsSegue, sender: presenter.spell)
-    }
-}
-
-// MARK: - UITextFieldDelegate
-extension DescriptionCSVC: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        presenter.saveInformation(descriptionTextField.text)
-        return true
     }
 }

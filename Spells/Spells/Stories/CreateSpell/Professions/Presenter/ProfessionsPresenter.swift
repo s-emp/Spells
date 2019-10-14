@@ -15,8 +15,18 @@ class ProfessionsPresenter: ProfessionsOutput {
     let service: SpellService
     
     func saveSpell(bard: Bool, wizard: Bool, druid: Bool, cleric: Bool, warlock: Bool, paladin: Bool, ranger: Bool, sorcerer: Bool) {
-        var result = [Profession]()
-        
+        var professions = [Profession]()
+        if bard { professions.append(Profession.bard) }
+        if wizard { professions.append(Profession.wizard) }
+        if druid { professions.append(Profession.druid) }
+        if cleric { professions.append(Profession.cleric) }
+        if warlock { professions.append(Profession.warlock) }
+        if paladin { professions.append(Profession.paladin) }
+        if ranger { professions.append(Profession.ranger) }
+        if sorcerer { professions.append(Profession.sorcerer) }
+        spell.professions = professions
+        service.addSpell(spell)
+        view.success()
     }
     
     required init(_ view: ProfessionsInput, service: SpellService) {

@@ -66,7 +66,7 @@
                                     <color key="textColor" name="text"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xl4-9I-XOA">
+                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xl4-9I-XOA">
                                     <rect key="frame" x="333" y="10.5" width="51" height="31"/>
                                     <color key="onTintColor" name="plusBackground"/>
                                 </switch>
@@ -96,7 +96,7 @@
                                     <color key="textColor" name="text"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yfU-8d-WxM">
+                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yfU-8d-WxM">
                                     <rect key="frame" x="333" y="10.5" width="51" height="31"/>
                                     <color key="onTintColor" name="plusBackground"/>
                                     <connections>
@@ -113,7 +113,7 @@
                                 <constraint firstItem="mQI-F4-hkt" firstAttribute="top" secondItem="MIr-mR-pz9" secondAttribute="top" constant="16" id="tLY-Bd-hoy"/>
                             </constraints>
                         </view>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Материальный компонент" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2gH-Ok-BKt">
+                        <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Материальный компонент" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2gH-Ok-BKt">
                             <rect key="frame" x="0.0" y="167" width="398" height="34"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="34" id="aeg-SW-ZOm"/>
@@ -126,14 +126,14 @@
                             </connections>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHr-i9-aaW" userLabel="Separator">
-                            <rect key="frame" x="0.0" y="201" width="398" height="1"/>
+                            <rect key="frame" x="0.0" y="167" width="398" height="1"/>
                             <color key="backgroundColor" name="separator"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="q9y-0P-p8h"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B41-aO-KmZ">
-                            <rect key="frame" x="0.0" y="202" width="398" height="480"/>
+                            <rect key="frame" x="0.0" y="168" width="398" height="514"/>
                             <color key="backgroundColor" name="background"/>
                         </view>
                     </subviews>
