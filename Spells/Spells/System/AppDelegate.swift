@@ -8,8 +8,6 @@
 
 import UIKit
 
-class Test: Imported, Exported {}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
