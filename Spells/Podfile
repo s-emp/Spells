@@ -5,9 +5,7 @@ inhibit_all_warnings!
 target 'Spells' do
   pod "RealmSwift", "3.17.0"
   pod 'TPKeyboardAvoiding', '1.3.2'
-  pod 'Kingfisher'
   pod 'SPStorkController', '1.6.5'
-  pod 'M13Checkbox'
   pod 'lottie-ios'
   target 'SpellsTests' do
     inherit! :search_paths
