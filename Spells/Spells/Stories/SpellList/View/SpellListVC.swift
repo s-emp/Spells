@@ -36,6 +36,7 @@ class SpellListVC: UIViewController {
     
     @IBOutlet private var containerViewForError: UIView!
     @IBOutlet private var animationContainerView: UIView!
+    let animationView = AnimationView(name: "Error")
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
@@ -46,6 +47,7 @@ class SpellListVC: UIViewController {
         super.viewDidLoad()
         filterButton.tintColor = UIColor(named: .background)
         presenter = SpellListPresenter(self, service: SpellService.shared(), filter: Filter(levels: [], professions: [], isConcentration: false, isRitual: false, books: []))
+        animationContainerView.addSubview(animationView)
         prepareTableView()
     }
     
@@ -67,7 +69,8 @@ class SpellListVC: UIViewController {
     
     // MARK: - Methods
     @IBAction func touchCancelSearch(_ sender: Any) {
-        searchTextField.insertText("")
+        searchTextField.text = ""
+        searchEditingChanged("")
         searchTextField.resignFirstResponder()
     }
     
@@ -165,11 +168,8 @@ extension SpellListVC {
     }
     
     private func prepareAnimatinView() {
-        let animationView = AnimationView(name: "Error")
-        animationView.frame = animationContainerView.frame
+        animationView.frame = animationContainerView.bounds
         animationView.loopMode = .loop
-        animationView.play()
-        animationContainerView.addSubview(animationView)
     }
 }
 
@@ -189,7 +189,14 @@ extension SpellListVC: SpellListInput {
 // MARK: - TableViewDataSource
 extension SpellListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        containerViewForError.isHidden = presenter.spells.count != 0
+        if presenter.spells.count == 0 {
+            containerViewForError.isHidden = false
+            animationView.play()
+        } else {
+            animationView.stop()
+            containerViewForError.isHidden = true
+        }
+        
         return presenter.spells.count
     }
     

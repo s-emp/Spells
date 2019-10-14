@@ -10,22 +10,20 @@ import UIKit
 
 class PopupMenuVC: UIViewController {
     
-    private let rootView: UIView = UIApplication.shared.windows.first!.rootViewController!.view!
-    
     var startRect: CGRect?
     var endRect: CGRect!
     weak var childVC: UIViewController?
     
     private var popupMenu: UIView!
     
-    func show() {
+    func show(_ parentView: UIView = UIApplication.shared.windows.first!.rootViewController!.view!) {
         guard let childVC = childVC else { return }
         addChild(childVC)
-        view.frame = rootView.bounds
-        popupMenu.frame = startRect ?? CGRect(origin: rootView.center, size: CGSize(width: 40, height: 40))
+        view.frame = parentView.bounds
+        popupMenu.frame = startRect ?? CGRect(origin: parentView.center, size: CGSize(width: 40, height: 40))
         childVC.view.frame = popupMenu.bounds
         popupMenu.addSubview(childVC.view)
-        rootView.addSubview(view)
+        parentView.addSubview(view)
         UIView.animate(withDuration: 0.2) {
             self.view.alpha = 1
             self.popupMenu.frame = self.endRect
@@ -35,11 +33,10 @@ class PopupMenuVC: UIViewController {
         }
     }
     
-    func hide() {
-        
+    func hide(_ parentView: UIView = UIApplication.shared.windows.first!.rootViewController!.view!) {
         UIView.animate(withDuration: 0.2, animations: {
             self.view.alpha = 0
-            self.popupMenu.frame = self.startRect ?? .zero
+            self.popupMenu.frame = self.startRect ?? CGRect(origin: parentView.center, size: CGSize(width: 40, height: 40))
             self.popupMenu.alpha = 0
         }) { _ in
             self.childVC?.view.removeFromSuperview()
@@ -47,6 +44,10 @@ class PopupMenuVC: UIViewController {
             self.view.removeFromSuperview()
             self.removeFromParent()
         }
+    }
+        
+    @objc func touchBackground(_ sender:UITapGestureRecognizer){
+       hide()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -67,6 +68,13 @@ class PopupMenuVC: UIViewController {
         super.viewDidLoad()
         view.alpha = 0
         view.backgroundColor = UIColor(named: .popupBackground)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let button = UIButton(frame: view.bounds)
+        button.addTarget(self, action: #selector(touchBackground(_:)), for: .touchUpInside)
+        view.insertSubview(button, at: 0)
     }
 }
 

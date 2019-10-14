@@ -56,6 +56,8 @@ class SpellVC: UIViewController {
     @IBOutlet private var likeButton: UIButton!
     @IBOutlet private var addSpellbookButton: UIButton!
     
+    private var popupVC: PopupMenuVC!
+    
     var likeButtonHidden: Bool = false
     var addSpellbookButtonHidden: Bool = false
     
@@ -83,8 +85,23 @@ class SpellVC: UIViewController {
         presenter.changeFavorite()
     }
     
+    fileprivate func preparePopupMenu() {
+        let rootView = self.view!
+        let baseMargin: CGFloat = 20
+        let heightPopupMenu: CGFloat = 120
+        popupVC = PopupMenuVC()
+        popupVC.endRect = CGRect(x: baseMargin, y: rootView.bounds.height / 2 - (heightPopupMenu / 2), width: rootView.bounds.width - baseMargin * 2, height: heightPopupMenu)
+    }
+    
     @IBAction func touchAddSpellInSpellbook(_ sender: Any) {
-        
+        popupVC = PopupMenuVC()
+        let child = AddInSpellbookVC(self, spell: presenter.spell)
+        let rootView = self.view!
+        let baseMargin: CGFloat = 20
+        let heightPopupMenu: CGFloat = 120
+        popupVC.endRect = CGRect(x: baseMargin, y: rootView.bounds.height / 2 - (heightPopupMenu / 2), width: rootView.bounds.width - baseMargin * 2, height: child.heightItem)
+        popupVC.childVC = child
+        popupVC.show(self.view)
     }
     
     private func updateUI() {
@@ -150,5 +167,22 @@ extension SpellVC: SpellInput {
 extension SpellVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         SPStorkController.scrollViewDidScroll(scrollView)
+    }
+}
+
+// MARK: - TabBarWithPopupMenuInput
+extension SpellVC: TabBarWithPopupMenuInput {
+    func hidePopupMenuAndShowVC(_ vc: UIViewController) {
+        fatalError()
+    }
+    
+    func hidePopupMenu() {
+        popupVC.view.removeFromSuperview()
+        popupVC.removeFromParent()
+        popupVC = nil
+    }
+    
+    func showPopupMenu(with item: PopupMenuItem) {
+        fatalError()
     }
 }
