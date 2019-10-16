@@ -48,6 +48,7 @@
                                 <segment title="Русский"/>
                                 <segment title="English"/>
                             </segments>
+                            <color key="tintColor" name="background"/>
                             <connections>
                                 <action selector="languageChanged:" destination="-1" eventType="valueChanged" id="5r0-Ng-nGd"/>
                             </connections>

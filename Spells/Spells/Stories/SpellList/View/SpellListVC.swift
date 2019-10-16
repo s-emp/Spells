@@ -238,12 +238,14 @@ extension SpellListVC: UITableViewDataSource {
 // MARK: - TableViewDelegate
 extension SpellListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        searchTextField.resignFirstResponder()
         let vc = SpellVC(presenter.spells[indexPath.row])
         let transitionDelegate = SPStorkTransitioningDelegate.default
         vc.transitioningDelegate = transitionDelegate
         vc.modalPresentationStyle = .custom
         vc.modalPresentationCapturesStatusBarAppearance = true
-        self.present(vc, animated: true, completion: nil)
+        self.present(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

@@ -28,7 +28,7 @@ class TabBarWithPopupMenu: UITabBarController {
         super.viewDidLoad()
         presenter = TabBarWithPopupMenuPresenter(self)
         prepareTabBarItems()
-        backgroundImageView = UIImageView(image: UIImage(named: "backgroundTabBar"))
+        backgroundImageView = UIImageView(image: UIImage(named: "backgroundTB"))
         backgroundImageView.backgroundColor = UIColor(named: .background)
     }
     
@@ -74,7 +74,7 @@ extension TabBarWithPopupMenu {
     
     fileprivate func prepareButton(_ heightButton: CGFloat, _ heightTabBar: CGFloat) {
         guard plusButton == nil else { return }
-        plusButton = PlusButton(frame: CGRect(x: tabBar.center.x - heightButton / 2, y: -(heightButton / 2 - (10 * heightTabBar / 93)), width: heightButton, height: heightButton))
+        plusButton = PlusButton(frame: CGRect(x: tabBar.center.x - heightButton / 2, y: -(heightButton / 2 - (10 * heightTabBar / 93)) - 3, width: heightButton, height: heightButton))
         plusButton.addTarget(self, action: #selector(touchShowPopupMenu), for: .touchUpInside)
     }
     

@@ -50,7 +50,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wyo-Yq-IEZ">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="576.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="605"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Клинок зеленого пламени" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icm-e8-Dmw" customClass="HeaderBottom" customModule="Spells" customModuleProvider="target">
                                     <rect key="frame" x="16" y="60" width="278" height="64.5"/>
@@ -131,10 +131,10 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9q-WG-usW">
-                                    <rect key="frame" x="16" y="162.5" width="382" height="179"/>
+                                    <rect key="frame" x="16" y="162.5" width="382" height="207.5"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xMc-4b-dw5">
-                                            <rect key="frame" x="16" y="16" width="350" height="147"/>
+                                            <rect key="frame" x="16" y="16" width="350" height="175.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4l-l9-ZWq">
                                                     <rect key="frame" x="0.0" y="0.0" width="350" height="20.5"/>
@@ -204,17 +204,17 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSq-I4-kH4">
-                                                    <rect key="frame" x="0.0" y="147" width="350" height="0.0"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSq-I4-kH4">
+                                                    <rect key="frame" x="0.0" y="155" width="350" height="20.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Материалы" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPG-KC-a5p" customClass="Text2" customModule="Spells" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="153" height="0.0"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="175" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="textInfo"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Соматический (Somatic)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7S-gZ-bZk" customClass="Text2" customModule="Spells" customModuleProvider="target">
-                                                            <rect key="frame" x="153" y="0.0" width="197" height="0.0"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="123" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7S-gZ-bZk" customClass="Text2" customModule="Spells" customModuleProvider="target">
+                                                            <rect key="frame" x="175" y="0.0" width="175" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" name="text"/>
                                                             <nil key="highlightedColor"/>
@@ -238,7 +238,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Pf-G2-6sR">
-                                    <rect key="frame" x="16" y="434.5" width="382" height="122"/>
+                                    <rect key="frame" x="16" y="463" width="382" height="122"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Apf-cG-oii">
                                             <rect key="frame" x="16" y="16" width="350" height="90"/>
@@ -294,7 +294,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jh1-w1-HG4">
-                                    <rect key="frame" x="16" y="357.5" width="382" height="61"/>
+                                    <rect key="frame" x="16" y="386" width="382" height="61"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>

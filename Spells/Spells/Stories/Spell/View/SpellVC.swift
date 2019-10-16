@@ -114,9 +114,12 @@ class SpellVC: UIViewController {
         durationLabel.text = spell.duration
         castLabel.text = spell.action
         componentsLabel.text = spell.components.map { $0.fullName(Language.systemLanguage) }.joined(separator: " ")
-        if let materials = spell.materials {
+        if let materials = spell.materials, !materials.isEmpty {
             materialView.isHidden = false
             materialLabel.text = materials
+        } else {
+            materialView.isHidden = true
+
         }
         infoLabel.text = spell.info
         professionsLabel.text = spell.professions.map { $0.fullName(Language.systemLanguage) }.joined(separator: ", ")
