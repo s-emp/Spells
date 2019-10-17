@@ -11,6 +11,7 @@ import Foundation
 protocol SpellbookOutput {
     var spellbook: Spellbook { get set }
     
+    func remove(spellInBookspell spell: Spell)
     init(_ view: SpellbookInput, service: SpellService, spellbook: Spellbook)
 }
 

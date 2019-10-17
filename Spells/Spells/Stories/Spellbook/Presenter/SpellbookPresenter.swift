@@ -16,6 +16,12 @@ class SpellbookPresenter: SpellbookOutput {
     weak var view: SpellbookInput!
     
     // MARK: - Methods
+    
+    func remove(spellInBookspell spell: Spell) {
+        service.removeSpellInSpellbook(spell, spellbook: spellbook)
+        spellbook = service.spellbooks().first(where: { $0.name == spellbook.name })!
+    }
+    
     required init(_ view: SpellbookInput, service: SpellService, spellbook: Spellbook) {
         self.view = view
         self.service = service
