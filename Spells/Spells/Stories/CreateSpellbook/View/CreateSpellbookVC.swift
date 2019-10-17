@@ -46,6 +46,7 @@ class CreateSpellbookVC: UIViewController {
 extension CreateSpellbookVC: CreateSpellbookInput {
     func success() {
         let banner = StatusBarNotificationBanner(title: "\(textField.text ?? "") создана!", style: .success)
+        banner.duration = 0.2
         banner.show()
         dismiss(animated: true)
     }

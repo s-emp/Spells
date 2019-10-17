@@ -43,6 +43,7 @@ extension AddInSpellbookVC {
 extension AddInSpellbookVC: AddInSpellbookInput {
     func hide() {
         let banner = StatusBarNotificationBanner(title: "Заклинание успешно добавлено!", style: .success)
+        banner.duration = 0.2
         banner.show()
         menu.hidePopupMenu()
     }

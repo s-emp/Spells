@@ -142,6 +142,9 @@
                                                     <color key="textColor" name="text"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="-1" id="UV4-bd-yBK"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" name="background"/>
@@ -178,6 +181,9 @@
                                                     <color key="textColor" name="text"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="-1" id="W4U-3y-mj7"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" name="background"/>
@@ -296,7 +302,7 @@
             <color red="0.43900001049041748" green="0.68599998950958252" blue="0.80800002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="separator">
-            <color red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="text">
             <color red="0.12941176470588237" green="0.2627450980392157" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

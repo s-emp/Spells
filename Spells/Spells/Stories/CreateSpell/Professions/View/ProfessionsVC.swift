@@ -49,7 +49,8 @@ extension ProfessionsVC: ProfessionsInput {
         }
     }
     func success() {
-        let banner = FloatingNotificationBanner(title: "\(presenter.spell.name) создано!", subtitle: "Ваша заклинаний успешно создана 🥳", style: .success)
+        let banner = FloatingNotificationBanner(title: "\(presenter.spell.name) создано!", subtitle: "Ваше заклинание успешно создано 🥳", style: .success)
+        banner.duration = 0.5
         banner.show()
         dismiss(animated: true)
     }

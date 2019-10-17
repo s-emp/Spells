@@ -28,6 +28,7 @@ class ParamsVC: UIViewController {
         rangeTextField.attributedPlaceholder = NSAttributedString(string: "60 футов", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: .placeholder)])
         durationTextField.attributedPlaceholder = NSAttributedString(string: "мгновенно", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: .placeholder)])
         actionTextField.attributedPlaceholder = NSAttributedString(string: "1 действие", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: .placeholder)])
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,6 +49,9 @@ class ParamsVC: UIViewController {
         let row = levelPickerView.selectedRow(inComponent: 0)
         levelButton.setTitle(levelPickerView.isHidden ? "Сохранить" : "\(row == 0 ? "Заговор" : String(row))", for: .normal)
         UIView.animate(withDuration: 0.2) {
+            if self.schoolPickerView.isHidden == false {
+                self.schoolPickerView.isHidden.toggle()
+            }
             self.levelPickerView.isHidden.toggle()
             self.view.layoutIfNeeded()
         }
@@ -57,6 +61,9 @@ class ParamsVC: UIViewController {
         let row = schoolPickerView.selectedRow(inComponent: 0)
         schoolButton.setTitle(schoolPickerView.isHidden ? "Сохранить" : School.allCases[row].fullName(Language.systemLanguage), for: .normal)
         UIView.animate(withDuration: 0.2) {
+            if self.levelPickerView.isHidden == false {
+                self.levelPickerView.isHidden.toggle()
+            }
             self.schoolPickerView.isHidden.toggle()
             self.view.layoutIfNeeded()
         }
@@ -118,12 +125,28 @@ extension ParamsVC: UIPickerViewDelegate {
             return nil
         }
     }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let string = self.pickerView(pickerView, titleForRow: row, forComponent: component) ?? ""
+        return NSAttributedString(string: string, attributes: [.font: UIFont.systemFont(ofSize: 23), NSAttributedString.Key.foregroundColor: UIColor(named: .text)])
+    }
 }
 
 // MARK: - UITextFieldDelegate
 extension ParamsVC: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if levelPickerView.isHidden == false {
+            levelPickerView.isHidden.toggle()
+        }
+        if schoolPickerView.isHidden == false {
+            schoolPickerView.isHidden.toggle()
+        }
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        touchNext("")
+        if textField == actionTextField {
+            touchNext("")
+        }
         return true
     }
 }

@@ -24,7 +24,6 @@ class SpellListPresenter: SpellListOutput {
     func removeSpell(_ spell: Spell) {
         spells.removeAll(where: { $0.uuid == spell.uuid})
         service.removeSpell(spell)
-        view.reloadTableView()
     }
     
     func search(_ message: String?) {

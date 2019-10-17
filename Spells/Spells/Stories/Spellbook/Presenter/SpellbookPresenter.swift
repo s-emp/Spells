@@ -26,5 +26,10 @@ class SpellbookPresenter: SpellbookOutput {
         self.view = view
         self.service = service
         self.spellbook = spellbook
+        self.spellbook.spells = self.spellbook.spells.sorted { (lv, rv) -> Bool in
+                if lv.level < rv.level { return true }
+                if lv.level ==  rv.level && lv.name < rv.name { return true }
+                return false
+        }
     }
 }

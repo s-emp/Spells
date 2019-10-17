@@ -189,7 +189,6 @@ extension SpellbookListVC: UITableViewDelegate {
             alertConstroller.addAction(deleteAction)
             alertConstroller.addAction(cancelAction)
             present(alertConstroller, animated: true, completion: nil)
-            
         }
     }
 }
