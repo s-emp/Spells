@@ -9,6 +9,6 @@
 import Foundation
 
 protocol CreateSpellbookInput: AnyObject {
-    func hide()
+    func success()
     func error(_ message: String)
 }

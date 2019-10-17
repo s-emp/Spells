@@ -24,7 +24,7 @@ class CreateSpellbookPresenter: CreateSpellbookOutput {
             return
         }
         service.addSpellbook(Spellbook(name: name, spells: []))
-        view.hide()
+        view.success()
     }
     
     required init(_ view: CreateSpellbookInput, service: SpellService) {

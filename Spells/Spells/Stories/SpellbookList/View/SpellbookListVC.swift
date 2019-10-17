@@ -183,7 +183,7 @@ extension SpellbookListVC: UITableViewDelegate {
                 notification.prepare()
                 notification.notificationOccurred(UINotificationFeedbackGenerator.FeedbackType.success)
                 self.presenter.remove(self.presenter.spellbooks[indexPath.row])
-                self.spellbookTableView.reloadData()
+                self.spellbookTableView.deleteRows(at: [indexPath], with: .automatic)
             }
             let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
             alertConstroller.addAction(deleteAction)

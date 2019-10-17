@@ -30,7 +30,7 @@ class CreateSpellbookVC: UIViewController {
     
     // MARK: - Methods
     @IBAction func touchCancel(_ sender: Any) {
-        hide()
+        dismiss(animated: true)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -44,8 +44,8 @@ class CreateSpellbookVC: UIViewController {
 
 // MARK: - Input
 extension CreateSpellbookVC: CreateSpellbookInput {
-    func hide() {
-        let banner = NotificationBanner(title: "\(textField.text ?? "") создана!", style: .success)
+    func success() {
+        let banner = StatusBarNotificationBanner(title: "\(textField.text ?? "") создана!", style: .success)
         banner.show()
         dismiss(animated: true)
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 fileprivate let identifier = "cell"
 
@@ -41,6 +42,8 @@ extension AddInSpellbookVC {
 // MARK: - Input
 extension AddInSpellbookVC: AddInSpellbookInput {
     func hide() {
+        let banner = StatusBarNotificationBanner(title: "Заклинание успешно добавлено!", style: .success)
+        banner.show()
         menu.hidePopupMenu()
     }
 }

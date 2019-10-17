@@ -250,7 +250,18 @@ extension SpellListVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            presenter.removeSpell(presenter.spells[indexPath.row])
+            let alertConstroller = UIAlertController(title: "Удаление заклинания", message: "Подтвердите удаление.", preferredStyle: .actionSheet)
+            let deleteAction = UIAlertAction(title: "Удалить", style: .destructive) { _ in
+                let notification = UINotificationFeedbackGenerator()
+                notification.prepare()
+                notification.notificationOccurred(UINotificationFeedbackGenerator.FeedbackType.success)
+                self.presenter.removeSpell(self.presenter.spells[indexPath.row])
+                self.spellsTableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+            let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+            alertConstroller.addAction(deleteAction)
+            alertConstroller.addAction(cancelAction)
+            present(alertConstroller, animated: true, completion: nil)
         }
     }
     

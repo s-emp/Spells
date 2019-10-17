@@ -83,6 +83,7 @@ class SpellService: Exported, Imported {
         guard let spellRealm = realm.objects(SpellRealm.self).first(where: { $0.uuid == spell.uuid }) else {
             fatalError("Не найдено заклинание [\(spell)] в Realm")
         }
+        guard !spellbookRealm.spells.contains(spellRealm) else { return }
         do {
             try realm.write {
                 spellbookRealm.spells.append(spellRealm)

@@ -57,6 +57,7 @@ class SpellVC: UIViewController {
     @IBOutlet private var addSpellbookButton: UIButton!
     
     private var popupVC: PopupMenuVC!
+    private let feedbackGenerator = UISelectionFeedbackGenerator()
     
     var likeButtonHidden: Bool = false
     var addSpellbookButtonHidden: Bool = false
@@ -82,7 +83,9 @@ class SpellVC: UIViewController {
 
     // MARK: - Methods
     @IBAction func touchLike(_ sender: Any) {
+        feedbackGenerator.prepare()
         presenter.changeFavorite()
+        feedbackGenerator.selectionChanged()
     }
     
     fileprivate func preparePopupMenu() {
