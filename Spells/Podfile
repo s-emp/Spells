@@ -7,6 +7,7 @@ target 'Spells' do
   pod 'TPKeyboardAvoiding', '1.3.2'
   pod 'SPStorkController', '1.6.5'
   pod 'lottie-ios'
+  pod 'NotificationBannerSwift', '~> 3.0.0'
   target 'SpellsTests' do
     inherit! :search_paths
     

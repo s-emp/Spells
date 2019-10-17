@@ -28,7 +28,7 @@ class TabBarWithPopupMenu: UITabBarController {
         super.viewDidLoad()
         presenter = TabBarWithPopupMenuPresenter(self)
         prepareTabBarItems()
-        backgroundImageView = UIImageView(image: UIImage(named: "backgroundTB"))
+        backgroundImageView = UIImageView(image: UIImage(named: "backgroundTabBar"))
         backgroundImageView.backgroundColor = UIColor(named: .background)
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 class CreateSpellbookVC: UIViewController {
 
@@ -32,12 +33,20 @@ class CreateSpellbookVC: UIViewController {
         hide()
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle { return .default }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if #available(iOS 13.0, *) {
+            return .darkContent
+        } else {
+            return .default
+        }
+    }
 }
 
 // MARK: - Input
 extension CreateSpellbookVC: CreateSpellbookInput {
     func hide() {
+        let banner = NotificationBanner(title: "\(textField.text ?? "") создана!", style: .success)
+        banner.show()
         dismiss(animated: true)
     }
     

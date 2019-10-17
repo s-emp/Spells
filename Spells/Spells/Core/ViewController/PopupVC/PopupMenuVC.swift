@@ -16,7 +16,7 @@ class PopupMenuVC: UIViewController {
     
     private var popupMenu: UIView!
     
-    func show(_ parentView: UIView = UIApplication.shared.windows.first!.rootViewController!.view!) {
+    func show(_ parentView: UIView = UIApplication.shared.keyWindow!.rootViewController!.view!) {
         guard let childVC = childVC else { return }
         addChild(childVC)
         view.frame = parentView.bounds

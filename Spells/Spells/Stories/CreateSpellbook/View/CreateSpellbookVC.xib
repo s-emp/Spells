@@ -38,7 +38,7 @@
                     <rect key="frame" x="16" y="141.5" width="382" height="18"/>
                     <color key="textColor" name="text"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="FPo-jm-c9d"/>
                     </connections>

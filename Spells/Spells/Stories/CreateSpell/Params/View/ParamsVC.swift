@@ -25,6 +25,9 @@ class ParamsVC: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        rangeTextField.attributedPlaceholder = NSAttributedString(string: "60 футов", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: .placeholder)])
+        durationTextField.attributedPlaceholder = NSAttributedString(string: "мгновенно", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: .placeholder)])
+        actionTextField.attributedPlaceholder = NSAttributedString(string: "1 действие", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: .placeholder)])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

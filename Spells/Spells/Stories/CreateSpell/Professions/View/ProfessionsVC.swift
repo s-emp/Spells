@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 class ProfessionsVC: UIViewController {
     
@@ -48,6 +49,8 @@ extension ProfessionsVC: ProfessionsInput {
         }
     }
     func success() {
+        let banner = FloatingNotificationBanner(title: "\(presenter.spell.name) создано!", subtitle: "Ваша заклинаний успешно создана 🥳", style: .success)
+        banner.show()
         dismiss(animated: true)
     }
 }

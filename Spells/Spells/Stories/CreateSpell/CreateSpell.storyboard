@@ -19,6 +19,9 @@
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" name="text"/>
                         </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" name="text"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="9T4-Q9-ou1" kind="relationship" relationship="rootViewController" id="Qsf-qa-OZt"/>

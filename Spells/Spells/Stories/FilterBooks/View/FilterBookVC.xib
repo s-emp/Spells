@@ -48,6 +48,7 @@
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="29c-Ho-yde">
                                             <rect key="frame" x="333" y="0.0" width="51" height="31"/>
+                                            <color key="backgroundColor" name="background"/>
                                             <color key="onTintColor" name="plusBackground"/>
                                             <connections>
                                                 <action selector="touchPlayersHandbook:" destination="-1" eventType="valueChanged" id="nHa-o1-8jT"/>
@@ -56,7 +57,7 @@
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" name="background"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="D3i-d5-HgR" secondAttribute="trailing" constant="16" id="Lb7-qf-nRW"/>
                                 <constraint firstItem="D3i-d5-HgR" firstAttribute="leading" secondItem="lBI-fR-T9G" secondAttribute="leading" id="LuU-FC-NzK"/>
@@ -93,7 +94,7 @@
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" name="background"/>
                             <constraints>
                                 <constraint firstItem="sZm-PS-UWm" firstAttribute="leading" secondItem="y5C-AE-Y48" secondAttribute="leading" id="3d9-eq-0SL"/>
                                 <constraint firstItem="VsH-v6-HA4" firstAttribute="top" secondItem="y5C-AE-Y48" secondAttribute="top" id="IP3-Lr-EQg"/>
@@ -133,7 +134,7 @@
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" name="background"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="Gtj-ZU-Uki" secondAttribute="bottom" id="6LV-En-9A2"/>
                                 <constraint firstItem="4FU-L6-sCs" firstAttribute="leading" secondItem="j5E-Wb-4ln" secondAttribute="leading" id="EDx-kG-8Vj"/>
@@ -173,7 +174,7 @@
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" name="background"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="LMI-tT-I9Q" secondAttribute="trailing" constant="16" id="2Ig-1C-9OJ"/>
                                 <constraint firstItem="OEN-QC-odt" firstAttribute="leading" secondItem="327-Kz-Kkq" secondAttribute="leading" id="2QL-bE-BlG"/>
@@ -213,7 +214,7 @@
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" name="background"/>
                             <constraints>
                                 <constraint firstItem="t8r-Qp-Seu" firstAttribute="top" secondItem="Gm2-y9-DV4" secondAttribute="bottom" constant="16" id="2mL-v8-Pqi"/>
                                 <constraint firstItem="Gm2-y9-DV4" firstAttribute="top" secondItem="BWW-cR-bEq" secondAttribute="top" id="Ih3-tX-42a"/>
@@ -261,6 +262,9 @@
     </objects>
     <resources>
         <image name="arrow" width="12" height="21"/>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="plusBackground">
             <color red="0.4392156862745098" green="0.68627450980392157" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

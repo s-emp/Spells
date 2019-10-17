@@ -15,11 +15,11 @@ class NameCSVC: UIViewController {
     // MARK: - Properties
     private var presenter: NameCSOutput!
     @IBOutlet var nameTextField: UITextField!
-    @IBOutlet var nextButton: NextButton!
     
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameTextField.attributedPlaceholder = NSAttributedString(string: "Введите название заклинания", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: .placeholder)])
         presenter = NameCSPresenter(self, service: SpellService.shared())
     }
     

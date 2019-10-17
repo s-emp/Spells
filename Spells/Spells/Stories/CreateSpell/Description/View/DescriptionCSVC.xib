@@ -53,7 +53,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" name="background"/>
                             <constraints>
                                 <constraint firstItem="C3S-Yj-xed" firstAttribute="leading" secondItem="C49-4k-ser" secondAttribute="leading" constant="16" id="KDe-Cm-RNa"/>
                                 <constraint firstItem="ghr-c1-ksm" firstAttribute="leading" secondItem="C49-4k-ser" secondAttribute="leading" constant="16" id="PUE-SM-wHo"/>
@@ -86,6 +86,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="text">
             <color red="0.12941176470588237" green="0.2627450980392157" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

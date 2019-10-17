@@ -9,6 +9,7 @@
 import UIKit
 import SPStorkController
 
+
 fileprivate let identifier = "SpellbookCell"
 
 class SpellbookListVC: UIViewController {
@@ -160,6 +161,7 @@ extension SpellbookListVC: UITableViewDataSource {
 // MARK: - TableViewDelegate
 extension SpellbookListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let vc = SpellbookVC(presenter.spellbooks[indexPath.row])
         let transitionDelegate = SPStorkTransitioningDelegate.default
         vc.transitioningDelegate = transitionDelegate
@@ -175,8 +177,19 @@ extension SpellbookListVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            presenter.remove(presenter.spellbooks[indexPath.row])
-            spellbookTableView.reloadData()
+            let alertConstroller = UIAlertController(title: "Удаление книги заклинаний", message: "Подтвердите удаление.", preferredStyle: .actionSheet)
+            let deleteAction = UIAlertAction(title: "Удалить", style: .destructive) { _ in
+                let notification = UINotificationFeedbackGenerator()
+                notification.prepare()
+                notification.notificationOccurred(UINotificationFeedbackGenerator.FeedbackType.success)
+                self.presenter.remove(self.presenter.spellbooks[indexPath.row])
+                self.spellbookTableView.reloadData()
+            }
+            let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+            alertConstroller.addAction(deleteAction)
+            alertConstroller.addAction(cancelAction)
+            present(alertConstroller, animated: true, completion: nil)
+            
         }
     }
 }
