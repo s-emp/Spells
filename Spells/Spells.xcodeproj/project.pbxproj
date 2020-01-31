@@ -1505,14 +1505,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VABTQXHL78;
+				DEVELOPMENT_TEAM = 2A88K9Z9N7;
 				INFOPLIST_FILE = "$(SRCROOT)/Spells/System/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.s-emp.Spells";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.s-emp.dndspells";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1525,14 +1525,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VABTQXHL78;
+				DEVELOPMENT_TEAM = 2A88K9Z9N7;
 				INFOPLIST_FILE = "$(SRCROOT)/Spells/System/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.s-emp.Spells";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.s-emp.dndspells";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
