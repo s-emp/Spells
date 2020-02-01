@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6265D6B523E4A3E900635CD6 /* ReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265D6B323E4A3E900635CD6 /* ReportVC.swift */; };
+		6265D6B623E4A3E900635CD6 /* ReportVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6265D6B423E4A3E900635CD6 /* ReportVC.xib */; };
+		6265D6B823E5AE0F00635CD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6265D6B723E5AE0F00635CD6 /* GoogleService-Info.plist */; };
 		82E633952F909330B06CF3E5 /* Pods_SpellsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4901326D67798CC528653667 /* Pods_SpellsTests.framework */; };
 		99094460234B8EC400EBE375 /* SPStorkTransitioningDelegate+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9909445F234B8EC400EBE375 /* SPStorkTransitioningDelegate+Default.swift */; };
 		991358D723423B4300F04668 /* SpellbookListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991358D523423B4300F04668 /* SpellbookListVC.swift */; };
@@ -155,6 +158,9 @@
 /* Begin PBXFileReference section */
 		0112B2A897F21E1CC4029C5C /* Pods-Spells.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spells.debug.xcconfig"; path = "Target Support Files/Pods-Spells/Pods-Spells.debug.xcconfig"; sourceTree = "<group>"; };
 		4901326D67798CC528653667 /* Pods_SpellsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpellsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6265D6B323E4A3E900635CD6 /* ReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportVC.swift; sourceTree = "<group>"; };
+		6265D6B423E4A3E900635CD6 /* ReportVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportVC.xib; sourceTree = "<group>"; };
+		6265D6B723E5AE0F00635CD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6C9E4AE86B3C81D82740A67A /* Pods-SpellsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellsTests.release.xcconfig"; path = "Target Support Files/Pods-SpellsTests/Pods-SpellsTests.release.xcconfig"; sourceTree = "<group>"; };
 		74DDF22D573CA7006A845975 /* Pods_Spells.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spells.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9909445F234B8EC400EBE375 /* SPStorkTransitioningDelegate+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SPStorkTransitioningDelegate+Default.swift"; sourceTree = "<group>"; };
@@ -316,6 +322,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6265D6B023E4A3B800635CD6 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				6265D6B123E4A3C000635CD6 /* Presenter */,
+				6265D6B223E4A3CA00635CD6 /* View */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		6265D6B123E4A3C000635CD6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		6265D6B223E4A3CA00635CD6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6265D6B323E4A3E900635CD6 /* ReportVC.swift */,
+				6265D6B423E4A3E900635CD6 /* ReportVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		991358D223423B1300F04668 /* SpellbookList */ = {
 			isa = PBXGroup;
 			children = (
@@ -714,6 +745,7 @@
 		99EDC003233372EB007855C4 /* Spells */ = {
 			isa = PBXGroup;
 			children = (
+				6265D6B723E5AE0F00635CD6 /* GoogleService-Info.plist */,
 				99EDC0282333754E007855C4 /* Core */,
 				99EDC02723337464007855C4 /* System */,
 				99EDC0262333745A007855C4 /* Resources */,
@@ -924,6 +956,7 @@
 		B914423A2335206500C68557 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
+				6265D6B023E4A3B800635CD6 /* Report */,
 				99F69F4E2346278A00A077DE /* CreateSpellbook */,
 				99D6063B234F201D004AA4A4 /* CreateSpell */,
 				99B76BBC23433E2300397846 /* Spellbook */,
@@ -1135,6 +1168,7 @@
 				99C627B423509D6400108411 /* ParamsVC.xib in Resources */,
 				99EDC011233372EC007855C4 /* LaunchScreen.storyboard in Resources */,
 				99EDC044233378D2007855C4 /* Colors.xcassets in Resources */,
+				6265D6B823E5AE0F00635CD6 /* GoogleService-Info.plist in Resources */,
 				B9144247233521C300C68557 /* SpellCell.xib in Resources */,
 				991358D823423B4300F04668 /* SpellbookListVC.xib in Resources */,
 				99EDC0492333885D007855C4 /* TabBar.xcassets in Resources */,
@@ -1149,6 +1183,7 @@
 				9993D17D233C95FE004C9E03 /* IOTagCell.xib in Resources */,
 				99F69F562346348F00A077DE /* CreateSpellbookVC.xib in Resources */,
 				99B76BB5234332CF00397846 /* SpellbookCell.xib in Resources */,
+				6265D6B623E4A3E900635CD6 /* ReportVC.xib in Resources */,
 				9946331223420E0C0057B879 /* FilterBookVC.xib in Resources */,
 				9933793C233B6B6D00907090 /* SpellVC.xib in Resources */,
 				99D60644234F2104004AA4A4 /* NameCSVC.xib in Resources */,
@@ -1333,6 +1368,7 @@
 				99D6064A234F2195004AA4A4 /* NextButton.swift in Sources */,
 				9993D184233CAC60004C9E03 /* Filter.swift in Sources */,
 				99337946233B95C600907090 /* FilterVC.swift in Sources */,
+				6265D6B523E4A3E900635CD6 /* ReportVC.swift in Sources */,
 				99A98545234384DC00849B4A /* SpellOutput.swift in Sources */,
 				99345D26233A27A0003CFD96 /* UIView+Radius.swift in Sources */,
 				991358DD2342522900F04668 /* Spellbook.swift in Sources */,

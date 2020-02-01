@@ -56,6 +56,8 @@ class SpellVC: UIViewController {
     @IBOutlet private var likeButton: UIButton!
     @IBOutlet private var addSpellbookButton: UIButton!
     
+    @IBOutlet private var reportButton: UIButton!
+    
     private var popupVC: PopupMenuVC!
     private let feedbackGenerator = UISelectionFeedbackGenerator()
     
@@ -157,6 +159,16 @@ class SpellVC: UIViewController {
             infoLabel.attributedText = attributeString
         } catch {
             
+        }
+    }
+    @IBAction func openReportVC(_ sender: Any) {
+        let vc = ReportVC()
+        vc.spell = presenter.spell
+        addChild(vc)
+        vc.view.frame = CGRect(x: view.bounds.width, y: 0, width: view.bounds.width, height: view.bounds.height)
+        view.addSubview(vc.view)
+        UIView.animate(withDuration: 0.2) {
+            vc.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
         }
     }
 }

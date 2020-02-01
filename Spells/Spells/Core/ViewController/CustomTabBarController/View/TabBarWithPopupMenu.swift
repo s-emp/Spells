@@ -74,7 +74,7 @@ extension TabBarWithPopupMenu {
     
     fileprivate func prepareButton(_ heightButton: CGFloat, _ heightTabBar: CGFloat) {
         guard plusButton == nil else { return }
-        plusButton = PlusButton(frame: CGRect(x: tabBar.center.x - heightButton / 2, y: -(heightButton / 2 - (10 * heightTabBar / 93)) - 3, width: heightButton, height: heightButton))
+        plusButton = PlusButton(frame: CGRect(x: tabBar.center.x - heightButton / 2, y: -(0 - (10 * heightTabBar / 93)) - 3, width: heightButton, height: heightButton))
         plusButton.addTarget(self, action: #selector(touchShowPopupMenu), for: .touchUpInside)
     }
     
@@ -101,6 +101,7 @@ extension TabBarWithPopupMenu {
         tabBar.addSubview(backgroundImageView)
         tabBar.sendSubviewToBack(backgroundImageView)
         tabBar.addSubview(plusButton)
+        tabBar.bringSubviewToFront(plusButton)
     }
     
     fileprivate func preparePopupMenu() {

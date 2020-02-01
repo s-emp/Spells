@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,6 +36,7 @@
                 <outlet property="radiusLabel" destination="GT3-kz-ifD" id="cu9-PI-EtM"/>
                 <outlet property="radiusNameLabel" destination="nGg-oR-gKG" id="jEG-al-dut"/>
                 <outlet property="radiusView" destination="u4l-l9-ZWq" id="mw7-V5-KoF"/>
+                <outlet property="reportButton" destination="2ot-3w-hwP" id="FUN-7P-a8y"/>
                 <outlet property="schoolLabel" destination="GUK-gb-Vx3" id="mMu-wP-Gt1"/>
                 <outlet property="schoolView" destination="vec-oR-cHD" id="Vd5-fL-13K"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -50,7 +51,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wyo-Yq-IEZ">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="605"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="661"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Клинок зеленого пламени" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icm-e8-Dmw" customClass="HeaderBottom" customModule="Spells" customModuleProvider="target">
                                     <rect key="frame" x="16" y="60" width="278" height="64.5"/>
@@ -299,22 +300,35 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ot-3w-hwP">
+                                    <rect key="frame" x="16" y="601" width="382" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="Fkp-KZ-HHy"/>
+                                    </constraints>
+                                    <state key="normal" title="Сообщить о ошибке"/>
+                                    <connections>
+                                        <action selector="openReportVC:" destination="-1" eventType="touchUpInside" id="L8b-M5-jOp"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" name="background"/>
                             <constraints>
                                 <constraint firstItem="vec-oR-cHD" firstAttribute="top" secondItem="Icm-e8-Dmw" secondAttribute="bottom" constant="8" id="0nU-gg-pNv"/>
-                                <constraint firstAttribute="bottom" secondItem="2Pf-G2-6sR" secondAttribute="bottom" constant="20" id="5b3-os-Ekn"/>
                                 <constraint firstItem="Icm-e8-Dmw" firstAttribute="top" secondItem="wyo-Yq-IEZ" secondAttribute="top" constant="60" id="6Df-8e-Jbb"/>
                                 <constraint firstItem="2Pf-G2-6sR" firstAttribute="leading" secondItem="wyo-Yq-IEZ" secondAttribute="leading" constant="16" id="ANI-sR-GyH"/>
+                                <constraint firstAttribute="bottom" secondItem="2ot-3w-hwP" secondAttribute="bottom" constant="20" id="Aub-Je-mUL"/>
                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vec-oR-cHD" secondAttribute="trailing" constant="16" id="ECx-Gq-pN0"/>
                                 <constraint firstItem="rxa-rE-X46" firstAttribute="leading" secondItem="Yn4-lf-6oo" secondAttribute="trailing" constant="16" id="EKX-nM-myI"/>
                                 <constraint firstAttribute="trailing" secondItem="2Pf-G2-6sR" secondAttribute="trailing" constant="16" id="HL2-sc-gO2"/>
                                 <constraint firstItem="Jh1-w1-HG4" firstAttribute="top" secondItem="F9q-WG-usW" secondAttribute="bottom" constant="16" id="K8g-gC-MXm"/>
                                 <constraint firstAttribute="trailing" secondItem="rxa-rE-X46" secondAttribute="trailing" constant="16" id="QgC-KI-pQ5"/>
                                 <constraint firstItem="Yn4-lf-6oo" firstAttribute="top" secondItem="wyo-Yq-IEZ" secondAttribute="top" constant="58" id="Rxj-oj-Gue"/>
+                                <constraint firstItem="2ot-3w-hwP" firstAttribute="top" secondItem="2Pf-G2-6sR" secondAttribute="bottom" constant="16" id="UUL-Mb-C8j"/>
                                 <constraint firstItem="rxa-rE-X46" firstAttribute="top" secondItem="wyo-Yq-IEZ" secondAttribute="top" constant="60" id="UaR-Tk-GC5"/>
+                                <constraint firstAttribute="trailing" secondItem="2ot-3w-hwP" secondAttribute="trailing" constant="16" id="WeB-QS-XVM"/>
                                 <constraint firstItem="Icm-e8-Dmw" firstAttribute="leading" secondItem="wyo-Yq-IEZ" secondAttribute="leading" constant="16" id="XIf-DS-xcw"/>
                                 <constraint firstItem="Yn4-lf-6oo" firstAttribute="leading" secondItem="Icm-e8-Dmw" secondAttribute="trailing" constant="16" id="aH7-o2-DnN"/>
+                                <constraint firstItem="2ot-3w-hwP" firstAttribute="leading" secondItem="wyo-Yq-IEZ" secondAttribute="leading" constant="16" id="aaf-so-aSq"/>
                                 <constraint firstItem="2Pf-G2-6sR" firstAttribute="top" secondItem="Jh1-w1-HG4" secondAttribute="bottom" constant="16" id="b71-eX-iB0"/>
                                 <constraint firstAttribute="trailing" secondItem="Jh1-w1-HG4" secondAttribute="trailing" constant="16" id="czQ-HA-MUq"/>
                                 <constraint firstAttribute="trailing" secondItem="F9q-WG-usW" secondAttribute="trailing" constant="16" id="gR3-Se-hVE"/>

@@ -8,6 +8,10 @@ target 'Spells' do
   pod 'SPStorkController', '1.6.5'
   pod 'lottie-ios'
   pod 'NotificationBannerSwift', '~> 3.0.0'
+  # Firebese:
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
   target 'SpellsTests' do
     inherit! :search_paths
     
