@@ -1,15 +1,19 @@
-platform :ios, '11.0'
+platform :ios, '12.0'
 use_frameworks!
 inhibit_all_warnings!
 
 target 'Spells' do
   pod "RealmSwift", "3.17.0"
   pod 'TPKeyboardAvoiding', '1.3.2'
-  pod 'Kingfisher'
   pod 'SPStorkController', '1.6.5'
-  pod 'M13Checkbox'
+  pod 'lottie-ios'
+  pod 'NotificationBannerSwift', '~> 3.0.0'
+  # Firebese:
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
   target 'SpellsTests' do
     inherit! :search_paths
-    # Pods for testing
+    
   end
 end

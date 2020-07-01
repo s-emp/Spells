@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LB8-1d-FSp">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="bqz-VV-ZTj">
+            <objects>
+                <navigationController id="LB8-1d-FSp" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="l4W-wA-gNZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="text"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="text"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" name="text"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9T4-Q9-ou1" kind="relationship" relationship="rootViewController" id="Qsf-qa-OZt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1vY-CG-4Jk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1030" y="28"/>
+        </scene>
+        <!--Название-->
+        <scene sceneID="Ljh-0m-Bde">
+            <objects>
+                <viewController id="9T4-Q9-ou1" customClass="NameCSVC" customModule="Spells" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Название" id="Xsx-kR-8vh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="KZ7-IZ-pw5">
+                            <connections>
+                                <action selector="touchCancel" destination="9T4-Q9-ou1" id="DAz-BZ-Js8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="wRw-bA-rFU" kind="show" identifier="Desc" id="AQB-pG-2b3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m8f-qh-ryA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-200" y="27"/>
+        </scene>
+        <!--Описание-->
+        <scene sceneID="6eX-AZ-iDJ">
+            <objects>
+                <viewController id="wRw-bA-rFU" customClass="DescriptionCSVC" customModule="Spells" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Описание" largeTitleDisplayMode="always" id="CLv-wC-1j2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="aWx-IJ-MNI"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="W9U-yr-IpU" kind="show" identifier="Params" id="8go-wZ-epA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fNn-WM-S9z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="641" y="27"/>
+        </scene>
+        <!--Параметры-->
+        <scene sceneID="cBh-UD-yEH">
+            <objects>
+                <viewController id="W9U-yr-IpU" customClass="ParamsVC" customModule="Spells" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Параметры" id="eN4-2E-vHp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="r2Y-4Q-N6E">
+                            <connections>
+                                <action selector="touchCancel" destination="W9U-yr-IpU" id="9mY-dL-1Z1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="GNb-iV-8zd" kind="show" identifier="Components" id="Vii-yD-su0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hok-3Q-XYk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1461" y="27"/>
+        </scene>
+        <!--Компоненты-->
+        <scene sceneID="lRE-N1-DOp">
+            <objects>
+                <viewController id="GNb-iV-8zd" customClass="ComponentsVC" customModule="Spells" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Компоненты" id="ecW-jb-tzG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="WTV-PN-QSi">
+                            <connections>
+                                <action selector="touchCancel" destination="GNb-iV-8zd" id="lbM-06-z2v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="RhG-k3-FFL" kind="show" identifier="Professions" id="VNW-V8-Iwv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkK-Eh-CrH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2329" y="27"/>
+        </scene>
+        <!--Классы-->
+        <scene sceneID="Pxm-Z6-T9T">
+            <objects>
+                <viewController id="RhG-k3-FFL" customClass="ProfessionsVC" customModule="Spells" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Классы" id="V79-Qk-05N">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="cxj-gS-Nrs">
+                            <connections>
+                                <action selector="touchCancel" destination="RhG-k3-FFL" id="SCG-H7-j4S"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Klo-zY-NXW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3213" y="27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="text">
+            <color red="0.12941176470588237" green="0.2627450980392157" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text">
+            <color red="0.12941176470588237" green="0.2627450980392157" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

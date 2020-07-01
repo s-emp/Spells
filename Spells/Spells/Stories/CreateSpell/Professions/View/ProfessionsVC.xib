@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfessionsVC" customModule="Spells" customModuleProvider="target">
+            <connections>
+                <outlet property="bardSwitch" destination="tgm-1s-szZ" id="WaE-MF-whR"/>
+                <outlet property="clericSwitch" destination="cUW-RF-J3t" id="5ZG-9E-0Pd"/>
+                <outlet property="druidSwitch" destination="Shr-db-wqS" id="Lcs-Ys-7O9"/>
+                <outlet property="paladinSwitch" destination="DF4-BE-vae" id="bke-Nd-H4P"/>
+                <outlet property="rangerSwitch" destination="ggo-or-uUm" id="BQc-uT-3sk"/>
+                <outlet property="sorcererSwitch" destination="tc9-eF-L3D" id="v2z-yr-noE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="warlockSwitch" destination="vWY-ty-3pY" id="SEW-ID-KtS"/>
+                <outlet property="wizardSwitch" destination="rqp-tG-TdL" id="C33-6M-ULB"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOQ-HG-Q9n">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zkg-Sa-ydY">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="584"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1Yi-en-Zlp">
+                                    <rect key="frame" x="16" y="20" width="398" height="448"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Byc-LN-hcT" userLabel="Level">
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="55"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Бард" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeC-tw-cgt" customClass="TextFilter" customModule="Spells" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="16" width="37.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" name="text"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tgm-1s-szZ">
+                                                    <rect key="frame" x="333" y="10.5" width="51" height="31"/>
+                                                    <color key="onTintColor" name="plusBackground"/>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" name="background"/>
+                                            <constraints>
+                                                <constraint firstItem="KeC-tw-cgt" firstAttribute="top" secondItem="Byc-LN-hcT" secondAttribute="top" constant="16" id="JeI-pR-jdS"/>
+                                                <constraint firstAttribute="height" constant="55" id="VWs-La-GCp"/>
+                                                <constraint firstItem="KeC-tw-cgt" firstAttribute="leading" secondItem="Byc-LN-hcT" secondAttribute="leading" id="qQ0-bp-Qob"/>
+                                                <constraint firstAttribute="trailing" secondItem="tgm-1s-szZ" secondAttribute="trailing" constant="16" id="r9k-NZ-Jm9"/>
+                                                <constraint firstItem="tgm-1s-szZ" firstAttribute="centerY" secondItem="KeC-tw-cgt" secondAttribute="centerY" id="sd5-3G-E00"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8k-dx-ccn" userLabel="Separator">
+                                            <rect key="frame" x="0.0" y="55" width="398" height="1"/>
+                                            <color key="backgroundColor" name="separator"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="hQN-Kr-MUd"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qs6-h8-14f" userLabel="Level">
+                                            <rect key="frame" x="0.0" y="56" width="398" height="55"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Жрец" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYa-bu-TRV" customClass="TextFilter" customModule="Spells" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="16" width="44.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" name="text"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cUW-RF-J3t">
+                                                    <rect key="frame" x="333" y="10.5" width="51" height="31"/>
+                                                    <color key="onTintColor" name="plusBackground"/>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" name="background"/>
+                                            <constraints>
+                                                <constraint firstItem="NYa-bu-TRV" firstAttribute="leading" secondItem="qs6-h8-14f" secondAttribute="leading" id="32Q-29-UVo"/>
+                                                <constraint firstItem="NYa-bu-TRV" firstAttribute="top" secondItem="qs6-h8-14f" secondAttribute="top" constant="16" id="7m4-j0-cBF"/>
+                                                <constraint firstAttribute="trailing" secondItem="cUW-RF-J3t" secondAttribute="trailing" constant="16" id="DgA-Sg-Nxb"/>
+                                                <constraint firstAttribute="height" constant="55" id="q8N-kE-JzH"/>
+                                                <constraint firstItem="cUW-RF-J3t" firstAttribute="centerY" secondItem="NYa-bu-TRV" secondAttribute="centerY" id="zFS-bA-oCz"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M61-Lk-rK7" userLabel="Separator">
+                                            <rect key="frame" x="0.0" y="111" width="398" height="1"/>
+                                            <color key="backgroundColor" name="separator"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="EyN-GS-PG3"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bmn-BO-UT1" userLabel="Level">
+                                            <rect key="frame" x="0.0" y="112" width="398" height="55"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Друид" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWf-lC-B6L" customClass="TextFilter" customModule="Spells" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="16" width="48.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" name="text"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Shr-db-wqS">
+                                                    <rect key="frame" x="333" y="10.5" width="51" height="31"/>
+                                                    <color key="onTintColor" name="plusBackground"/>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" name="background"/>
+                                            <constraints>
+                                                <constraint firstItem="Shr-db-wqS" firstAttribute="centerY" secondItem="HWf-lC-B6L" secondAttribute="centerY" id="7bA-aA-aTE"/>
+                                                <constraint firstItem="HWf-lC-B6L" firstAttribute="top" secondItem="Bmn-BO-UT1" secondAttribute="top" constant="16" id="KQg-eG-5ak"/>
+                                                <constraint firstAttribute="height" constant="55" id="NT2-OC-ym6"/>
+                                                <constraint firstItem="HWf-lC-B6L" firstAttribute="leading" secondItem="Bmn-BO-UT1" secondAttribute="leading" id="QgN-Kj-y85"/>
+                                                <constraint firstAttribute="trailing" secondItem="Shr-db-wqS" secondAttribute="trailing" constant="16" id="rhL-PM-5Ww"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rSG-3J-y0A" userLabel="Separator">
+                                            <rect key="frame" x="0.0" y="167" width="398" height="1"/>
+                                            <color key="backgroundColor" name="separator"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="JvO-48-sch"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rkX-Tz-4OF" userLabel="Level">
+                                            <rect key="frame" x="0.0" y="168" width="398" height="55"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Паладин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vl8-lo-icQ" customClass="TextFilter" customModule="Spells" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="16" width="66" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" name="text"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DF4-BE-vae">
+                                                    <rect key="frame" x="333" y="10.5" width="51" height="31"/>
+                                                    <color key="onTintColor" name="plusBackground"/>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" name="background"/>
+                                            <constraints>
+                                                <constraint firstItem="DF4-BE-vae" firstAttribute="centerY" secondItem="Vl8-lo-icQ" secondAttribute="centerY" id="MMd-b9-88k"/>
+                                                <constraint firstAttribute="height" constant="55" id="ef1-iQ-ftG"/>
+                                                <constraint firstItem="Vl8-lo-icQ" firstAttribute="leading" secondItem="rkX-Tz-4OF" secondAttribute="leading" id="hdW-Kv-623"/>
+                                                <constraint firstItem="Vl8-lo-icQ" firstAttribute="top" secondItem="rkX-Tz-4OF" secondAttribute="top" constant="16" id="oFd-yf-NSZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="DF4-BE-vae" secondAttribute="trailing" constant="16" id="yPG-LP-C1P"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IN2-Eg-4pk" userLabel="Separator">
+                                            <rect key="frame" x="0.0" y="223" width="398" height="1"/>
+                                            <color key="backgroundColor" name="separator"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="odg-la-jf2"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7a-gJ-Jic" userLabel="Level">
+                                            <rect key="frame" x="0.0" y="224" width="398" height="55"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ренджер" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8aI-db-acF" customClass="TextFilter" customModule="Spells" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="16" width="68.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" name="text"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ggo-or-uUm">
+                                                    <rect key="frame" x="333" y="10.5" width="51" height="31"/>
+                                                    <color key="onTintColor" name="plusBackground"/>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" name="background"/>
+                                            <constraints>
+                                                <constraint firstItem="8aI-db-acF" firstAttribute="leading" secondItem="U7a-gJ-Jic" secondAttribute="leading" id="1IN-bE-xpU"/>
+                                                <constraint firstItem="8aI-db-acF" firstAttribute="top" secondItem="U7a-gJ-Jic" secondAttribute="top" constant="16" id="E7a-sL-81x"/>
+                                                <constraint firstItem="ggo-or-uUm" firstAttribute="centerY" secondItem="8aI-db-acF" secondAttribute="centerY" id="FtR-rj-9c1"/>
+                                                <constraint firstAttribute="height" constant="55" id="X7G-l1-DS9"/>
+                                                <constraint firstAttribute="trailing" secondItem="ggo-or-uUm" secondAttribute="trailing" constant="16" id="mDz-dO-10H"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIq-w0-YGB" userLabel="Separator">
+                                            <rect key="frame" x="0.0" y="279" width="398" height="1"/>
+                                            <color key="backgroundColor" name="separator"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="99q-Pp-X1M"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ven-1b-oXx" userLabel="Level">
+                                            <rect key="frame" x="0.0" y="280" width="398" height="55"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Чародей" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RN0-Sy-ik1" customClass="TextFilter" customModule="Spells" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="16" width="66.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" name="text"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tc9-eF-L3D">
+                                                    <rect key="frame" x="333" y="10.5" width="51" height="31"/>
+                                                    <color key="onTintColor" name="plusBackground"/>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" name="background"/>
+                                            <constraints>
+                                                <constraint firstItem="tc9-eF-L3D" firstAttribute="centerY" secondItem="RN0-Sy-ik1" secondAttribute="centerY" id="5hh-Uw-eTD"/>
+                                                <constraint firstItem="RN0-Sy-ik1" firstAttribute="leading" secondItem="Ven-1b-oXx" secondAttribute="leading" id="TIs-OA-6Ea"/>
+                                                <constraint firstAttribute="trailing" secondItem="tc9-eF-L3D" secondAttribute="trailing" constant="16" id="bnG-dO-Ahz"/>
+                                                <constraint firstItem="RN0-Sy-ik1" firstAttribute="top" secondItem="Ven-1b-oXx" secondAttribute="top" constant="16" id="lAM-Ys-H1q"/>
+                                                <constraint firstAttribute="height" constant="55" id="nRy-xc-gcA"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brq-Gr-EoM" userLabel="Separator">
+                                            <rect key="frame" x="0.0" y="335" width="398" height="1"/>
+                                            <color key="backgroundColor" name="separator"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="2iZ-xu-7vV"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebg-tp-bHm" userLabel="Level">
+                                            <rect key="frame" x="0.0" y="336" width="398" height="55"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Колдун" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j74-HE-A92" customClass="TextFilter" customModule="Spells" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="16" width="55.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" name="text"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vWY-ty-3pY">
+                                                    <rect key="frame" x="333" y="10.5" width="51" height="31"/>
+                                                    <color key="onTintColor" name="plusBackground"/>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" name="background"/>
+                                            <constraints>
+                                                <constraint firstItem="j74-HE-A92" firstAttribute="top" secondItem="ebg-tp-bHm" secondAttribute="top" constant="16" id="FFi-E9-qR1"/>
+                                                <constraint firstItem="vWY-ty-3pY" firstAttribute="centerY" secondItem="j74-HE-A92" secondAttribute="centerY" id="Ixc-I7-4C9"/>
+                                                <constraint firstAttribute="trailing" secondItem="vWY-ty-3pY" secondAttribute="trailing" constant="16" id="a8L-bb-8pB"/>
+                                                <constraint firstAttribute="height" constant="55" id="qaK-dJ-DqY"/>
+                                                <constraint firstItem="j74-HE-A92" firstAttribute="leading" secondItem="ebg-tp-bHm" secondAttribute="leading" id="sVD-r8-bZx"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GWD-6S-s4V" userLabel="Separator">
+                                            <rect key="frame" x="0.0" y="391" width="398" height="1"/>
+                                            <color key="backgroundColor" name="separator"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="5gL-e4-Qhy"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKc-qP-Y7Y" userLabel="Level">
+                                            <rect key="frame" x="0.0" y="392" width="398" height="55"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Волшебник" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyo-d9-KWp" customClass="TextFilter" customModule="Spells" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="16" width="87" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" name="text"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rqp-tG-TdL">
+                                                    <rect key="frame" x="333" y="10.5" width="51" height="31"/>
+                                                    <color key="onTintColor" name="plusBackground"/>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" name="background"/>
+                                            <constraints>
+                                                <constraint firstItem="rqp-tG-TdL" firstAttribute="centerY" secondItem="iyo-d9-KWp" secondAttribute="centerY" id="3Mc-uf-PFb"/>
+                                                <constraint firstAttribute="trailing" secondItem="rqp-tG-TdL" secondAttribute="trailing" constant="16" id="Akg-oQ-DEz"/>
+                                                <constraint firstItem="iyo-d9-KWp" firstAttribute="leading" secondItem="yKc-qP-Y7Y" secondAttribute="leading" id="MJz-K8-pkY"/>
+                                                <constraint firstAttribute="height" constant="55" id="ZMv-Qi-ajE"/>
+                                                <constraint firstItem="iyo-d9-KWp" firstAttribute="top" secondItem="yKc-qP-Y7Y" secondAttribute="top" constant="16" id="aBL-Z3-xl6"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XtF-rW-KuX" userLabel="Separator">
+                                            <rect key="frame" x="0.0" y="447" width="398" height="1"/>
+                                            <color key="backgroundColor" name="separator"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="veR-K0-RS3"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cc3-6H-pO2">
+                                    <rect key="frame" x="16" y="488" width="382" height="56"/>
+                                    <color key="backgroundColor" name="plusBackground"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="56" id="3SE-mP-Pu4"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="Сохранить">
+                                        <color key="titleColor" name="buttonTitleEnabled"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="touchSpellSave:" destination="-1" eventType="touchUpInside" id="dSz-QJ-zKh"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" name="background"/>
+                            <constraints>
+                                <constraint firstItem="1Yi-en-Zlp" firstAttribute="leading" secondItem="zkg-Sa-ydY" secondAttribute="leading" constant="16" id="84f-d4-Dpj"/>
+                                <constraint firstAttribute="trailing" secondItem="Cc3-6H-pO2" secondAttribute="trailing" constant="16" id="9NM-GO-3zI"/>
+                                <constraint firstItem="1Yi-en-Zlp" firstAttribute="top" secondItem="zkg-Sa-ydY" secondAttribute="top" constant="20" id="DM9-Tv-vXz"/>
+                                <constraint firstAttribute="trailing" secondItem="1Yi-en-Zlp" secondAttribute="trailing" id="Vvk-IW-bjF"/>
+                                <constraint firstItem="Cc3-6H-pO2" firstAttribute="top" secondItem="1Yi-en-Zlp" secondAttribute="bottom" constant="20" id="YvV-Jz-sgf"/>
+                                <constraint firstAttribute="bottom" secondItem="Cc3-6H-pO2" secondAttribute="bottom" constant="40" id="nAl-N0-NXA"/>
+                                <constraint firstItem="Cc3-6H-pO2" firstAttribute="leading" secondItem="zkg-Sa-ydY" secondAttribute="leading" constant="16" id="nrc-0R-qDV"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="zkg-Sa-ydY" firstAttribute="top" secondItem="vOQ-HG-Q9n" secondAttribute="top" id="AxT-NT-akr"/>
+                        <constraint firstAttribute="bottom" secondItem="zkg-Sa-ydY" secondAttribute="bottom" id="PRV-Xa-aF5"/>
+                        <constraint firstItem="zkg-Sa-ydY" firstAttribute="leading" secondItem="vOQ-HG-Q9n" secondAttribute="leading" id="fDh-MR-X3v"/>
+                        <constraint firstAttribute="trailing" secondItem="zkg-Sa-ydY" secondAttribute="trailing" id="xGs-yD-wuU"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="zkg-Sa-ydY" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="D01-xM-r9j"/>
+                <constraint firstItem="vOQ-HG-Q9n" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Hks-n0-aoQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vOQ-HG-Q9n" secondAttribute="trailing" id="L2g-iG-iXN"/>
+                <constraint firstItem="vOQ-HG-Q9n" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Zna-We-WNv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vOQ-HG-Q9n" secondAttribute="bottom" id="rUo-Mh-xDs"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="buttonTitleEnabled">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="plusBackground">
+            <color red="0.4392156862745098" green="0.68627450980392157" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="separator">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text">
+            <color red="0.12941176470588237" green="0.2627450980392157" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
