@@ -19,7 +19,11 @@ class ReportVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        messageViewText.becomeFirstResponder()
     }
     @IBAction func sendReport(_ sender: Any) {
         let db = Firestore.firestore()
