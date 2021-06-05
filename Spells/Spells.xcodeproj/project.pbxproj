@@ -10,6 +10,7 @@
 		6265D6B523E4A3E900635CD6 /* ReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265D6B323E4A3E900635CD6 /* ReportVC.swift */; };
 		6265D6B623E4A3E900635CD6 /* ReportVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6265D6B423E4A3E900635CD6 /* ReportVC.xib */; };
 		6265D6B823E5AE0F00635CD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6265D6B723E5AE0F00635CD6 /* GoogleService-Info.plist */; };
+		6269AD40266BB12E00ED4720 /* String+Capitalizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6269AD3F266BB12E00ED4720 /* String+Capitalizing.swift */; };
 		82E633952F909330B06CF3E5 /* Pods_SpellsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4901326D67798CC528653667 /* Pods_SpellsTests.framework */; };
 		99094460234B8EC400EBE375 /* SPStorkTransitioningDelegate+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9909445F234B8EC400EBE375 /* SPStorkTransitioningDelegate+Default.swift */; };
 		991358D723423B4300F04668 /* SpellbookListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991358D523423B4300F04668 /* SpellbookListVC.swift */; };
@@ -161,6 +162,7 @@
 		6265D6B323E4A3E900635CD6 /* ReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportVC.swift; sourceTree = "<group>"; };
 		6265D6B423E4A3E900635CD6 /* ReportVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportVC.xib; sourceTree = "<group>"; };
 		6265D6B723E5AE0F00635CD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6269AD3F266BB12E00ED4720 /* String+Capitalizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Capitalizing.swift"; sourceTree = "<group>"; };
 		6C9E4AE86B3C81D82740A67A /* Pods-SpellsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellsTests.release.xcconfig"; path = "Target Support Files/Pods-SpellsTests/Pods-SpellsTests.release.xcconfig"; sourceTree = "<group>"; };
 		74DDF22D573CA7006A845975 /* Pods_Spells.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spells.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9909445F234B8EC400EBE375 /* SPStorkTransitioningDelegate+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SPStorkTransitioningDelegate+Default.swift"; sourceTree = "<group>"; };
@@ -857,6 +859,7 @@
 				9938B23E233CE89A0073B574 /* Int+Declension.swift */,
 				9909445F234B8EC400EBE375 /* SPStorkTransitioningDelegate+Default.swift */,
 				998C0A97234F392200BAD31D /* UIAlertController+defaultError.swift */,
+				6269AD3F266BB12E00ED4720 /* String+Capitalizing.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1278,6 +1281,7 @@
 				B91442142335175B00C68557 /* CreateListOutput.swift in Sources */,
 				99094460234B8EC400EBE375 /* SPStorkTransitioningDelegate+Default.swift in Sources */,
 				99EDC03223337583007855C4 /* Text2.swift in Sources */,
+				6269AD40266BB12E00ED4720 /* String+Capitalizing.swift in Sources */,
 				99337949233B95D400907090 /* FilterInput.swift in Sources */,
 				998C0AA1234F3BB600BAD31D /* DescriptionCSVC.swift in Sources */,
 				991358D723423B4300F04668 /* SpellbookListVC.swift in Sources */,
